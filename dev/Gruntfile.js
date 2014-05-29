@@ -9,8 +9,8 @@ grunt.initConfig({
 // watch
     watch: {
         sass: {
-          files: ['sass/**/*.scss'],
-          tasks: ['sass:dev', 'autoprefixer:dist'],
+          files: ['sass/**/*.scss', 'js/**/*.*', 'js_dist/**/*.*', 'js/**/*.*', 'fonts/**/*.*', 'images/**/*.*'],
+          tasks: ['sass:prod', 'autoprefixer:dist', 'ftpush:dev'],
           options: {
             spawn: false,
             livereload: true,
@@ -83,7 +83,7 @@ grunt.initConfig({
             "printshiv": false,
             "load"     : false,
             "mq"       : false,
-            "cssclasses" : false
+            "cssclasses" : true
         },
 
         // Based on default settings on http://modernizr.com/download/
@@ -119,6 +119,9 @@ grunt.initConfig({
         // Have custom Modernizr tests? Add paths to their location here.
         "customTests" : []
     },
+
+
+
 // impage optimisation
     imagemin: {
         dist: {
@@ -131,25 +134,59 @@ grunt.initConfig({
         }
     },
 
+
+
+// ftpush
+    ftpush: {
+
+        dev: {
+            auth: {
+                host: 'hauptwolke',
+                port: 21,
+                authKey: 'host'
+              },
+            src: '',
+            dest: 'httpdocs/files/public',
+            exclusions: ['**/.DS_Store', '**/Thumbs.db', 'dist/tmp', 'styles.css', 'styles.css.map', '*.patch',
+              '.grunt','css/menatwork', 'sass'],
+            keep: ['/important/images/at/server/*.jpg'],
+            simple: true,
+            useList: false
+        },
+
+        prod: {
+            auth: {
+                host: 'schwesternliebe.de',
+                port: 21,
+                authKey: 'host'
+              },
+            src: '',
+            dest: 'files/public',
+            exclusions: ['**/.DS_Store', '**/Thumbs.db', 'dist/tmp', 'styles.css', 'styles.css.map', '*.patch',
+              '.grunt','css/menatwork'],
+            keep: ['/important/images/at/server/*.jpg'],
+            simple: true,
+            useList: false
+        }
+    },
+
 }); // end: init
 
 
-  // grunt.loadNpmTasks ('grunt-contrib-uglify');
-  // grunt.loadNpmTasks ('grunt-contrib-concat');
   grunt.loadNpmTasks ('grunt-contrib-sass');
   grunt.loadNpmTasks ('grunt-autoprefixer');
   grunt.loadNpmTasks ('grunt-contrib-imagemin');
   grunt.loadNpmTasks ('grunt-contrib-watch');
   grunt.loadNpmTasks ('grunt-modernizr');
+  grunt.loadNpmTasks ('grunt-ftpush');
 
   // setBase
   grunt.file.setBase('../files/public/');
 
   // registerTasks
-  grunt.registerTask('default', ['sass:dev', 'autoprefixer:dist', 'imagemin','watch']);
-  grunt.registerTask('prod', ['sass:prod', 'autoprefixer:dist', 'imagemin']);
+  grunt.registerTask('default', ['sass:prod', 'autoprefixer:dist', 'imagemin', 'ftpush:dev', 'watch']);
+  grunt.registerTask('prod', ['sass:prod', 'autoprefixer:dist', 'imagemin', 'ftpush:prod']);
 
-  // test
-  //grunt.registerTask('sass', ['sass:dev']);
+
 };
 
