@@ -1,0 +1,72 @@
+/*   -------------------------------------------------------------------------
+ *                                 gc_defaults
+ *   =========================================================================
+ */
+
+/*
+ * Contao Defauts
+ */
+header,footer,nav,section,aside,article,figure,figcaption {
+    display:block;
+}
+body,div,h1,h2,h3,h4,h5,h6,p,blockquote,pre,code,ol,ul,li,dl,dt,dd,figure,table,th,td,form,fieldset,legend,input,textarea {
+    margin:0;
+    padding:0;
+}
+h1,h2,h3,h4,h5,h6 {
+    margin-top: $font_size;
+}
+h1,h2,h3,h4,h5,h6,p,pre,blockquote,table,ol,ul,form {
+    margin-bottom: $font_size;
+}
+
+/*
+ * equal margin-top
+ */
+#left,
+#main,
+#right {
+    > .inside {
+        margin-top: $font_size;
+    }
+}
+
+
+/*
+ * image_container
+ */
+.image_container {
+    line-height: 1em;
+    margin-bottom: .5em;
+    &.float_left {
+        width: 40%;
+        margin-right: 1em;
+    }
+    &.float_right {
+        width: 40%;
+        margin-left:  1em;
+    }
+
+    // strech images
+    @media (max-width: 767px) {
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+    }
+    // figure margins
+    @media (max-width: 480px) {
+        &.float_right,
+        &.float_left {
+            float: none !important;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+// reset for Gallery
+.ce_gallery .image_container {
+    width: auto;
+}

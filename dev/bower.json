@@ -1,0 +1,20 @@
+{
+  "name": "bower-installer",
+  "version": "0.1",
+  "dependencies": {
+    "requirejs-domready": "latest",
+    "scut": "latest",
+    "jstorage": "latest",
+    "jquery": "~1.10.2",
+    "requirejs": "latest"
+  },
+
+  "install": {
+    "path": "../files/public/bower",
+    "sources": {
+      "jquery"        : "bower_components/jquery/jquery.js",
+      "jstorage"      : "bower_components/jstorage/jstorage.min.js",
+      "requirejs-domready": "bower_components/requirejs-domready/domReady.js"
+    }
+  }
+}

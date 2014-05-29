@@ -1,0 +1,81 @@
+/*   -------------------------------------------------------------------------
+ * 									nav_main
+ *	 =========================================================================
+ */
+
+
+/*
+ * default
+ */
+#nav_main {
+	margin: 0 (-$layout_gutter -$layout_gutter_outer);
+
+	ul.level_1 {
+		display: table;
+		margin: 0;
+		padding: 0;
+	    width: 100%;
+	    list-style: none;
+
+	    > li {
+		    display: table-cell;
+		    padding: 0 .25em;
+		    text-align: center;
+		}
+		> li.first {
+			padding-left: 0;
+		}
+		> li.last {
+			padding-right: 0;
+		}
+	}
+	a, span.active {
+	    background: #eee;
+	    display: block;
+	    padding: 1em 0;
+	    overflow: hidden;
+	}
+	.trail {
+
+	}
+}
+
+@media only screen and (max-width: 767px) {
+    #nav_main {
+		margin: 0 (-$layout_gutter/2);
+		ul.level_1 {
+
+			> li {
+				float: left;
+				width: 33%;
+				padding-bottom: .5em;
+			}
+			> li:nth-child(3n+1) {
+				padding-left: 0;
+				width: 34%;
+			}
+			> li:nth-child(3n+3) {
+				padding-right: 0;
+			}
+		}
+
+
+    }
+
+}
+
+
+/*
+ * custom
+ */
+
+// $color_nav
+// $color_nav--hover
+// $color_nav--active
+
+#nav_main {
+	padding-top: 150px;
+	padding-bottom: 20px;
+}
+
+

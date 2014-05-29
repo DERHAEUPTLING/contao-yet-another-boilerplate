@@ -1,0 +1,61 @@
+/*
+ * hypens
+ */
+@mixin prevent-text-breakouts {
+    word-break: break-all;
+    word-break: break-word;
+       hyphens: auto;
+}
+%prevent-text-breakouts {
+    @include prevent-text-breakouts;
+}
+
+
+
+
+/*
+ * icons before
+ */
+@mixin link-pfeil {
+	&:before {
+		content: '\25B6';
+		display: inline-block;
+		margin-right: .8em;
+	    font-style: normal;
+	    font-weight: normal;
+
+		// 33% smaller
+		// font-size: 0.75em;
+		// line-height: 0;
+		// vertical-align: middle;
+		// vertical-align: -15%;
+
+		// 50% smaller
+		font-size: 0.5em;
+		line-height: 0;
+		heigth: 0;
+		vertical-align: middle;
+
+		// 33% bigger
+		// font-size: 1.3333333333333333em;
+		// line-height: 0.75em;
+		// vertical-align: -15%;
+	}
+
+}
+%link-pfeil {
+	@include link-pfeil;
+}
+
+
+/*
+ * transition default
+ */
+ @mixin transition {
+    transition-property: color, opacity;
+    transition-duration: .15s;
+    transition-timing-function: ease-out;
+}
+%transition {
+    @include transition;
+}

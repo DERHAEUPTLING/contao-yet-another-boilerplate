@@ -1,0 +1,28 @@
+/*    -------------------------------------------------------------------------
+ *                             gc_is-loading
+ *    =========================================================================
+ */
+
+// transition img opacity
+.image_container img {
+    transition-property: opacity;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
+}
+.is-loading {
+
+    // hide img while loading
+    .image_container img,
+    .headerimage .inside {
+        opacity: 0 !important;
+    }
+
+    // remove all Transision while Pageload
+    * {
+        -webkit-transition: none !important;
+        -moz-transition:    none !important;
+        -ms-transition:     none !important;
+        -o-transition:      none !important;
+        transition:         none !important;
+    }
+}

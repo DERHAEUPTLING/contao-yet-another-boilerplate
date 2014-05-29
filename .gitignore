@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# IDEs
+dev/.sass-cache
+dev/images_to_optimze
+
+
+# composer related
+vendor/
+
+# build
+build/

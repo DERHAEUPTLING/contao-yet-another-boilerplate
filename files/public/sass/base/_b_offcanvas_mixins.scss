@@ -1,0 +1,238 @@
+/*   -------------------------------------------------------------------------
+ *                                 b_offcanvas-mixins
+ *   =========================================================================
+ */
+@mixin offcanvas_setup (){
+    .responsive {
+        overflow: hidden;
+        background-color: #fff;
+    }
+    .offcanvas-page {
+        z-index: 2;
+
+        /*  Prevents Flickering  */
+        -webkit-backface-visibility: hidden;
+           -moz-backface-visibility: hidden;
+            -ms-backface-visibility: hidden;
+    }
+    .offcanvas-page.open a {
+        pointer-events: none; // make links not clickable, while offcanvas open
+    }
+
+    .offcanvas-navbar,
+    #offcanvas-sidebar,
+    .is-loading #offcanvas-sidebar {
+        display: none;
+    }
+
+    @media only screen and (max-width: 767px) {
+        .is-loading #offcanvas-sidebar {
+            display: none;
+        }
+        .offcanvas-navbar,
+        #offcanvas-sidebar {
+            display: block;
+        }
+        .offcanvas-navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+        }
+        #offcanvas-sidebar {
+            height: 100%;
+            overflow-y: auto;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+@mixin offcanvas_animation ($side: left) {
+    @media only screen and (max-width: 767px) {
+        /*
+            *********************************************************************************************************
+                                    #offcanvas-sidebar
+            =========================================================================================================
+        */
+        $offcanvasSidebarOffset-begin: 5%;
+        @if ($side == left)  { $offcanvasSidebarOffset-begin: $offcanvasSidebarOffset-begin; }
+        @if ($side == right) { $offcanvasSidebarOffset-begin: - $offcanvasSidebarOffset-begin; }
+
+            #offcanvas-sidebar {
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                margin: 0;
+                opacity: .3;
+            }
+        @if ($side == left) {
+            #offcanvas-sidebar {
+                left: 0;
+                width: 260px;
+                margin-left: auto;
+            }
+        }
+        @if ($side == right) {
+            #offcanvas-sidebar {
+                right: 0;
+                width: 260px;
+                margin-left: auto;
+            }
+        }
+
+
+
+
+        /* #offcanvas-sidebar Expanding Open Effect */
+        #offcanvas-sidebar.open {
+            opacity: 1;
+
+            -webkit-transform: translate3d(0,0,0)scale(1);
+            -webkit-animation: slideIn .35s ease-in-out;
+
+            -moz-transform: translate3d(0,0,0)scale(1);
+            -moz-animation: slideIn .35s ease-in-out;
+
+            transform: translate3d(0,0,0)scale(1);
+            animation: slideIn .35s ease-in-out;
+        }
+
+
+        @-webkit-keyframes slideIn {
+            0%    {opacity: .3;
+                        -webkit-transform: translate3d($offcanvasSidebarOffset-begin,0,0)scale(.97);}
+            100%    {opacity: 1;
+                        -webkit-transform: translate3d(0,0,0)scale(1);}
+        }
+        @-moz-keyframes slideIn {
+            0%      {opacity: .3;
+                        -moz-transform: translate3d($offcanvasSidebarOffset-begin,0,0)scale(.97);}
+            100%  {opacity: 1;
+                        -moz-transform: translate3d(0,0,0)scale(1);}
+        }
+        @keyframes slideIn {
+            0%      {opacity: .3;
+                        transform: translate3d($offcanvasSidebarOffset-begin,0,0)scale(.97);}
+            100%  {opacity: 1;
+                        transform: translate3d(0,0,0)scale(1);}
+        }
+
+        /*#offcanvas-sidebar Shrinking Closed Effect*/
+        #offcanvas-sidebar.close {
+            opacity: .3;
+            -webkit-animation: slideOut .3s ease-in-out;
+            -moz-animation: slideOut .3s ease-in-out;
+            animation: slideOut .3s ease-in-out;
+        }
+        @-webkit-keyframes slideOut {
+            0%      {opacity: 1;
+                        -webkit-transform: translate3d(0,0,0)scale(1);}
+            100%  {opacity: .3;
+                        -webkit-transform: translate3d($offcanvasSidebarOffset-begin,0,0)scale(.97);}
+        }
+        @-moz-keyframes slideOut {
+            0%      {opacity: 1;
+                        -moz-transform: translate3d(0,0,0)scale(1);}
+            100%  {opacity: .3;
+                        -moz-transform: translate3d($offcanvasSidebarOffset-begin,0,0)scale(.97);}
+        }
+        @keyframes slideOut {
+            0%      {opacity: 1;
+                        transform: translate3d(0,0,0)scale(1);}
+            100%  {opacity: .3;
+                        transform: translate3d($offcanvasSidebarOffset-begin,0,0)scale(.97);}
+        }
+
+
+
+
+
+
+
+
+
+
+        /*
+            *********************************************************************************************************
+                                    offcanvas-content
+            =========================================================================================================
+        */
+
+
+
+        .offcanvas-page {
+            /* starting point */
+            transform: translate3d(0,0,0);
+            z-index: 1;
+        }
+        $offcanvasPageOffset: 240px;
+        $offcanvasPageOffset-Elastic: 260px;
+        @if ($side == right) {
+            $offcanvasPageOffset: -($offcanvasPageOffset);
+            $offcanvasPageOffset-Elastic: -($offcanvasPageOffset-Elastic);
+        }
+
+        /*Content Sliding Open Effect*/
+        .offcanvas-page.open
+        {
+            -webkit-transform: translate3d($offcanvasPageOffset,0,0);
+            -webkit-animation: open .5s ease-in-out;
+
+            -moz-transform: translate3d($offcanvasPageOffset,0,0);
+            -moz-animation: open .5s ease-in-out;
+
+            transform: translate3d($offcanvasPageOffset,0,0);
+            animation: open .5s ease-in-out;
+        }
+        @-webkit-keyframes open {
+            0%      {-webkit-transform: translate3d(0,0,0);}
+            70%    {-webkit-transform: translate3d($offcanvasPageOffset-Elastic,0,0);}
+            100%  {-webkit-transform: translate3d($offcanvasPageOffset,0,0);}
+        }
+        @-moz-keyframes open {
+            0%      {-moz-transform: translate3d(0,0,0);}
+            70%    {-moz-transform: translate3d($offcanvasPageOffset-Elastic,0,0);}
+            100%  {-moz-transform: translate3d($offcanvasPageOffset,0,0);}
+        }
+        @keyframes open {
+            0%      {transform: translate3d(0,0,0);}
+            70%    {transform: translate3d($offcanvasPageOffset-Elastic,0,0);}
+            100%  {transform: translate3d($offcanvasPageOffset,0,0);}
+        }
+
+        /*Content Sliding Closed Effect*/
+        .offcanvas-page.close,
+        {
+            -webkit-transform: translate3d(0,0,0);
+            -webkit-animation: close .3s ease-in-out;
+
+            -moz-transform: translate3d(0,0,0);
+            -moz-animation: close .3s ease-in-out;
+
+            transform: translate3d(0,0,0);
+            animation: close .3s ease-in-out;
+        }
+        @-webkit-keyframes close {
+            0%      {-webkit-transform: translate3d($offcanvasPageOffset,0,0);}
+            100%  {-webkit-transform: translate3d(0,0,0);}
+        }
+        @-moz-keyframes close {
+            0%       {-moz-transform: translate3d($offcanvasPageOffset,0,0);}
+            100%  {-moz-transform: translate3d(0,0,0);}
+        }
+        @keyframes close {
+            0%       {transform: translate3d($offcanvasPageOffset,0,0);}
+            100%  {transform: translate3d(0,0,0);}
+        }
+
+    }
+}
+

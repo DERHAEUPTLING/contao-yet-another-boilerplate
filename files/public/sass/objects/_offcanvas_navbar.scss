@@ -1,0 +1,87 @@
+/*    -------------------------------------------------------------------------
+ *                             offcanvas-navbar
+ *    =========================================================================
+ */
+
+.offcanvas-navbar {
+    // margin: 0 $layout_gutter_outer /2;
+    padding: 5px 15px 0 15px;
+    background-color: white;
+
+
+/* .nav_logo */
+    .nav_logo {
+        transition-property: scale;
+        transition-duration: .35s;
+        transform: scale(1);
+        a {
+            display: block;
+            overflow: hidden;
+            width: 125px;
+
+            img {
+                width: 100px;
+                max-width: none;
+            }
+        }
+    }
+
+
+/* .offcanvas-toggle */
+    .offcanvas-toggle {
+        position: absolute;
+        right: 15px;
+        top: 0;
+        padding-top: 40px;
+        cursor: pointer;
+        font-size: 1.9em;
+
+        transition-property: scale;
+        transition-duration: .35s;
+        transform: scale(1);
+
+
+
+        .burger {
+            display: inline-block;
+            margin: 0;
+            margin-left: 5px;
+
+            li {
+                width: 30px;
+                height: 4px;
+                background-color: $color_font;
+                border-radius: 3px;
+                margin-top: 5px;
+            }
+        }
+    }
+
+
+/* .offcanvas-navbar.scrolled */
+    height: 97px;
+    border-bottom: 2px solid $color_link;
+    border-bottom-width: 0;
+
+    transition-property: height;
+    transition-duration: .35s;
+
+    &.scrolledDown {
+        height: 60px;
+        border-bottom-width: 2px;
+
+
+
+        .nav_logo {
+            transform: scale(.7);
+            transform-origin: 0 0;
+
+        }
+        .offcanvas-toggle {
+            transform: scale(.7);
+            transform-origin: 100% 0;
+        }
+    }
+}
+
+

@@ -1,0 +1,47 @@
+/*   -------------------------------------------------------------------------
+ * 									ce_gallery
+ *	 =========================================================================
+ */
+
+/*
+ * 3 col setup
+ */
+// .ce_gallery {
+// 	background-color: grey;
+// 	li {
+// 		width: 30%;
+// 		margin-right: 5%;
+// 		margin-bottom: 5%;
+// 		&.col_last {
+// 			margin-right: 0;
+// 		}
+// 	}
+// }
+
+/*
+ * 4 col setup
+ */
+// .ce_gallery {
+// 	li {
+// 		width: 21%;
+// 		margin-right: 5.2%;
+// 		margin-bottom: 5%;
+// 		&.col_last {
+// 			margin-right: 0;
+// 		}
+// 	}
+// }
+
+/*
+ * 5 col setup
+ */
+.ce_gallery {
+	li {
+		width: 17%;
+		margin-right: 3.7%;
+		margin-bottom: 5%;
+		&.col_last {
+			margin-right: 0;
+		}
+	}
+}

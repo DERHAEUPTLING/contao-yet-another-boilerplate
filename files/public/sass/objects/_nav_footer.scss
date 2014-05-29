@@ -1,0 +1,17 @@
+#nav_footer {
+	width: 50%;
+	margin: 0 auto;
+	ul {
+		display: table;
+		margin: 0;
+		padding: 0;
+	    width: 100%;
+	    list-style: none;
+	    > li {
+		    display: table-cell;
+		    padding: 0 .25em;
+		    text-align: center;
+		}
+	}
+}
+

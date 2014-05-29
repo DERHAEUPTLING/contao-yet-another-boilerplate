@@ -1,0 +1,50 @@
+/*	-------------------------------------------------------------------------
+ * 							nav_aside
+ *	=========================================================================
+ */
+
+/*
+ * default
+ */
+#nav_aside {
+	a, span.active {
+		display: block;
+		padding: 5px;
+		border-bottom: 1px solid $color_border;
+
+		transition-property: background-color;
+	    transition-duration: .15s;
+	    transition-timing-function: ease-out;
+	    &:hover {
+	    	background-color: #eee;
+	    }
+	}
+
+	ul.level_2 {
+		display: none;
+
+		a {
+			border-bottom: 0;
+			padding-left: 20px;
+		}
+	}
+
+	li.active,
+	li.trail {
+		ul.level_2 {
+			display: block;
+		}
+	}
+
+
+
+}
+/*
+ * custom
+ */
+
+// $color_nav
+// $color_nav--hover
+// $color_nav--active
+
+

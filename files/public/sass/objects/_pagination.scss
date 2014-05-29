@@ -1,0 +1,34 @@
+/*    -------------------------------------------------------------------------
+ *                             pagination
+ *    =========================================================================
+ */
+
+/*
+ * default
+ */
+.pagination {
+	margin-top: 1.5em;
+	@include scut-clearfix;
+
+	p {
+        float: left;
+    }
+    ul {
+    	float: right;
+
+        // |  -> default
+	    // \00B7 -> dot
+        @include scut-list-divided("\00B7", 0.2em);
+
+        li.first,li.previous, li.previous + li, li.next, li.last {
+            &:before {
+                content: '';
+            }
+        }
+
+    }
+}
+
+/*
+ * custom
+ */

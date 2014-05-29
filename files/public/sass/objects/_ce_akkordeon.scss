@@ -1,0 +1,39 @@
+/*   -------------------------------------------------------------------------
+ * 									ce_accordion
+ *	 =========================================================================
+ */
+
+
+.ce_accordion {
+	&:last-of-type {
+		border-bottom: 1px $color_link solid;
+	}
+
+	/* toggler */
+	.toggler {
+		padding: 0 .5em;
+		font-size: 1.125em;
+		line-height: 1.7em;
+		cursor: pointer;
+		background-color: $color_bg;
+		border-top: 1px $color_link solid;
+
+		&.ui-state-focus {
+		  	outline: none;
+		}
+
+		&:hover,
+		&.ui-state-active {
+			// color: red;
+		}
+	}
+
+	/* accordion */
+	.accordion {
+		padding-top: .75em;
+		> div {
+			margin-bottom: 1em;
+		}
+
+	}
+}

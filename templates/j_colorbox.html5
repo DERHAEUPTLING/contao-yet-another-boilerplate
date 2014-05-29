@@ -1,0 +1,45 @@
+<?php
+
+// Add the colorbox style sheet
+// $GLOBALS['TL_CSS'][] = 'assets/jquery/colorbox/'. COLORBOX .'/css/colorbox.min.css||static';
+
+?>
+
+<script src="<?php echo TL_ASSETS_URL; ?>assets/jquery/colorbox/<?php echo COLORBOX; ?>/js/colorbox.min.js"></script>
+<script>
+  (function($) {
+    $(document).ready(function() {
+
+
+      // on page read
+      $('a[data-lightbox]').map(function() {
+        $(this).colorbox({
+          // Put custom options here
+          loop      : false,
+          rel       : $(this).attr('data-lightbox'),
+          maxWidth  : '95%',
+          maxHeight : '95%',
+          opacity   : '.7',
+          title     : false,
+          close     : '<div></div><span>close</span>',
+          previous  : '<span>previous</span>',
+          next      : '<span>next</span>',
+
+          onComplete: function() {
+            $('#colorbox').addClass('colorbox-complete');
+            $("#cboxTitle").hide();
+            $("#cboxLoadedContent").append('<div id="cboxTitleMoved">' + $("#cboxTitle").html() + '</div>');
+            $.fn.colorbox.resize();
+          },
+          onCleanup : function() {
+            $('#colorbox').removeClass('colorbox-complete');
+          }
+
+
+
+
+        });
+      });
+    });
+  })(jQuery);
+</script>

@@ -1,0 +1,20 @@
+{
+  "name": "contao_baseinstall",
+  "description": "Contao Boilerplate - ready to start with structure, no design",
+  "version": "0.0.1",
+  "author": {
+    "name": "\"derhäuptling\" Martin Schwenzer",
+    "url": "http://derhaeuptling.com/"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-uglify": "~0.2.6",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-sass": "~0.6.0",
+    "grunt-contrib-requirejs": "0.4.0",
+    "grunt-autoprefixer": "~0.6.3",
+    "grunt-contrib-imagemin": "~0.4.0",
+    "grunt-modernizr": "~0.4.1"
+  }
+}

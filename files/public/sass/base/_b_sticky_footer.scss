@@ -1,0 +1,11 @@
+/*   -------------------------------------------------------------------------
+ * 								b_sticky_footer
+ *   =========================================================================
+ */
+#offcanvas-container,
+#offcanvas-content {
+    height: 100%;
+}
+
+
+@include scut-sticky-footer($sticky_footer_height, "#wrapper","#footer");

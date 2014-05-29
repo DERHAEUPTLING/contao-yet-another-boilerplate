@@ -1,0 +1,23 @@
+/*   -------------------------------------------------------------------------
+ * 								b_offcanvas
+ *   =========================================================================
+ */
+
+/*
+ * sticky footer - fix
+ */
+#offcanvas-container,
+#offcanvas-content,
+#page {
+    height: 100%;
+}
+
+@include offcanvas_setup;
+@include offcanvas_animation(right);
+
+
+
+
+
+
+
