@@ -3,12 +3,17 @@
 Thumbs.db
 
 # IDEs
-dev/.sass-cache
-dev/images_to_optimze
-
+.sass-cache
+images_to_optimze/
+bower_components/
+node_modules
 
 # composer related
 vendor/
 
 # build
 build/
+.ftppass
+
+# public
+*/public/css/
