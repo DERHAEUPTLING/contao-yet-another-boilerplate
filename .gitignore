@@ -7,13 +7,12 @@ Thumbs.db
 images_to_optimze/
 bower_components/
 node_modules
+.ftppass
 
-# composer related
-vendor/
 
 # build
 build/
-.ftppass
+
 
 # public
 */public/css/
