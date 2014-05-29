@@ -2,7 +2,9 @@ BEM
 ===
 
 .block{} //the section of content
+
 .block__element{} //an individual element inside of the content section
+
 .block--modifier{} //specifically edited element pieces
 
 SETUP
