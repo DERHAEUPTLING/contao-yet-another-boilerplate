@@ -1,16 +1,18 @@
-BEM
-===
+PREPARE SYSTEM
+==============
+install npm: curl -L https://npmjs.org/install.sh | sh
 
-.block{} //the section of content
+install bower: npm install -g bower
 
-.block__element{} //an individual element inside of the content section
+install bower installer: npm install -g bower-installer
 
-.block--modifier{} //specifically edited element pieces
 
 SETUP
 =====
 npm install -> Install project dependencies
+
 bower-installer -> Install Libs
+
 grunt -> start task runner
 
 BUILD TOOLS

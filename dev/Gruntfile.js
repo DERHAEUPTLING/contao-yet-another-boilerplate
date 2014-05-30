@@ -120,28 +120,25 @@ grunt.initConfig({
         "customTests" : []
     },
 
-
-
-// impage optimisation
-    imagemin: {
-        dist: {
-            files: [{
-                expand: true,
-                cwd: 'images_to_optimize',
-                src: '**/*.{png,jpg,jpeg}',
-                dest: 'images'
-            }]
-        }
+// Spritesmith
+    sprite:{
+      all: {
+        src: 'img/sprite/*.png',
+        destImg: 'img/spritesheet.png',
+        destCSS: 'sass/_sprite.scss',
+        'algorithm': 'diagonal',
+        'padding': 10,
+        'cssFormat': 'scss_maps'
+      }
     },
 
 
 
 // ftpush
     ftpush: {
-
         dev: {
             auth: {
-                host: 'hauptwolke',
+                host: 'schwesternliebe.de',
                 port: 21,
                 authKey: 'host'
               },
@@ -153,7 +150,6 @@ grunt.initConfig({
             simple: true,
             useList: false
         },
-
         prod: {
             auth: {
                 host: 'schwesternliebe.de',
@@ -175,17 +171,17 @@ grunt.initConfig({
 
   grunt.loadNpmTasks ('grunt-contrib-sass');
   grunt.loadNpmTasks ('grunt-autoprefixer');
-  grunt.loadNpmTasks ('grunt-contrib-imagemin');
   grunt.loadNpmTasks ('grunt-contrib-watch');
   grunt.loadNpmTasks ('grunt-modernizr');
   grunt.loadNpmTasks ('grunt-ftpush');
+  grunt.loadNpmTasks ('grunt-spritesmith');
 
   // setBase
   grunt.file.setBase('../files/public/');
 
   // registerTasks
-  grunt.registerTask('default', ['sass:prod', 'autoprefixer:dist', 'imagemin', 'ftpush:dev', 'watch']);
-  grunt.registerTask('prod', ['sass:prod', 'autoprefixer:dist', 'imagemin', 'ftpush:prod']);
+  grunt.registerTask('default', ['sass:prod', 'autoprefixer:dist', 'sprite', 'ftpush:dev', 'watch']);
+  grunt.registerTask('prod', ['sass:prod', 'autoprefixer:dist', 'sprite', 'ftpush:prod']);
 
 
 };
