@@ -10,9 +10,12 @@ node_modules
 .ftppass
 
 
-# build
+# dev
 build/
+npm-debug.log
 
 
 # public
-*/public/css/
+public/css/
+bower/
+*css*

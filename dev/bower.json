@@ -3,18 +3,17 @@
   "version": "0.1",
   "dependencies": {
     "requirejs-domready": "latest",
-    "scut": "latest",
-    "jstorage": "latest",
-    "jquery": "~1.10.2",
-    "requirejs": "latest"
+    "scut": "latest"
   },
 
   "install": {
-    "path": "../files/public/bower",
+    "path" : {
+      "scss": "../files/public/sass/generic/bower",
+      "js": "../files/public/js/bower"
+    },
     "sources": {
-      "jquery"        : "bower_components/jquery/jquery.js",
-      "jstorage"      : "bower_components/jstorage/jstorage.min.js",
-      "requirejs-domready": "bower_components/requirejs-domready/domReady.js"
+      "requirejs-domready": "bower_components/requirejs-domready/domReady.js",
+      "scut": "bower_components/scut/dist/_scut.scss"
     }
   }
 }
