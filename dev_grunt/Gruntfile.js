@@ -178,7 +178,7 @@ grunt.initConfig({
   // grunt.loadNpmTasks ('grunt-spritesmith');
 
   // setBase
-  grunt.file.setBase('../dev_src/');
+  grunt.file.setBase('../src/');
 
   // registerTasks
   grunt.registerTask('default', ['sass:prod', 'autoprefixer:dist', 'ftpush:dev', 'watch']);
