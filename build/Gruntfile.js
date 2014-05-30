@@ -28,7 +28,7 @@ grunt.initConfig({
     sass: {
 
       options: {
-        cacheLocation: '../../dev/.sass-cache',
+        cacheLocation: '../../build/.sass-cache',
       },
 
       dev: {
@@ -170,7 +170,7 @@ grunt.initConfig({
 
 
   grunt.loadNpmTasks ('grunt-contrib-sass');
-  grunt.loadNpmTasks ('grunt-autoprefixer');
+  //grunt.loadNpmTasks ('grunt-autoprefixer');
   grunt.loadNpmTasks ('grunt-contrib-watch');
   grunt.loadNpmTasks ('grunt-modernizr');
   grunt.loadNpmTasks ('grunt-ftpush');
