@@ -6,16 +6,17 @@ Thumbs.db
 .sass-cache
 images_to_optimze/
 bower_components/
-node_modules
+node_modules/
+npm-debug.log
 .ftppass
 
 
 # dev
-build/
-npm-debug.log
+
+
 
 
 # public
 css/
 bower/
-*css*
+music_academy.sql
