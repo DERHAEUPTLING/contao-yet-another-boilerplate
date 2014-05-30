@@ -11,11 +11,7 @@ npm-debug.log
 .ftppass
 
 # files
-/files/public/css/*
-
-/files/public/css/styles.css
-
-css/
+#files/public/css/*
 
 bower/
 music_academy.sql
