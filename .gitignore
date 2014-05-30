@@ -10,14 +10,13 @@ node_modules/
 npm-debug.log
 .ftppass
 
+# files
+/files/public/css/*
 
-# dev
+/files/public/css/styles.css
 
+css/
 
-
-
-# public
-/css/*
 bower/
 music_academy.sql
 .grunt/
