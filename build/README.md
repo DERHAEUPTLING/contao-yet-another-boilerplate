@@ -1,15 +1,26 @@
-# Setup Build Tool
-## PREPARE SYSTEM
-- install npm: `curl -L https://npmjs.org/install.sh | sh`
-- install bower: `npm install -g bower`
-- install bower installer: `npm install -g bower-installer
+# USAGE
+## Install required Tools on OS
+- install [npm](https://github.com/npm/npm) <br>
+    `curl -L https://npmjs.org/install.sh | sh`
+- install [bower](https://github.com/bower/bower) <br> 
+    `npm install -g bower`
+- install [bower-installer](https://github.com/blittle/bower-installer) <br>
+    `npm install -g bower-installer
 
 
-## SETUP
-- npm install -> Install project dependencies
-- bower-installer -> Install Libs
-- grunt -> start task runner
+## Install build dependencies 
+- install node modules <br>
+    `npm install`
+- install app dependencies `bower-installer`
 
+## start task runner GRUNT
+- watch and deploy while developement <br>
+    `grunt` 
+- deploy all changed source files to server <br>
+    `grunt:prod`
+
+
+# INFOS
 ## BUILD TOOLS
 Grunt:
 --http://zerosixthree.se/getting-started-with-grunt/
