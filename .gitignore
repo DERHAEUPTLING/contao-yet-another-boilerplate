@@ -16,6 +16,6 @@ npm-debug.log
 
 
 # public
-public/css/
+css/
 bower/
 *css*
