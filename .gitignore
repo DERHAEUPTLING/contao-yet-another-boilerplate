@@ -14,5 +14,10 @@ npm-debug.log
 #files/public/css/*
 
 bower/
-music_academy.sql
+
 .grunt/
+
+# templates
+templates/.htaccess
+templates/music_academy.sql
+templates/index.html
