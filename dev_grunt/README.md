@@ -5,7 +5,7 @@
 - install [bower](https://github.com/bower/bower) <br> 
     `npm install -g bower`
 - install [bower-installer](https://github.com/blittle/bower-installer) <br>
-    `npm install -g bower-installer
+    `npm install -g bower-installer`
 
 
 ## Install build dependencies 
