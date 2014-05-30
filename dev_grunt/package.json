@@ -10,8 +10,8 @@
     "grunt": "~0.4.5",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-contrib-sass": "~0.7.3",
-    "grunt-autoprefixer": "~0.7.3",
     "grunt-spritesmith": "2.1.0",
+    "grunt-autoprefixer": "~0.6.5",
     "grunt-modernizr": "~0.5.2",
     "grunt-ftpush": "~0.3.3"
   }
