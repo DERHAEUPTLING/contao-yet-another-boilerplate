@@ -8,7 +8,7 @@
 
   "install": {
     "path" : {
-      "scss": "../files/public/sass/generic/bower",
+      "scss": "../src/sass/generic/bower",
       "js": "../files/public/js/bower"
     },
     "sources": {
