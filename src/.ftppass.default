@@ -1,10 +1,6 @@
 {
-  "key1": {
-    "username": "username1",
-    "password": "password1"
-  },
-  "key2": {
-    "username": "username2",
-    "password": "password2"
+  "host": {
+    "username": "username",
+    "password": "password"
   }
 }

@@ -24,7 +24,7 @@ grunt.initConfig({
   sass: {
 
     options: {
-      cacheLocation: '../dev/.sass-cache',
+      cacheLocation: '../dev_grunt/.sass-cache',
     },
 
     dev: {
