@@ -8,8 +8,8 @@
 
   "install": {
     "path" : {
-      "scss": "../src/sass/generic/bower",
-      "js": "../files/public/js/bower"
+      "scss": "../app/sass/generic/bower",
+      "js": "../files/dist/js/bower"
     },
     "sources": {
       "requirejs-domready": "bower_components/requirejs-domready/domReady.js",
