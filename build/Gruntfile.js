@@ -6,7 +6,9 @@ grunt.initConfig({
   pkg: grunt.file.readJSON('package.json'),
 
 
-  // watch
+  /**
+   * WATCH
+   */
   watch: {
       sass: {
         files: ['sass/**/*.scss', 'js/**/*.*', 'js_dist/**/*.*', 'js/**/*.*', 'fonts/**/*.*', 'images/**/*.*'],
@@ -20,11 +22,13 @@ grunt.initConfig({
 
 
 
-  // sass
+  /**
+   * SASS
+   */
   sass: {
 
     options: {
-      cacheLocation: '../dev_grunt/.sass-cache',
+      cacheLocation: '../build/.sass-cache',
     },
 
     dev: {
@@ -34,7 +38,7 @@ grunt.initConfig({
         lineNumbers: true,
       },
       files: {
-        '../files/public/css/styles.css': 'sass/styles.scss'
+        '../files/dist/css/styles.css': 'sass/styles.scss'
       }
     },
 
@@ -44,35 +48,39 @@ grunt.initConfig({
         sourcemap: true,
       },
       files: {
-       '../files/public/css/styles.css' : 'sass/styles.scss'
+       '../files/dist/css/styles.css' : 'sass/styles.scss'
       }
     }
   },
 
 
 
-  // autoprefixer
+  /**
+   * AUTOPREFIXER
+   */
   autoprefixer: {
     dist: {
       options: {
           browsers: ['last 3 versions', '> 1%', 'ie 9', 'ie 8'],
           map: true
       },
-      src: '../files/public/css/styles.css',
-      dest:'../files/public/css/styles.prefixed.css'
+      src: '../files/dist/css/styles.css',
+      dest:'../files/dist/css/styles.prefixed.css'
     }
   },
 
 
-  // modernizr
+  /**
+   * MODERNIZR
+   */
   modernizr: {
 
       dist: {
           // [REQUIRED] Path to the build you're using for development.
-          "devFile" : "../files/public/js/",
+          "devFile" : "../files/dist/js/",
 
           // [REQUIRED] Path to save out the built file.
-          "outputFile" : "../files/public/js/lib/modernizr-custom.js",
+          "outputFile" : "../files/dist/js/lib/modernizr-custom.js",
 
           // Based on default settings on http://modernizr.com/download/
           "extra" : {
@@ -121,23 +129,27 @@ grunt.initConfig({
 
   },
 
-  // Spritesmith
-  // sprite:{
-  //   all: {
-  //     src: 'img/sprite/*.png',
-  //     destImg: 'img/spritesheet.png',
-  //     destCSS: 'sass/_sprite.scss',
-  //     // OPTIONAL: Specify engine (auto, phantomjs, canvas, gm, pngsmith)
-  //     'engine': 'auto',
-  //     'algorithm': 'diagonal',
-  //     'padding': 10,
-  //     'cssFormat': 'scss_maps'
-  //   }
-  // },
+  /**
+   * SPRITESMITH
+   */
+  sprite:{
+    all: {
+      src: 'sprite/*.png',
+      destImg: '../files/dist/images/spritesheet.png',
+      destCSS: 'sass/_sprite.scss',
+      // OPTIONAL: Specify engine (auto, phantomjs, canvas, gm, pngsmith)
+      'engine': 'pngsmith',
+      'algorithm': 'diagonal',
+      'padding': 10,
+      'cssFormat': 'scss_maps'
+    }
+  },
 
 
 
-  // ftpush
+  /**
+   * FTPUSH
+   */
   ftpush: {
       dev: {
           auth: {
@@ -145,23 +157,35 @@ grunt.initConfig({
               port: 21,
               authKey: 'host'
             },
-          src: '../files/public/',
-          dest: 'files/public',
-          exclusions: ['**/.DS_Store', '**/Thumbs.db', 'dist/tmp', 'styles.css', 'styles.css.map', '*.patch'],
+          src: '../files/dist/',
+          dest: 'files/dist',
+          exclusions: ['.DS_Store', '**/Thumbs.db', 'dist/tmp', 'styles.css', 'styles.css.map'],
           keep: ['/important/images/at/server/*.jpg'],
           simple: true,
           useList: false
       },
-      prod: {
+      src_app: {
           auth: {
               host: 'hauptwolke.de',
               port: 21,
               authKey: 'host'
             },
-          src: '',
-          dest: 'files/public',
-          exclusions: ['**/.DS_Store', '**/Thumbs.db', 'dist/tmp', 'styles.css', 'styles.css.map', '*.patch', '.grunt'],
-          keep: ['/important/images/at/server/*.jpg'],
+          src: '../app',
+          dest: '../app',
+          exclusions: ['**/.DS_Store', '**/Thumbs.db', 'dist/tmp', 'styles.css', 'styles.css.map', '.grunt'],
+          simple: true,
+          useList: false
+      },
+      src_build: {
+          auth: {
+              host: 'hauptwolke.de',
+              port: 21,
+              authKey: 'host'
+            },
+          src: '../build',
+          dest: '../build',
+          exclusions: ['**/.DS_Store', '**/Thumbs.db', 'dist/tmp', 'styles.css', 'styles.css.map',
+            '.sass-cache', 'bower_components', 'node_modules'],
           simple: true,
           useList: false
       }
@@ -175,14 +199,14 @@ grunt.initConfig({
   grunt.loadNpmTasks ('grunt-contrib-watch');
   grunt.loadNpmTasks ('grunt-modernizr');
   grunt.loadNpmTasks ('grunt-ftpush');
-  // grunt.loadNpmTasks ('grunt-spritesmith');
+  grunt.loadNpmTasks ('grunt-spritesmith');
 
   // setBase
-  grunt.file.setBase('../src/');
+  grunt.file.setBase('../app/');
 
   // registerTasks
   grunt.registerTask('default', ['sass:prod', 'autoprefixer:dist', 'ftpush:dev', 'watch']);
-  grunt.registerTask('prod', ['sass:prod', 'autoprefixer:dist', 'ftpush:prod']);
+  grunt.registerTask('prod', ['sass:prod', 'autoprefixer:dist', 'ftpush:dev', 'ftpush:src_app', 'ftpush:src_build']);
 
 
 };

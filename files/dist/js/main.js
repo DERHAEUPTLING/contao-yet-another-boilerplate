@@ -1,5 +1,5 @@
 requirejs.config({
-    "baseUrl": "files/public/js/",
+    "baseUrl": "files/dist/js/",
     "paths": {
         // loads jQuery if not already there -> see [1]
         jquery: "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min",

@@ -49,7 +49,6 @@
     <title><?php echo $this->pageTitle; ?> - <?php echo $this->mainTitle; ?></title>
     <base href="<?php echo $this->base; ?>">
 
-    <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
     <meta name="viewport" content="width=device-width, user-scalable=no">
 
     <meta name="robots" content="<?php echo $this->robots; ?>">
@@ -71,7 +70,7 @@
     <?php echo $this->viewport; ?>
     <?php echo $this->framework; ?>
     <?php echo $this->stylesheets; ?>
-    <link rel="stylesheet" href="files/public/css/styles.prefixed.css">
+    <link rel="stylesheet" href="files/dist/css/styles.prefixed.css">
 
     <?php echo $this->mooScripts; ?>
     <?php echo $this->head; ?>
@@ -167,8 +166,8 @@
 <?php // echo $this->getCustomSections('bottom'); ?>
 
 
-<script data-main="files/public/js/main" src="files/public/js/lib/require.js"></script>
-<!-- <script src="files/public/js_dist/main.single.js">-->
+<script data-main="files/dist/js/main" src="files/dist/js/lib/require.js"></script>
+<!-- <script src="files/dist/js_dist/main.single.js">-->
 
 
 <?php echo $this->mootools; ?>
