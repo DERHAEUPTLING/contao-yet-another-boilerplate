@@ -49,7 +49,7 @@
     <title><?php echo $this->pageTitle; ?> - <?php echo $this->mainTitle; ?></title>
     <base href="<?php echo $this->base; ?>">
 
-    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="viewport" id="viewport" content="width=device-width">
 
     <meta name="robots" content="<?php echo $this->robots; ?>">
     <meta name="description" content="<?php echo $this->description; ?>">
@@ -84,11 +84,13 @@
     document.getElementsByTagName('body')[0].className += ' is-loading';
     if (typeof jQuery === 'function') {
         $( window ).load(function() {
-            // remove .is-loading
             $('body').removeClass(' is-loading');
-            // inner wrap links, for pseudoelement styling
             $('a').wrapInner('<span class="wrapInner"></span>');
         });
+    }
+    if (screen.width < 480) {
+        document.getElementById("viewport")
+            .setAttribute("content", "width=device-width, user-scalable=no");
     }
 </script>
 
