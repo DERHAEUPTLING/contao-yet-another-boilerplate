@@ -2,10 +2,15 @@
  * 								b_sticky_footer
  *   =========================================================================
  */
+
+
+/*
+ * sticky footer - fix
+ */
 #offcanvas-container,
-#offcanvas-content {
+#offcanvas-content,
+#page {
     height: 100%;
 }
-
 
 @include scut-sticky-footer($sticky_footer_height, "#wrapper","#footer");

@@ -3,17 +3,12 @@
  *   =========================================================================
  */
 @mixin offcanvas_setup (){
-    .responsive {
-        overflow: hidden;
-        background-color: #fff;
-    }
     .offcanvas-page {
-        z-index: 2;
-
         /*  Prevents Flickering  */
         -webkit-backface-visibility: hidden;
            -moz-backface-visibility: hidden;
             -ms-backface-visibility: hidden;
+                backface-visibility: hidden;
     }
     .offcanvas-page.open a {
         pointer-events: none; // make links not clickable, while offcanvas open
