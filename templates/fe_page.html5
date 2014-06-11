@@ -49,7 +49,15 @@
     <title><?php echo $this->pageTitle; ?> - <?php echo $this->mainTitle; ?></title>
     <base href="<?php echo $this->base; ?>">
 
-    <meta name="viewport" id="viewport" content="width=1088">
+    <script>
+        if (window.outerWidth < 767) {
+            document.write('<meta name="viewport" id="viewport" content="width=device-width, user-scalable=no">');
+        } else if (window.outerWidth > 767) {
+            document.write('<meta name="viewport" id="viewport" content="width=1088">');
+        } else {
+
+        }
+    </script>
 
     <meta name="robots" content="<?php echo $this->robots; ?>">
     <meta name="description" content="<?php echo $this->description; ?>">
@@ -92,6 +100,26 @@
         document.getElementById("viewport")
             .setAttribute("content", "width=device-width, user-scalable=no");
     }
+
+    var viewport = function () {
+        if (window.outerWidth < 767) {
+            document.getElementById("viewport")
+                .setAttribute("content", "width=device-width, user-scalable=no");
+        } else if (window.outerWidth > 767) {
+            document.getElementById("viewport")
+                .setAttribute("content", "width=1089");
+        }
+    }
+    var addEvent = function(elem, type, eventHandle) {
+        if ( elem.addEventListener ) {
+            elem.addEventListener( type, eventHandle, false );
+        } else if ( elem.attachEvent ) {
+            elem.attachEvent( "on" + type, eventHandle );
+        } else {
+            elem["on"+type]=eventHandle;
+        }
+    }
+    addEvent(window,"resize", viewport)
 </script>
 
 <div id="offcanvas-container">
