@@ -80,6 +80,10 @@
     <?php echo $this->stylesheets; ?>
     <link rel="stylesheet" href="files/dist/css/styles.prefixed.css">
 
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="apple-touch-icon" href="./img/Icon@2X.png" />
+
     <?php echo $this->mooScripts; ?>
     <?php echo $this->head; ?>
     <!--[if lt IE 9]><script src="<?php echo TL_ASSETS_URL; ?>assets/html5shiv/<?php echo HTML5SHIV; ?>/html5shiv.js"></script><![endif]-->
