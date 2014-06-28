@@ -28,11 +28,12 @@
         #offcanvas-sidebar {
             display: block;
         }
-        .offcanvas-navbar {
+        .offcanvas-page.offcanvas-navbar {
             position: fixed;
             top: 0;
             right: 0;
             left: 0;
+            z-index: 20;
         }
         #offcanvas-sidebar {
             height: 100%;
@@ -133,7 +134,7 @@
         .offcanvas-page {
             /* starting point */
             transform: translate3d(0,0,0);
-            z-index: 1;
+            z-index: 10;
         }
         $offcanvasPageOffset: 240px;
         $offcanvasPageOffset-Elastic: 260px;
