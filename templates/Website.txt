@@ -2,11 +2,11 @@
 # Website-Template : Website.sql
 #================================================================================
 # Contao-Website   : Website
-# Contao-Database  : contao_baseinstall
+# Contao-Database  : contao-baseinstall
 # Saved by User    : derhaeuptling (Martin Schwenzer)
-# Time stamp       : 2014-02-03 at 17:47:00
+# Time stamp       : 2014-06-30 at 16:29:53
 #
-# Contao Extension : BackupDB, Version 3.0.0
+# Contao Extension : BackupDB, Version 3.2.0
 # Copyright        : Softleister (www.softleister.de)
 # Author           : Hagen Klemp
 # Licence          : LGPL
@@ -14,12 +14,13 @@
 # Visit Contao project page http://www.contao.org for more information
 #
 #-----------------------------------------------------
-# Contao Version 3.2.3
+# Contao Version 3.2.12
 # Folgende Module müssen installiert sein:
 #-----------------------------------------------------
 #   - m17-sticky-backend-footer   : Version 2.0.4 stable, Build 8
-#   - merger2                     : Version 2.3.1 stable, Build 6
-#   - MultiColumnWizard           : Version 3.2.0 rc2, Build 6
+#   - merger2                     : Version 3.0.6 stable, Build 4
+#   - mobilecontent               : Version 1.0.1 stable, Build 5
+#   - MultiColumnWizard           : Version 3.2.1 stable, Build 4
 #   - contao-boilerplate
 #
 #================================================================================
@@ -37,7 +38,7 @@
  3. Speichern Sie dieses Website-Template im Pfad /templates/ ab.
 
  4. Speichern Sie alle für das Website-Template notwendige Dateien
-    im Pfad /templates/ und /tl_files/ oder Subdirectories (genau
+    im Pfad /templates/ und /files/ oder Subdirectories (genau
     wie bei der Template-Erstellung).
 
  5. Führen Sie jetzt das InstallTool von Contao aus und
