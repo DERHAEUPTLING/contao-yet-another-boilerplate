@@ -3,26 +3,26 @@
  *    =========================================================================
  */
 
-// transition img opacity
-.image_container img {
-    transition-property: opacity;
-    transition-duration: .5s;
-    transition-timing-function: ease-out;
+// remove all Transision while Pageload
+.is-loading * {
+    transition: none !important;
 }
-.is-loading {
 
-    // hide img while loading
-    .image_container img,
-    .headerimage .inside {
-        opacity: 0 !important;
+// transition img opacity
+.image_container {
+    img {
+        transition-property: opacity;
+        transition-duration: .5s;
+        transition-timing-function: ease-out;
     }
+}
 
-    // remove all Transision while Pageload
-    * {
-        -webkit-transition: none !important;
-        -moz-transition:    none !important;
-        -ms-transition:     none !important;
-        -o-transition:      none !important;
-        transition:         none !important;
+.is-loading {
+    .image_container {
+        background:transparent url('../images/loading-spinner/loading.gif') center center no-repeat;
+    }
+    // hide img while loading
+    .image_container img {
+        opacity: 0;
     }
 }
