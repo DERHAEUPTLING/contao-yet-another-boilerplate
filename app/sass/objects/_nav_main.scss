@@ -29,14 +29,14 @@
 			padding-right: 0;
 		}
 	}
-	a, span.active {
+	a, span.active, {
 	    background: #eee;
 	    display: block;
 	    padding: 1em 0;
 	    overflow: hidden;
 	}
-	.trail {
-
+	.active, .trail {
+		color: $color_nav--active;
 	}
 }
 

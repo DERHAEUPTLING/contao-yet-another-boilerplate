@@ -28,8 +28,11 @@
 @import "base/b_link";
 @import "base/b_list";
 
+@import "base/b_image_container";
+
 @import "base/b_offcanvas_mixins";
 @import "base/b_offcanvas";
+
 
 
 /*						objects
@@ -48,6 +51,7 @@
 
 @import "objects/ce_gallery";
 @import "objects/ce_akkordeon";
+@import "objects/ce_slider";
 
 @import "objects/offcanvas_navbar";
 @import "objects/offcanvas_sidebar";

@@ -1,0 +1,17 @@
+.content-slider {
+	margin-left: -$layout_gutter;
+    margin-right: -$layout_gutter;
+    @media (max-width: 767px) {
+        margin-left: -$layout_gutter / 2;
+        margin-right: -$layout_gutter / 2;
+    }
+
+    .slider-wrapper > * {
+		padding-left: $layout_gutter;
+	    padding-right: $layout_gutter;
+	    @media (max-width: 767px) {
+	        padding-left: $layout_gutter / 2;
+	        padding-right: $layout_gutter / 2;
+	    }
+    }
+}
