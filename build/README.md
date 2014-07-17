@@ -6,6 +6,9 @@
     `npm install -g bower`
 - install [bower-installer](https://github.com/blittle/bower-installer) <br>
     `npm install -g bower-installer`
+- install [webpack](http://webpack.github.io/docs/tutorials/getting-started/) <br>
+    `npm install webpack -g`
+
 
 
 ## Install build dependencies 

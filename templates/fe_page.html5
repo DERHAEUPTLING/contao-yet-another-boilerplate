@@ -200,8 +200,9 @@
 <?php // echo $this->getCustomSections('bottom'); ?>
 
 
-<script data-main="files/dist/js/main" src="files/dist/js/lib/require.js"></script>
+<!-- <script data-main="files/dist/js/main" src="files/dist/js/lib/require.js"></script> -->
 <!-- <script src="files/dist/js_dist/main.single.js">-->
+<script src="files/dist/js/webpack.js">
 
 
 <?php echo $this->mootools; ?>

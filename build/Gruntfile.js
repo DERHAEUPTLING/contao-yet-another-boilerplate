@@ -11,13 +11,30 @@ grunt.initConfig({
    */
   watch: {
       sass: {
-        files: ['sass/**/*.scss', 'js/**/*.*', 'js_dist/**/*.*', 'js/**/*.*', 'fonts/**/*.*', 'images/**/*.*'],
-        tasks: ['sass:prod', 'autoprefixer:dist', 'ftpush:dev'],
+        files: ['sass/**/*.scss', 'fonts/**/*.*', 'images/**/*.*'],
+        tasks: ['sass:prod', 'autoprefixer:dist', 'ftpush:files'],
+        options: {
+          spawn: false,
+          livereload: true,
+        },
+      },
+      js: {
+        files: ['js/**/*.*', 'js_dist/**/*.*'],
+        tasks: ['webpack:dev', 'ftpush:files'],
+        options: {
+          spawn: false,
+          livereload: true,
+        },
+      },
+      tempaltes: {
+        files: ['../templates/**/*.*'],
+        tasks: ['ftpush:templates'],
         options: {
           spawn: false,
           livereload: true,
         },
       }
+
   },
 
 
@@ -146,12 +163,50 @@ grunt.initConfig({
   },
 
 
+  /**
+   * WEBPACK
+   */
+  webpack: {
+
+      dev: {
+        // webpack options
+        entry: "./js/entry.js",
+        output: {
+            path: "../files/dist/js/",
+            filename: "webpack.js",
+        },
+
+        stats: {
+            // Configure the console output
+            colors: false,
+            modules: true,
+            reasons: true
+        },
+        // stats: false disables the stats output
+
+        storeStatsTo: "xyz", // writes the status to a variable named xyz
+        // you may use it later in grunt i.e. <%= xyz.hash %>
+
+        progress: false, // Don't show progress
+        // Defaults to true
+
+        failOnError: false, // don't report error to grunt if webpack find errors
+        // Use this if webpack errors are tolerable and grunt should continue
+
+        watch: true, // use webpacks watcher
+        // You need to keep the grunt process alive
+
+        // keepalive: true, // don't finish the grunt task
+        // Use this in combination with the watch option
+      }
+  },
+
 
   /**
    * FTPUSH
    */
   ftpush: {
-      dev: {
+      files: {
           auth: {
               host: 'hauptwolke.de',
               port: 21,
@@ -164,7 +219,19 @@ grunt.initConfig({
           simple: true,
           useList: false
       },
-      src_app: {
+      templates: {
+          auth: {
+              host: 'hauptwolke.de',
+              port: 21,
+              authKey: 'host'
+            },
+          src: '../templates',
+          dest: '../templates',
+          exclusions: ['**/.DS_Store', '**/Thumbs.db'],
+          simple: true,
+          useList: false
+      },
+      app: {
           auth: {
               host: 'hauptwolke.de',
               port: 21,
@@ -176,7 +243,7 @@ grunt.initConfig({
           simple: true,
           useList: false
       },
-      src_build: {
+      build: {
           auth: {
               host: 'hauptwolke.de',
               port: 21,
@@ -200,13 +267,14 @@ grunt.initConfig({
   grunt.loadNpmTasks ('grunt-modernizr');
   grunt.loadNpmTasks ('grunt-ftpush');
   grunt.loadNpmTasks ('grunt-spritesmith');
+  grunt.loadNpmTasks ('grunt-webpack');
 
   // setBase
   grunt.file.setBase('../app/');
 
   // registerTasks
-  grunt.registerTask('default', ['sass:prod', 'autoprefixer:dist', 'ftpush:dev', 'watch']);
-  grunt.registerTask('prod', ['sass:prod', 'autoprefixer:dist', 'ftpush:dev', 'ftpush:src_app', 'ftpush:src_build']);
+  grunt.registerTask('default', ['sass:prod', 'autoprefixer:dist', 'ftpush:files', 'watch']);
+  grunt.registerTask('prod', ['sass:prod', 'autoprefixer:dist', 'ftpush:files', 'ftpush:app', 'ftpush:build']);
 
 
 };
