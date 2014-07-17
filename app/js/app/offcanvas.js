@@ -1,7 +1,4 @@
-
-define([
-    'jquery'
-], function ($) {
+function () {
 
 
     var init = function () {
@@ -61,4 +58,4 @@ define([
     return {
         init: init
     };
-});
+};

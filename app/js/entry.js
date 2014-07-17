@@ -1,22 +1,29 @@
-// require("./content.js");
+
+/**
+ * static includes
+ *
+ */
+require("./app/basic.js");
+require("./app/autogrow.js");
 
 
 
 
 
+/**
+ * autogrow alway include
+ *
+ */
 
-if($('textarea').length) {
-    console.log("Loading touch libraries 11");
 
-    require.ensure(['./lib/jquery.autogrow.js'], function(autogrow){
 
-        // require.ensure creates a bundle split-point
-        var Hammer = require('./app/autogrow.js');
 
-        // Hammer loaded via XHR - ready to initialize
-        // Hammer(/* ... */);
-    });
-
-} else {
-    console.log("No touch features detected - skipping unneeded libraries");
-}
+/**
+ * offcanvas
+ *
+ */
+// if ($('#offcanvas-container').length ) {
+//     require.ensure(['app/offcanvas.js'], function(e){
+//     	e.init();
+//     });
+// }
