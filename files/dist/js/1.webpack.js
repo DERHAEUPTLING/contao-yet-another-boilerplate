@@ -1,6 +1,6 @@
-webpackJsonp([1],[
-/* 0 */,
-/* 1 */
+webpackJsonp([1],{
+
+/***/ 3:
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
@@ -73,26 +73,6 @@ webpackJsonp([1],[
 	};
 
 
-/***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var autogrow =  function() {
-	    /**
-	     * Initialize
-	     * @returns {void}
-	     */
-	    var init = function () {
-
-	        //  autogrow
-	        $('textarea').autogrow();
-
-	    };
-
-	    return {
-	        init: init
-	    };
-	};
-
 /***/ }
-]);
+
+});

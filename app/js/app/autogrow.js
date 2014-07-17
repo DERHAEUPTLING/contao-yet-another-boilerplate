@@ -1,16 +1,9 @@
-var autogrow =  function() {
-    /**
-     * Initialize
-     * @returns {void}
-     */
-    var init = function () {
 
-        //  autogrow
-        $('textarea').autogrow();
 
-    };
+require("../lib/jquery.autogrow.js");
 
-    return {
-        init: init
-    };
-};
+
+$('textarea').autogrow();
+
+
+

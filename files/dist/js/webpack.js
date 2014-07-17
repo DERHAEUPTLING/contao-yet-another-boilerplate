@@ -1,34 +1,6 @@
 /******/ (function(modules) { // webpackBootstrap
-/******/ 	// install a JSONP callback for chunk loading
-/******/ 	var parentJsonpFunction = window["webpackJsonp"];
-/******/ 	window["webpackJsonp"] = function webpackJsonpCallback(chunkIds, moreModules) {
-/******/ 		// add "moreModules" to the modules object,
-/******/ 		// then flag all "chunkIds" as loaded and fire callback
-/******/ 		var moduleId, chunkId, i = 0, callbacks = [];
-/******/ 		for(;i < chunkIds.length; i++) {
-/******/ 			chunkId = chunkIds[i];
-/******/ 			if(installedChunks[chunkId])
-/******/ 				callbacks.push.apply(callbacks, installedChunks[chunkId]);
-/******/ 			installedChunks[chunkId] = 0;
-/******/ 		}
-/******/ 		for(moduleId in moreModules) {
-/******/ 			modules[moduleId] = moreModules[moduleId];
-/******/ 		}
-/******/ 		if(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules);
-/******/ 		while(callbacks.length)
-/******/ 			callbacks.shift().call(null, __webpack_require__);
-/******/
-/******/ 	};
-/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-/******/
-/******/ 	// object to store loaded and loading chunks
-/******/ 	// "0" means "already loaded"
-/******/ 	// Array means "loading", array contains callbacks
-/******/ 	var installedChunks = {
-/******/ 		0:0
-/******/ 	};
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -54,27 +26,6 @@
 /******/ 		return module.exports;
 /******/ 	}
 /******/
-/******/ 	// This file contains only the entry chunk.
-/******/ 	// The chunk loading function for additional chunks
-/******/ 	__webpack_require__.e = function requireEnsure(chunkId, callback) {
-/******/ 		// "0" is the signal for "already loaded"
-/******/ 		if(installedChunks[chunkId] === 0)
-/******/ 			return callback.call(null, __webpack_require__);
-/******/
-/******/ 		// an array means "currently loading".
-/******/ 		if(installedChunks[chunkId] !== undefined) {
-/******/ 			installedChunks[chunkId].push(callback);
-/******/ 		} else {
-/******/ 			// start chunk loading
-/******/ 			installedChunks[chunkId] = [callback];
-/******/ 			var head = document.getElementsByTagName('head')[0];
-/******/ 			var script = document.createElement('script');
-/******/ 			script.type = 'text/javascript';
-/******/ 			script.charset = 'utf-8';
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".webpack.js";
-/******/ 			head.appendChild(script);
-/******/ 		}
-/******/ 	};
 /******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
@@ -93,28 +44,136 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// require("./content.js");
+	
+	/**
+	 * static includes
+	 *
+	 */
+	__webpack_require__(1);
+	__webpack_require__(2);
 
 
 
 
 
+	/**
+	 * autogrow alway include
+	 *
+	 */
 
-	if($('textarea').length) {
-	    console.log("Loading touch libraries 11");
 
-	    __webpack_require__.e/*nsure*/(1, function(autogrow){
 
-	        // require.ensure creates a bundle split-point
-	        var Hammer = __webpack_require__(2);
 
-	        // Hammer loaded via XHR - ready to initialize
-	        // Hammer(/* ... */);
+	/**
+	 * offcanvas
+	 *
+	 */
+	// if ($('#offcanvas-container').length ) {
+	//     require.ensure(['app/offcanvas.js'], function(e){
+	//     	e.init();
+	//     });
+	// }
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	
+
+	__webpack_require__(3);
+
+
+	$('textarea').autogrow();
+
+
+
+
+
+/***/ },
+/* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/*!
+	 * ----------------------------------------------------------------------------
+	 * "THE BEER-WARE LICENSE" (Revision 42):
+	 * <jevin9@gmail.com> wrote this file. As long as you retain this notice you
+	 * can do whatever you want with this stuff. If we meet some day, and you think
+	 * this stuff is worth it, you can buy me a beer in return. Jevin O. Sewaruth
+	 * ----------------------------------------------------------------------------
+	 *
+	 * Autogrow Textarea Plugin Version v2.0
+	 * http://www.technoreply.com/autogrow-textarea-plugin-version-2-0
+	 *
+	 * Date: March 13, 2011
+	 */
+
+
+	jQuery.fn.autogrow = function(){
+	    return this.each(function(){
+	        // Variables
+	        var colsDefault = this.cols;
+	        var rowsDefault = this.rows;
+
+	        //Functions
+	        var grow = function() {
+	            growByRef(this);
+	        };
+
+	        var growByRef = function(obj) {
+	            var linesCount = 0;
+	            var lines = obj.value.split('\n');
+
+	            for (var i=lines.length-1; i>=0; --i)
+	            {
+	                linesCount += Math.floor((lines[i].length / colsDefault) + 1);
+	            }
+
+	            if (linesCount >= rowsDefault)
+	                obj.rows = linesCount + 1;
+	            else
+	                obj.rows = rowsDefault;
+	        };
+
+	        var characterWidth = function (obj){
+	            var characterWidth = 0;
+	            var temp1 = 0;
+	            var temp2 = 0;
+	            var tempCols = obj.cols;
+
+	            obj.cols = 1;
+	            temp1 = obj.offsetWidth;
+	            obj.cols = 2;
+	            temp2 = obj.offsetWidth;
+	            characterWidth = temp2 - temp1;
+	            obj.cols = tempCols;
+
+	            return characterWidth;
+	        };
+
+	        // Manipulations
+	        //this.style.width = "auto";
+	        this.style.height = "auto";
+	        this.style.overflow = "hidden";
+	        //this.style.width = ((characterWidth(this) * this.cols) + 6) + "px";
+	        this.onkeyup = grow;
+	        this.onfocus = grow;
+	        this.onblur = grow;
+	        growByRef(this);
 	    });
+	};
 
-	} else {
-	    console.log("No touch features detected - skipping unneeded libraries");
-	}
+
+/***/ }
+/******/ ])row;
+	        growByRef(this);
+	    });
+	};
 
 
 /***/ }

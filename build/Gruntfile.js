@@ -178,7 +178,7 @@ grunt.initConfig({
 
         stats: {
             // Configure the console output
-            colors: false,
+            colors: true,
             modules: true,
             reasons: true
         },
@@ -196,7 +196,7 @@ grunt.initConfig({
         watch: true, // use webpacks watcher
         // You need to keep the grunt process alive
 
-        // keepalive: true, // don't finish the grunt task
+        //keepalive: true, // don't finish the grunt task
         // Use this in combination with the watch option
       }
   },
