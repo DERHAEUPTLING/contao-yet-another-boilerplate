@@ -104,10 +104,10 @@ grunt.initConfig({
 
       dist: {
           // [REQUIRED] Path to the build you're using for development.
-          "devFile" : "../files/dist/js/",
+          "devFile" : "js/",
 
           // [REQUIRED] Path to save out the built file.
-          "outputFile" : "../files/dist/js/lib/modernizr-custom.js",
+          "outputFile" : "js/lib/modernizr-custom.js",
 
           // Based on default settings on http://modernizr.com/download/
           "extra" : {
@@ -148,10 +148,10 @@ grunt.initConfig({
 
           // When parseFiles = true, matchCommunityTests = true will attempt to
           // match user-contributed tests.
-          "matchCommunityTests" : false,
+          //"matchCommunityTests" : false,
 
           // Have custom Modernizr tests? Add paths to their location here.
-          "customTests" : []
+          //"customTests" : []
       }
 
   },
