@@ -51,9 +51,9 @@
 	// var foobar = require('./app/commonjs.js');
 	//     test   = new foobar();
 	// test.bar(); // 'Hello bar'
-	
-	
-	
+
+
+
 	/**
 	 * EXAMPLE: Code Splitting - CommonJS Pattern
 	 *
@@ -63,16 +63,16 @@
 	//     	   test   = new foobar();
 	// 	   test.bar(); // 'Hello bar'
 	// });
-	
-	
-	
+
+
+
 	/**
 	 * static includes
 	 *
 	 */
 	__webpack_require__(1);
 	__webpack_require__(2);
-	
+
 	var offcanvas = __webpack_require__(3);
 	new offcanvas();
 
@@ -88,7 +88,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	
-	
+
 	__webpack_require__(4);
 	$('textarea').autogrow();
 
@@ -98,14 +98,14 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function offcanvas() {
-	
+
 	    var init = function () {
-	
+
 	        var items   = $('.offcanvas-page, #offcanvas-sidebar');
 	        var content = $('.offcanvas-page');
 	        var button  = $('.offcanvas-toggle');
-	
-	
+
+
 	        var open = function() {
 	                                $(items).removeClass('close').addClass('open');
 	                                $(content).one('click', closeEventHandler);
@@ -116,19 +116,19 @@
 	        var closeEventHandler = function() {
 	            $(close);
 	        };
-	
+
 	        button.click(function(event){
 	            event.stopPropagation();
 	            if (content.hasClass('open')) {$(close);}
 	            else {$(open);}
 	        });
-	
-	
-	
+
+
+
 	        // Scroll timer
 	        var scrollTimeout;  // global for any pending scrollTimeout
 	        var nodeCache = $('.offcanvas-navbar');
-	
+
 	        $(window).scroll(function () {
 	                if (scrollTimeout) {
 	                        // clear the timeout, if one is pending
@@ -137,7 +137,7 @@
 	                }
 	                scrollTimeout = setTimeout(scrollHandler, 100);
 	        });
-	
+
 	        scrollHandler = function () {
 	                // Check your page position and then
 	                if ($(window).scrollTop() > 20) {
@@ -147,14 +147,14 @@
 	                }
 	        };
 	        scrollHandler();
-	
-	
+
+
 	    };
-	
+
 	    init();
-	
+
 	};
-	
+
 
 
 /***/ },
@@ -174,50 +174,50 @@
 	 *
 	 * Date: March 13, 2011
 	 */
-	
-	
+
+
 	jQuery.fn.autogrow = function(){
 	    return this.each(function(){
 	        // Variables
 	        var colsDefault = this.cols;
 	        var rowsDefault = this.rows;
-	
+
 	        //Functions
 	        var grow = function() {
 	            growByRef(this);
 	        };
-	
+
 	        var growByRef = function(obj) {
 	            var linesCount = 0;
 	            var lines = obj.value.split('\n');
-	
+
 	            for (var i=lines.length-1; i>=0; --i)
 	            {
 	                linesCount += Math.floor((lines[i].length / colsDefault) + 1);
 	            }
-	
+
 	            if (linesCount >= rowsDefault)
 	                obj.rows = linesCount + 1;
 	            else
 	                obj.rows = rowsDefault;
 	        };
-	
+
 	        var characterWidth = function (obj){
 	            var characterWidth = 0;
 	            var temp1 = 0;
 	            var temp2 = 0;
 	            var tempCols = obj.cols;
-	
+
 	            obj.cols = 1;
 	            temp1 = obj.offsetWidth;
 	            obj.cols = 2;
 	            temp2 = obj.offsetWidth;
 	            characterWidth = temp2 - temp1;
 	            obj.cols = tempCols;
-	
+
 	            return characterWidth;
 	        };
-	
+
 	        // Manipulations
 	        //this.style.width = "auto";
 	        this.style.height = "auto";
@@ -233,4 +233,3 @@
 
 /***/ }
 /******/ ])
-//# sourceMappingURL=bundle.js.map

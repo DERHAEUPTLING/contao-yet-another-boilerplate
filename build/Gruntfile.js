@@ -191,7 +191,7 @@ grunt.initConfig({
             // Configure the console output
             colors: true,
             modules: true,
-            reasons: true
+            reasons: false
         },
         // stats: false disables the stats output
 
