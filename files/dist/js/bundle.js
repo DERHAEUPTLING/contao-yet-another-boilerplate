@@ -44,6 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	$(document).ready(function(){
 	/**
 	 * EXAMPLE: CommonJS Pattern
 	 *
@@ -76,6 +77,10 @@
 	var offcanvas = __webpack_require__(3);
 	new offcanvas();
 
+
+
+
+	}); // End: $().ready()
 
 /***/ },
 /* 1 */

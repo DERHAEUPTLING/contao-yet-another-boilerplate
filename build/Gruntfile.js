@@ -15,7 +15,7 @@ grunt.initConfig({
         tasks: ['sass:prod', 'autoprefixer:dist', 'ftpush:files'],
         options: {
           spawn: false,
-          livereload: true,
+          // livereload: true,
         },
       },
       js: {
@@ -23,7 +23,7 @@ grunt.initConfig({
         tasks: ['clean:js', 'webpack:dev', 'ftpush:files'],
         options: {
           spawn: false,
-          livereload: true,
+          // livereload: true,
         },
       },
       tempaltes: {
@@ -31,7 +31,7 @@ grunt.initConfig({
         tasks: ['ftpush:templates'],
         options: {
           spawn: false,
-          livereload: true,
+          // livereload: true,
         },
       }
 
@@ -213,6 +213,22 @@ grunt.initConfig({
       }
   },
 
+  /**
+   * BROWSERSYNC
+   */
+  browserSync: {
+      dev: {
+          bsFiles: {
+              src :  ['../files/dist/**/*', '../templates/**/*']
+          },
+          options: {
+              open: false,
+              proxy: "cb.derhaeuptling.com",
+              injectChanges: false,
+              watchTask: true
+          }
+      }
+  },
 
   /**
    * FTPUSH
@@ -280,12 +296,13 @@ grunt.initConfig({
   grunt.loadNpmTasks ('grunt-ftpush');
   grunt.loadNpmTasks ('grunt-spritesmith');
   grunt.loadNpmTasks ('grunt-webpack');
+  grunt.loadNpmTasks ('grunt-browser-sync');
 
   // setBase
   grunt.file.setBase('../app/');
 
   // registerTasks
-  grunt.registerTask('default', ['sass:prod', 'autoprefixer:dist', 'clean:js', 'webpack:dev', 'ftpush', 'watch']);
+  grunt.registerTask('default', ['sass:prod', 'autoprefixer:dist', 'clean:js', 'webpack:dev', 'ftpush', 'browserSync', 'watch' ]);
 
 
 };

@@ -1,3 +1,4 @@
+$(document).ready(function(){
 /**
  * EXAMPLE: CommonJS Pattern
  *
@@ -29,3 +30,8 @@ require("./app/autogrow.js");
 
 var offcanvas = require('./app/offcanvas.js');
 new offcanvas();
+
+
+
+
+}); // End: $().ready()
