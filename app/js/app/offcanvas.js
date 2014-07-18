@@ -1,5 +1,4 @@
-function () {
-
+module.exports = function offcanvas() {
 
     var init = function () {
 
@@ -51,11 +50,9 @@ function () {
         scrollHandler();
 
 
-
-
     };
 
-    return {
-        init: init
-    };
+    init();
+
 };
+

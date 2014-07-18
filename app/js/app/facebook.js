@@ -1,5 +1,4 @@
-define([
-], function () {
+define([], function () {
     /**
      * Initialize
      * @returns {void}
