@@ -71,16 +71,18 @@
 	 * static includes
 	 *
 	 */
+
+
 	__webpack_require__(1);
 	__webpack_require__(2);
 
 	var offcanvas = __webpack_require__(3);
 	new offcanvas();
 
-
-
-
 	}); // End: $().ready()
+
+
+
 
 /***/ },
 /* 1 */

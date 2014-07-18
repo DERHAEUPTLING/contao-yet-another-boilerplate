@@ -25,13 +25,14 @@ $(document).ready(function(){
  * static includes
  *
  */
+
+
 require("./app/basic.js");
 require("./app/autogrow.js");
 
 var offcanvas = require('./app/offcanvas.js');
 new offcanvas();
 
-
-
-
 }); // End: $().ready()
+
+
