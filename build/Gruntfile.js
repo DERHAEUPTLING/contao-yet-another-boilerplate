@@ -20,7 +20,7 @@ grunt.initConfig({
       },
       js: {
         files: ['js/**/*.*', 'js_dist/**/*.*'],
-        tasks: ['webpack:dev', 'ftpush:files'],
+        tasks: ['clean:js', 'webpack:dev', 'ftpush:files'],
         options: {
           spawn: false,
           livereload: true,
@@ -38,6 +38,16 @@ grunt.initConfig({
   },
 
 
+  /**
+   * CLEAN Folders
+   */
+  clean: {
+    options : {
+      force: true
+    },
+    js: ["../files/dist/js"],
+    release: ["path/to/another/dir/one", "path/to/another/dir/two"]
+  },
 
   /**
    * SASS
@@ -190,10 +200,10 @@ grunt.initConfig({
         progress: false, // Don't show progress
         // Defaults to true
 
-        failOnError: false, // don't report error to grunt if webpack find errors
+        failOnError: true, // don't report error to grunt if webpack find errors
         // Use this if webpack errors are tolerable and grunt should continue
 
-        watch: true, // use webpacks watcher
+        //watch: true, // use webpacks watcher
         // You need to keep the grunt process alive
 
         //keepalive: true, // don't finish the grunt task
@@ -211,7 +221,7 @@ grunt.initConfig({
               host: 'hauptwolke.de',
               port: 21,
               authKey: 'host'
-            },
+          },
           src: '../files/dist/',
           dest: 'files/dist',
           exclusions: ['.DS_Store', '**/Thumbs.db', 'dist/tmp', 'styles.css', 'styles.css.map'],
@@ -260,7 +270,7 @@ grunt.initConfig({
 
 }); // end: init
 
-
+  grunt.loadNpmTasks ('grunt-contrib-clean');
   grunt.loadNpmTasks ('grunt-contrib-sass');
   grunt.loadNpmTasks ('grunt-autoprefixer');
   grunt.loadNpmTasks ('grunt-contrib-watch');
@@ -273,7 +283,7 @@ grunt.initConfig({
   grunt.file.setBase('../app/');
 
   // registerTasks
-  grunt.registerTask('default', ['sass:prod', 'autoprefixer:dist', 'ftpush:files', 'watch']);
+  grunt.registerTask('default', ['sass:prod', 'autoprefixer:dist', 'clean:js', 'webpack:dev', 'ftpush', 'watch']);
   grunt.registerTask('prod', ['sass:prod', 'autoprefixer:dist', 'ftpush:files', 'ftpush:app', 'ftpush:build']);
 
 
