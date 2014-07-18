@@ -1,4 +1,4 @@
-$(document).ready(function(){
+
 /**
  * EXAMPLE: CommonJS Pattern
  *
@@ -25,14 +25,28 @@ $(document).ready(function(){
  * static includes
  *
  */
-
-
 require("./app/basic.js");
 require("./app/autogrow.js");
 
 var offcanvas = require('./app/offcanvas.js');
 new offcanvas();
 
-}); // End: $().ready()
+
+/**
+ * load swipe if touch device
+ *
+ */
+if (Modernizr.touch) {
+    console.log("has touch");
+} else {
+    console.log("no touch");
+}
 
 
+
+
+
+
+$( window ).load(function() {
+    $('body').removeClass(' is-loading');
+});

@@ -107,7 +107,7 @@ grunt.initConfig({
           "devFile" : "js/",
 
           // [REQUIRED] Path to save out the built file.
-          "outputFile" : "js/lib/modernizr-custom.js",
+          "outputFile" : "../files/dist/lib/modernizr-custom.js",
 
           // Based on default settings on http://modernizr.com/download/
           "extra" : {

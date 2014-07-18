@@ -80,11 +80,7 @@
     <?php echo $this->stylesheets; ?>
     <link rel="stylesheet" href="files/dist/css/styles.prefixed.css">
 
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <link rel="apple-touch-icon" href="./img/Icon@2X.png" />
-
-    <?php echo $this->mooScripts; ?>
+    <?php //echo $this->mooScripts; ?>
     <?php echo $this->head; ?>
     <!--[if lt IE 9]><script src="<?php echo TL_ASSETS_URL; ?>assets/html5shiv/<?php echo HTML5SHIV; ?>/html5shiv.js"></script><![endif]-->
 
@@ -94,12 +90,7 @@
 <script>
     (function(h){h.className = h.className.replace('no-js', 'js')})(document.documentElement)
     document.getElementsByTagName('body')[0].className += ' is-loading';
-    if (typeof jQuery === 'function') {
-        $( window ).load(function() {
-            $('body').removeClass(' is-loading');
-            $('a').wrapInner('<span class="wrapInner"></span>');
-        });
-    }
+
     if (screen.width < 767) {
         document.getElementById("viewport")
             .setAttribute("content", "width=device-width, user-scalable=no");
@@ -199,7 +190,8 @@
 
 <?php // echo $this->getCustomSections('bottom'); ?>
 
-
+<?php echo $this->mooScripts; ?>
+<script src="files/dist/lib/modernizr-custom.js"></script>
 <!-- <script data-main="files/dist/js/main" src="files/dist/js/lib/require.js"></script> -->
 <!-- <script src="files/dist/js_dist/main.single.js">-->
 <script src="files/dist/js/bundle.js"></script>

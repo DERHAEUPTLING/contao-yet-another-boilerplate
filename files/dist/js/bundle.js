@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	$(document).ready(function(){
+	
 	/**
 	 * EXAMPLE: CommonJS Pattern
 	 *
@@ -71,18 +71,31 @@
 	 * static includes
 	 *
 	 */
-
-
 	__webpack_require__(1);
 	__webpack_require__(2);
 
 	var offcanvas = __webpack_require__(3);
 	new offcanvas();
 
-	}); // End: $().ready()
+
+	/**
+	 * load swipe if touch device
+	 *
+	 */
+	if (Modernizr.touch) {
+	    console.log("has touch");
+	} else {
+	    console.log("no touch");
+	}
 
 
 
+
+
+
+	$( window ).load(function() {
+	    $('body').removeClass(' is-loading');
+	});
 
 /***/ },
 /* 1 */
