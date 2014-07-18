@@ -1,11 +1,14 @@
 {
   "name": "contao_yabp",
-  "description": "Contao yet another boilerplate - node builder, basic template, SASS mudules, AMD JS ",
+  "description": "Contao yet another boilerplate - node builder, basic template, SASS mudules, AMD / CommonJS ",
   "version": "0.0.1",
   "private": true,
   "author": {
     "name": "\"derhäuptling\" Martin Schwenzer",
     "url": "http://derhaeuptling.com/"
+  },
+  "scripts": {
+    "start": "grunt"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
