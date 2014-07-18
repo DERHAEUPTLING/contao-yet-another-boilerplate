@@ -177,13 +177,14 @@ grunt.initConfig({
    * WEBPACK
    */
   webpack: {
-
       dev: {
         // webpack options
         entry: "./js/entry.js",
         output: {
             path: "../files/dist/js/",
-            filename: "webpack.js",
+            publicPath: "files/dist/js/",
+            // filename: "[name].bundle.js",
+            // namedChunkFilename: "[name].bundle.js"
         },
 
         stats: {
@@ -208,6 +209,7 @@ grunt.initConfig({
 
         //keepalive: true, // don't finish the grunt task
         // Use this in combination with the watch option
+
       }
   },
 
@@ -284,7 +286,6 @@ grunt.initConfig({
 
   // registerTasks
   grunt.registerTask('default', ['sass:prod', 'autoprefixer:dist', 'clean:js', 'webpack:dev', 'ftpush', 'watch']);
-  grunt.registerTask('prod', ['sass:prod', 'autoprefixer:dist', 'ftpush:files', 'ftpush:app', 'ftpush:build']);
 
 
 };

@@ -202,7 +202,7 @@
 
 <!-- <script data-main="files/dist/js/main" src="files/dist/js/lib/require.js"></script> -->
 <!-- <script src="files/dist/js_dist/main.single.js">-->
-<script src="files/dist/js/webpack.js"></script>
+<script src="files/dist/js/bundle.js"></script>
 
 
 <?php echo $this->mootools; ?>
