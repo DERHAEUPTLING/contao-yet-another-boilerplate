@@ -87,12 +87,7 @@
 	
 
 	__webpack_require__(3);
-
-
 	$('textarea').autogrow();
-
-
-
 
 
 /***/ },
@@ -164,13 +159,6 @@
 	        this.onkeyup = grow;
 	        this.onfocus = grow;
 	        this.onblur = grow;
-	        growByRef(this);
-	    });
-	};
-
-
-/***/ }
-/******/ ])row;
 	        growByRef(this);
 	    });
 	};
