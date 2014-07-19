@@ -17,31 +17,17 @@ new offcanvas();
  * load swipe if touch device
  *
  */
-
 if (Modernizr.touch) {
-	console.log("has touch");
+
+	//console.log("has touch");
 
 	require.ensure([], function(require) {
 	    var swipe = require('./chunk/touchswipe.js');
 	    new swipe();
-
-
-
 	});
+
 }
 
-// if (Modernizr.touch) {
-//     console.log("has touch");
-//     require("./lib/jquery.touchSwipe.min.js");
-
-//     $("html").swipe({
-// 	  swipe:function(event, direction, distance, duration, fingerCount){
-// 	    $(this).text("You swiped " + direction + " for " + distance + "px" );
-// 	  },
-// 	  threshold:100
-// 	});
-
-// }
 
 
 
@@ -49,24 +35,12 @@ if (Modernizr.touch) {
 
 
 
+/**
+ * window.load
+ *
+ */
 $( window ).load(function() {
     $('body').removeClass(' is-loading');
 });
-
-
-
-
-
-
-// define('HelloWorldize',[], function() {
-
-// 	var HelloWorldize = function(selector){
-// 	    console.log("amd");
-// 	};
-
-// 	return HelloWorldize();
-// });
-
-//define(['HelloWorldize'], function(HelloWorldize) {});
 
 

@@ -1,5 +1,5 @@
 module.exports = function touchswipe() {
-
+	// http://labs.rampinteractive.co.uk/touchSwipe/demos/
     require("../lib/jquery.touchSwipe.min.js");
 
     $("html").swipe({
@@ -8,5 +8,5 @@ module.exports = function touchswipe() {
         },
         threshold:100
     });
-    console.log("touchswipe.js loaded");
+    // console.log("touchswipe.js loaded");
 }
