@@ -4,16 +4,16 @@ webpackJsonp([1],{
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function touchswipe() {
+		// http://labs.rampinteractive.co.uk/touchSwipe/demos/
+	    __webpack_require__(7);
 
-	        __webpack_require__(7);
-
-	        $("html").swipe({
-	                swipe:function(event, direction, distance, duration, fingerCount){
-	                        $(this).text("You swiped " + direction + " for " + distance + "px" );
-	                },
-	                threshold:100
-	        });
-	        console.log("touchswipe.js loaded");
+	    $("html").swipe({
+	        swipe:function(event, direction, distance, duration, fingerCount){
+	            $(this).text("You swiped " + direction + " for " + distance + "px" );
+	        },
+	        threshold:100
+	    });
+	    // console.log("touchswipe.js loaded");
 	}
 
 /***/ },
