@@ -191,9 +191,8 @@
 <?php // echo $this->getCustomSections('bottom'); ?>
 
 <?php echo $this->mooScripts; ?>
-<script src="files/dist/lib/modernizr-custom.js"></script>
-<!-- <script data-main="files/dist/js/main" src="files/dist/js/lib/require.js"></script> -->
-<!-- <script src="files/dist/js_dist/main.single.js">-->
+<script src="files/dist/js/lib/modernizr-custom.js"></script>
+
 <script src="files/dist/js/bundle.js"></script>
 
 

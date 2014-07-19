@@ -2,8 +2,8 @@
   "name": "bower-installer",
   "version": "0.1",
   "dependencies": {
-    "requirejs-domready": "latest",
-    "scut": "latest"
+    "scut": "latest",
+    "modernizr": "latest"
   },
 
   "install": {
@@ -12,8 +12,8 @@
       "js": "../files/dist/js/bower"
     },
     "sources": {
-      "requirejs-domready": "bower_components/requirejs-domready/domReady.js",
-      "scut": "bower_components/scut/dist/_scut.scss"
+      "scut": "bower_components/scut/dist/_scut.scss",
+      "modernizr": "bower_components/modernizr/modernizr.js"
     }
   }
 }

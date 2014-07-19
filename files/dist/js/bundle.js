@@ -1,6 +1,34 @@
 /******/ (function(modules) { // webpackBootstrap
+/******/ 	// install a JSONP callback for chunk loading
+/******/ 	var parentJsonpFunction = window["webpackJsonp"];
+/******/ 	window["webpackJsonp"] = function webpackJsonpCallback(chunkIds, moreModules) {
+/******/ 		// add "moreModules" to the modules object,
+/******/ 		// then flag all "chunkIds" as loaded and fire callback
+/******/ 		var moduleId, chunkId, i = 0, callbacks = [];
+/******/ 		for(;i < chunkIds.length; i++) {
+/******/ 			chunkId = chunkIds[i];
+/******/ 			if(installedChunks[chunkId])
+/******/ 				callbacks.push.apply(callbacks, installedChunks[chunkId]);
+/******/ 			installedChunks[chunkId] = 0;
+/******/ 		}
+/******/ 		for(moduleId in moreModules) {
+/******/ 			modules[moduleId] = moreModules[moduleId];
+/******/ 		}
+/******/ 		if(parentJsonpFunction) parentJsonpFunction(chunkIds, moreModules);
+/******/ 		while(callbacks.length)
+/******/ 			callbacks.shift().call(null, __webpack_require__);
+/******/
+/******/ 	};
+/******/
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
+/******/
+/******/ 	// object to store loaded and loading chunks
+/******/ 	// "0" means "already loaded"
+/******/ 	// Array means "loading", array contains callbacks
+/******/ 	var installedChunks = {
+/******/ 		0:0
+/******/ 	};
 /******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
@@ -26,6 +54,27 @@
 /******/ 		return module.exports;
 /******/ 	}
 /******/
+/******/ 	// This file contains only the entry chunk.
+/******/ 	// The chunk loading function for additional chunks
+/******/ 	__webpack_require__.e = function requireEnsure(chunkId, callback) {
+/******/ 		// "0" is the signal for "already loaded"
+/******/ 		if(installedChunks[chunkId] === 0)
+/******/ 			return callback.call(null, __webpack_require__);
+/******/
+/******/ 		// an array means "currently loading".
+/******/ 		if(installedChunks[chunkId] !== undefined) {
+/******/ 			installedChunks[chunkId].push(callback);
+/******/ 		} else {
+/******/ 			// start chunk loading
+/******/ 			installedChunks[chunkId] = [callback];
+/******/ 			var head = document.getElementsByTagName('head')[0];
+/******/ 			var script = document.createElement('script');
+/******/ 			script.type = 'text/javascript';
+/******/ 			script.charset = 'utf-8';
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + ".bundle.js";
+/******/ 			head.appendChild(script);
+/******/ 		}
+/******/ 	};
 /******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
@@ -44,37 +93,18 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	
-	/**
-	 * EXAMPLE: CommonJS Pattern
-	 *
-	 */
-	// var foobar = require('./app/commonjs.js');
-	//     test   = new foobar();
-	// test.bar(); // 'Hello bar'
-
-
-
-	/**
-	 * EXAMPLE: Code Splitting - CommonJS Pattern
-	 *
-	 */
-	// require.ensure([], function(require) {
-	//     var foobar = require('./app/commonjs.js');
-	//     	   test   = new foobar();
-	// 	   test.bar(); // 'Hello bar'
-	// });
-
-
+	//require("./lib/modernizr-custom.js");
 
 	/**
 	 * static includes
 	 *
 	 */
-	__webpack_require__(1);
-	__webpack_require__(2);
+	var jQuery = __webpack_require__(1);
 
-	var offcanvas = __webpack_require__(3);
+	__webpack_require__(2);
+	__webpack_require__(3);
+
+	var offcanvas = __webpack_require__(4);
 	new offcanvas();
 
 
@@ -82,11 +112,32 @@
 	 * load swipe if touch device
 	 *
 	 */
+
 	if (Modernizr.touch) {
-	    console.log("has touch");
-	} else {
-	    console.log("no touch");
+		console.log("has touch");
+
+		__webpack_require__.e/*nsure*/(1, function(require) {
+		    var swipe = __webpack_require__(5);
+		    new swipe();
+
+
+
+		});
 	}
+
+	// if (Modernizr.touch) {
+	//     console.log("has touch");
+	//     require("./lib/jquery.touchSwipe.min.js");
+
+	//     $("html").swipe({
+	// 	  swipe:function(event, direction, distance, duration, fingerCount){
+	// 	    $(this).text("You swiped " + direction + " for " + distance + "px" );
+	// 	  },
+	// 	  threshold:100
+	// 	});
+
+	// }
+
 
 
 
@@ -97,24 +148,49 @@
 	    $('body').removeClass(' is-loading');
 	});
 
+
+
+
+
+
+	// define('HelloWorldize',[], function() {
+
+	// 	var HelloWorldize = function(selector){
+	// 	    console.log("amd");
+	// 	};
+
+	// 	return HelloWorldize();
+	// });
+
+	//define(['HelloWorldize'], function(HelloWorldize) {});
+
+
+
+
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-
+	module.exports = jQuery;
 
 /***/ },
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	
-
-	__webpack_require__(4);
-	$('textarea').autogrow();
 
 
 /***/ },
 /* 3 */
+/***/ function(module, exports, __webpack_require__) {
+
+	
+
+	__webpack_require__(6);
+	$('textarea').autogrow();
+
+
+/***/ },
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = function offcanvas() {
@@ -178,7 +254,8 @@
 
 
 /***/ },
-/* 4 */
+/* 5 */,
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!
