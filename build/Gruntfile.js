@@ -10,29 +10,21 @@ grunt.initConfig({
    * WATCH
    */
   watch: {
+      options: {
+        spawn: false,
+        livereload: false,
+      },
       sass: {
         files: ['sass/**/*.scss', 'fonts/**/*.*', 'images/**/*.*'],
         tasks: ['sass:prod', 'autoprefixer:dist', 'ftpush:files'],
-        options: {
-          spawn: false,
-          // livereload: true,
-        },
       },
       js: {
-        files: ['js/**/*.*', 'js_dist/**/*.*'],
+        files: ['js/**/*.*', '../files/dist/js/**/*.*'],
         tasks: ['clean:js', 'webpack:dev', 'ftpush:files'],
-        options: {
-          spawn: false,
-          // livereload: true,
-        },
       },
       tempaltes: {
         files: ['../templates/**/*.*'],
         tasks: ['ftpush:templates'],
-        options: {
-          spawn: false,
-          // livereload: true,
-        },
       }
 
   },
@@ -45,7 +37,7 @@ grunt.initConfig({
     options : {
       force: true
     },
-    js: ["../files/dist/js"],
+    js: ["../files/dist/js/*.*"],
     release: ["path/to/another/dir/one", "path/to/another/dir/two"]
   },
 
@@ -104,10 +96,10 @@ grunt.initConfig({
 
       dist: {
           // [REQUIRED] Path to the build you're using for development.
-          "devFile" : "js/",
+          "devFile" : "./",
 
           // [REQUIRED] Path to save out the built file.
-          "outputFile" : "../files/dist/lib/modernizr-custom.js",
+          "outputFile" : "../files/dist/js/lib/modernizr-custom.js",
 
           // Based on default settings on http://modernizr.com/download/
           "extra" : {
@@ -142,16 +134,16 @@ grunt.initConfig({
 
           // When parseFiles = true, this task will crawl all *.js, *.css, *.scss files, except files that are in node_modules/.
           // You can override this by defining a "files" array below.
-          // "files" : {
-              // "src": []
-          // },
+          "files" : {
+              "src": ["../app/**/*"]
+          },
 
           // When parseFiles = true, matchCommunityTests = true will attempt to
           // match user-contributed tests.
-          //"matchCommunityTests" : false,
+          "matchCommunityTests" : false,
 
           // Have custom Modernizr tests? Add paths to their location here.
-          //"customTests" : []
+          "customTests" : []
       }
 
   },
@@ -185,6 +177,11 @@ grunt.initConfig({
             publicPath: "files/dist/js/",
             // filename: "[name].bundle.js",
             // namedChunkFilename: "[name].bundle.js"
+        },
+        externals: {
+            // require("jquery") is external and available
+            //  on the global var jQuery
+            "jquery": "jQuery"
         },
 
         stats: {
@@ -224,7 +221,7 @@ grunt.initConfig({
           options: {
               open: false,
               proxy: "cb.derhaeuptling.com",
-              injectChanges: false,
+              injectChanges: true,
               watchTask: true
           }
       }
