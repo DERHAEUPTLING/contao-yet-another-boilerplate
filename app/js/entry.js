@@ -9,19 +9,11 @@ var jQuery = require("jquery");
 require("./chunk/basic.js");
 require("./chunk/autogrow.js");
 
+
+
 var offcanvas = require('./chunk/offcanvas.js');
-new offcanvas();
-//offcanvas_obj.open();
+var scrollTimer = require('./chunk/scrollTimer.js');
 
-
-/**
- * EXAMPLE: AMD Pattern + commonjs dependencys
- * load external
- */
-require.ensure([], function(require) {
-    var amd = require('./chunk/example.amd-commonjs.js');
-    amd.test('body');
-});
 
 
 
@@ -37,8 +29,9 @@ require.ensure([], function(require) {
 if (Modernizr.touch) {
 	//console.log("has touch");
 	require.ensure([], function(require) {
-	    var swipe = require('./chunk/touchswipe.js');
-	    new swipe();
+	    var touchswipe = require('./chunk/touchswipe.js');
+	    //new swipe();
+	    touchswipe.left();
 	});
 }
 

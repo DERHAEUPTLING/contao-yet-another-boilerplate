@@ -1,12 +1,50 @@
-module.exports = function touchswipe() {
-	// http://labs.rampinteractive.co.uk/touchSwipe/demos/
+
+/**
+ * AMD Module + commonjs dependency management
+ *
+ */
+
+define(function(require) {
+	/**
+	 * static inclues
+	 *
+	 */
+    var $ = require('jquery');
     require("../lib/jquery.touchSwipe.min.js");
 
-    $("html").swipe({
-        swipe:function(event, direction, distance, duration, fingerCount){
-            $(this).text("You swiped " + direction + " for " + distance + "px" );
-        },
-        threshold:100
-    });
-    // console.log("touchswipe.js loaded");
-}
+
+
+
+    /**
+	 * private functions
+	 *
+	 */
+    var thisObject = this;
+
+
+
+
+
+	/**
+	 * public functions
+	 *
+	 */
+    var init = {};
+
+    init.left = function(){
+        $("#main h1").swipe({
+	        swipe:function(event, direction, distance, duration, fingerCount){
+	            $(this).text("You swiped " + direction + " for " + distance + "px" );
+	            offcanvas.open();
+
+	        },
+	        threshold:100
+	    });
+
+
+	    //console.log("touchswipe.test done");
+
+    };
+
+    return init;
+});
