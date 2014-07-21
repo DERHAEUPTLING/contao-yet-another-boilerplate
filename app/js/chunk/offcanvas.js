@@ -45,9 +45,8 @@ define(function(require) {
      */
     content.on('click', function() {
         if ($('.offcanvas-page.open').length > 0) {
-            self.close()
-        };
-
+            self.close();
+        }
     });
 
 
@@ -64,7 +63,7 @@ define(function(require) {
 
 
     // onLoad
-    $(items).addClass('close');
+    $(items).addClass('offcanvas-is-ready');
 
     return self;
 });

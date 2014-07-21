@@ -119,9 +119,7 @@
 	if (Modernizr.touch) {
 		//console.log("has touch");
 		__webpack_require__.e/*nsure*/(1, function(require) {
-
-		    var touchswipe = __webpack_require__(6);
-
+	        var touchswipe = __webpack_require__(6);
 		});
 	}
 
@@ -215,9 +213,8 @@
 	     */
 	    content.on('click', function() {
 	        if ($('.offcanvas-page.open').length > 0) {
-	            self.close()
-	        };
-
+	            self.close();
+	        }
 	    });
 
 
@@ -234,7 +231,7 @@
 
 
 	    // onLoad
-	    $(items).addClass('close');
+	    $(items).addClass('offcanvas-is-ready');
 
 	    return self;
 	}.call(exports, __webpack_require__, exports, module)), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
