@@ -28,11 +28,21 @@ define(function(require) {
 	 * public functions
 	 *
 	 */
-    var init = {};
+    var self = {};
 
-    init.test = function(selector){
+    self.test = function(selector){
         $(selector).text('hello world');
     };
 
-    return init;
+
+    /**
+	 * do stuff
+	 *
+	 */
+	console.log("do stuff");
+
+
+
+
+    return self;
 });

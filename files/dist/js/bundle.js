@@ -104,19 +104,11 @@
 	__webpack_require__(2);
 	__webpack_require__(3);
 
+
+
 	var offcanvas = __webpack_require__(4);
-	new offcanvas();
-	//offcanvas_obj.open();
+	var scrollTimer = __webpack_require__(5);
 
-
-	/**
-	 * EXAMPLE: AMD Pattern + commonjs dependencys
-	 * load external
-	 */
-	__webpack_require__.e/*nsure*/(1, function(require) {
-	    var amd = __webpack_require__(5);
-	    amd.test('body');
-	});
 
 
 
@@ -131,9 +123,10 @@
 	 */
 	if (Modernizr.touch) {
 		//console.log("has touch");
-		__webpack_require__.e/*nsure*/(2, function(require) {
-		    var swipe = __webpack_require__(6);
-		    new swipe();
+		__webpack_require__.e/*nsure*/(1, function(require) {
+		    var touchswipe = __webpack_require__(6);
+		    //new swipe();
+		    touchswipe.left();
 		});
 	}
 
@@ -181,11 +174,22 @@
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = function offcanvas() {
+	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = (function(require) {
+	    /**
+	     * static inclues
+	     *
+	     */
+	    var $ = __webpack_require__(1);
 
 
 
-	    // functions local
+
+	    /**
+	     * private functions
+	     *
+	     */
+	    var thisObject = this;
+
 	    var items   = $('.offcanvas-page, #offcanvas-sidebar');
 	    var content = $('.offcanvas-page');
 	    var button  = $('.offcanvas-toggle');
@@ -193,100 +197,121 @@
 
 
 
+	    /**
+	     * public functions
+	     *
+	     */
+	    var self = {};
 
-
-	    // funcions exports
-	    this.open =function() {
-	        console.log("offcanvas func called");
+	    self.open =  function() {
 	        $(items).removeClass('close').addClass('open');
-	        $(content).one('click', closeEventHandler);
+	        $('.menu-burger').removeClass('open').addClass('close');
+
 	    };
-	    this.close = function() {
+	    self.close = function() {
 	        $(items).removeClass('open').addClass('close');
-	    };
-	    this.closeEventHandler = function() {
-	        $(close);
+	        $('.menu-burger').removeClass('close').addClass('open');
 	    };
 
 
 
-
-	    // button.click(function(event){
-	    //     event.stopPropagation();
-	    //     if (content.hasClass('open')) {
-	    //         console.log("button clicked");
-	    //         //$(close);
-	    //         //close();
-	    //     } else {
-	    //         console.log("button clicked no open");
-	    //         open();
-	    //     }
-	    // });
+	    /**
+	     * do stuff
+	     *
+	     */
+	    content.on('click', function() {
+	        self.close()
+	    });
 
 
-	    var init = function () {
+	    button.on('click',  function(event) {
+	        event.preventDefault();
+	        event.stopPropagation();
+	        /* Act on the event */
+	        if (content.hasClass('open')) {
+	            self.close();
+	        } else {
+	            self.open();
+	        }
 
-	        //console.log("offcanvas func called");
 
-	        var items   = $('.offcanvas-page, #offcanvas-sidebar');
-	        var content = $('.offcanvas-page');
-	        var button  = $('.offcanvas-toggle');
-
-
-	        var open = function() {
-	                                $(items).removeClass('close').addClass('open');
-	                                $(content).one('click', closeEventHandler);
-	                            };
-	        var close = function() {
-	                                $(items).removeClass('open').addClass('close');
-	                            };
-	        var closeEventHandler = function() {
-	            $(close);
-	        };
-
-	        button.click(function(event){
-	            event.stopPropagation();
-	            if (content.hasClass('open')) {$(close);}
-	            else {$(open);}
-	        });
+	    });
 
 
 
-	        // Scroll timer
-	        var scrollTimeout;  // global for any pending scrollTimeout
-	        var nodeCache = $('.offcanvas-navbar');
+	    return self;
+	}.call(exports, __webpack_require__, exports, module)), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
-	        $(window).scroll(function () {
-	                if (scrollTimeout) {
-	                        // clear the timeout, if one is pending
-	                        clearTimeout(scrollTimeout);
-	                        scrollTimeout = null;
-	                }
-	                scrollTimeout = setTimeout(scrollHandler, 100);
-	        });
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
 
-	        scrollHandler = function () {
-	                // Check your page position and then
-	                if ($(window).scrollTop() > 20) {
-	                    $(nodeCache).addClass('scrolledDown');
-	                } else {
-	                    $(nodeCache).removeClass('scrolledDown');
-	                }
-	        };
-	        scrollHandler();
+	var __WEBPACK_AMD_DEFINE_RESULT__;/**
+	 * AMD Module + commonjs dependency management
+	 *
+	 */
+
+	!(__WEBPACK_AMD_DEFINE_RESULT__ = (function(require) {
+		/**
+		 * static inclues
+		 *
+		 */
+	    var $ = __webpack_require__(1);
 
 
+
+
+	    /**
+		 * private functions
+		 *
+		 */
+	    var thisObject = this;
+
+	    var scrollTimeout;
+	    var nodeCache = $('.offcanvas-navbar');
+	    var scrollHandler = function () {
+	        // Check your page position and then
+	        if ($(window).scrollTop() > 20) {
+	            $(nodeCache).addClass('scrolledDown');
+	        } else {
+	            $(nodeCache).removeClass('scrolledDown');
+	        }
 	    };
 
 
-	    return init();
 
-	};
+		/**
+		 * public functions
+		 *
+		 */
+	    var self = {};
+	    self.eventThrottler = function () {
+	    	// body...
+	    	$(window).scroll(function () {
+		        if (scrollTimeout) {
+		                // clear the timeout, if one is pending
+		                clearTimeout(scrollTimeout);
+		                scrollTimeout = null;
+		        }
+		        scrollTimeout = setTimeout(scrollHandler(), 10);
+		    });
+	    }
+
+
+
+	    /**
+		 * do stuff
+		 *
+		 */
+		self.eventThrottler();
+
+	    return self;
+	}.call(exports, __webpack_require__, exports, module)), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+
 
 
 
 /***/ },
-/* 5 */,
 /* 6 */,
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
