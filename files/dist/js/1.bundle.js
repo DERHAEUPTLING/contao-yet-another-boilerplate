@@ -15,8 +15,9 @@ webpackJsonp([1],{
 		 *
 		 */
 	    var $ = __webpack_require__(1);
-	    __webpack_require__(8);
+	    var offcanvas = __webpack_require__(4);
 
+	    __webpack_require__(8);
 
 
 
@@ -36,22 +37,22 @@ webpackJsonp([1],{
 		 */
 	    var init = {};
 
-	    init.left = function(){
-	        $("#main h1").swipe({
-		        swipe:function(event, direction, distance, duration, fingerCount){
-		            $(this).text("You swiped " + direction + " for " + distance + "px" );
+	    init.swipe = function(){
+	        $("html").swipe({
+		        swipeLeft:function(event, direction, distance, duration, fingerCount){
 		            offcanvas.open();
-
 		        },
-		        threshold:100
+		        swipeRight:function(event, direction, distance, duration, fingerCount){
+		            offcanvas.close();
+		        },
+		        threshold:100,
+		        excludedElements:$.fn.swipe.defaults.excludedElements+", .close .content-slider"
 		    });
-
-
-		    //console.log("touchswipe.test done");
-
 	    };
 
-	    return init;
+
+	    // init.swipe();
+	    return init.swipe();
 	}.call(exports, __webpack_require__, exports, module)), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
 

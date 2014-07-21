@@ -1,4 +1,4 @@
-define('offcanvas',function(require) {
+define(function(require) {
     /**
      * static inclues
      *
@@ -44,7 +44,10 @@ define('offcanvas',function(require) {
      *
      */
     content.on('click', function() {
-        self.close()
+        if ($('.offcanvas-page.open').length > 0) {
+            self.close()
+        };
+
     });
 
 
@@ -57,11 +60,11 @@ define('offcanvas',function(require) {
         } else {
             self.open();
         }
-
-
     });
 
 
+    // onLoad
+    $(items).addClass('close');
 
     return self;
 });
