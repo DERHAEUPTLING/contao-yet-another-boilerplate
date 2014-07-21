@@ -39,15 +39,15 @@ webpackJsonp([1],{
 
 	    init.swipe = function(){
 	        $("html").swipe({
-		        swipeLeft:function(event, direction, distance, duration, fingerCount){
-		            offcanvas.open();
-		        },
-		        swipeRight:function(event, direction, distance, duration, fingerCount){
-		            offcanvas.close();
-		        },
-		        threshold:100,
-		        excludedElements:$.fn.swipe.defaults.excludedElements+", .close .content-slider"
-		    });
+	            swipeLeft:function(event, direction, distance, duration, fingerCount){
+	                offcanvas.open();
+	            },
+	            swipeRight:function(event, direction, distance, duration, fingerCount){
+	                offcanvas.close();
+	            },
+	            threshold:100,
+	            excludedElements:$.fn.swipe.defaults.excludedElements+", .offcanvas-is-ready:not(.open) .content-slider"
+	        });
 	    };
 
 

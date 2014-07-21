@@ -24,9 +24,7 @@ var scrollTimer = require('./chunk/scrollTimer.js');
 if (Modernizr.touch) {
 	//console.log("has touch");
 	require.ensure([], function(require) {
-
-	    var touchswipe = require('./chunk/touchswipe.js');
-
+        var touchswipe = require('./chunk/touchswipe.js');
 	});
 }
 
