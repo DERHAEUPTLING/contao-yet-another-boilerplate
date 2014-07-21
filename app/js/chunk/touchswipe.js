@@ -10,8 +10,9 @@ define(function(require) {
 	 *
 	 */
     var $ = require('jquery');
-    require("../lib/jquery.touchSwipe.min.js");
+    var offcanvas = require('../chunk/offcanvas.js');
 
+    require("../lib/jquery.touchSwipe.min.js");
 
 
 
@@ -31,20 +32,20 @@ define(function(require) {
 	 */
     var init = {};
 
-    init.left = function(){
-        $("#main h1").swipe({
-	        swipe:function(event, direction, distance, duration, fingerCount){
-	            $(this).text("You swiped " + direction + " for " + distance + "px" );
+    init.swipe = function(){
+        $("html").swipe({
+	        swipeLeft:function(event, direction, distance, duration, fingerCount){
 	            offcanvas.open();
-
 	        },
-	        threshold:100
+	        swipeRight:function(event, direction, distance, duration, fingerCount){
+	            offcanvas.close();
+	        },
+	        threshold:100,
+	        excludedElements:$.fn.swipe.defaults.excludedElements+", .close .content-slider"
 	    });
-
-
-	    //console.log("touchswipe.test done");
-
     };
 
-    return init;
+
+    // init.swipe();
+    return init.swipe();
 });

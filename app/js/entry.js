@@ -6,18 +6,13 @@
  */
 var jQuery = require("jquery");
 
-require("./chunk/basic.js");
-require("./chunk/autogrow.js");
+var basic = require("./chunk/basic.js");
+var autogrow = require("./chunk/autogrow.js");
 
 
 
 var offcanvas = require('./chunk/offcanvas.js');
 var scrollTimer = require('./chunk/scrollTimer.js');
-
-
-
-
-
 
 
 
@@ -29,9 +24,9 @@ var scrollTimer = require('./chunk/scrollTimer.js');
 if (Modernizr.touch) {
 	//console.log("has touch");
 	require.ensure([], function(require) {
+
 	    var touchswipe = require('./chunk/touchswipe.js');
-	    //new swipe();
-	    touchswipe.left();
+
 	});
 }
 
