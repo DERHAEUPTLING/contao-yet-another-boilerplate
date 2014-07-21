@@ -106,6 +106,23 @@
 
 	var offcanvas = __webpack_require__(4);
 	new offcanvas();
+	//offcanvas_obj.open();
+
+
+	/**
+	 * EXAMPLE: AMD Pattern + commonjs dependencys
+	 * load external
+	 */
+	__webpack_require__.e/*nsure*/(1, function(require) {
+	    var amd = __webpack_require__(5);
+	    amd.test('body');
+	});
+
+
+
+
+
+
 
 
 	/**
@@ -113,14 +130,11 @@
 	 *
 	 */
 	if (Modernizr.touch) {
-
 		//console.log("has touch");
-
-		__webpack_require__.e/*nsure*/(1, function(require) {
-		    var swipe = __webpack_require__(5);
+		__webpack_require__.e/*nsure*/(2, function(require) {
+		    var swipe = __webpack_require__(6);
 		    new swipe();
 		});
-
 	}
 
 
@@ -159,7 +173,7 @@
 
 	
 
-	__webpack_require__(6);
+	__webpack_require__(7);
 	$('textarea').autogrow();
 
 
@@ -169,7 +183,50 @@
 
 	module.exports = function offcanvas() {
 
+
+
+	    // functions local
+	    var items   = $('.offcanvas-page, #offcanvas-sidebar');
+	    var content = $('.offcanvas-page');
+	    var button  = $('.offcanvas-toggle');
+
+
+
+
+
+
+	    // funcions exports
+	    this.open =function() {
+	        console.log("offcanvas func called");
+	        $(items).removeClass('close').addClass('open');
+	        $(content).one('click', closeEventHandler);
+	    };
+	    this.close = function() {
+	        $(items).removeClass('open').addClass('close');
+	    };
+	    this.closeEventHandler = function() {
+	        $(close);
+	    };
+
+
+
+
+	    // button.click(function(event){
+	    //     event.stopPropagation();
+	    //     if (content.hasClass('open')) {
+	    //         console.log("button clicked");
+	    //         //$(close);
+	    //         //close();
+	    //     } else {
+	    //         console.log("button clicked no open");
+	    //         open();
+	    //     }
+	    // });
+
+
 	    var init = function () {
+
+	        //console.log("offcanvas func called");
 
 	        var items   = $('.offcanvas-page, #offcanvas-sidebar');
 	        var content = $('.offcanvas-page');
@@ -221,7 +278,8 @@
 
 	    };
 
-	    init();
+
+	    return init();
 
 	};
 
@@ -229,7 +287,8 @@
 
 /***/ },
 /* 5 */,
-/* 6 */
+/* 6 */,
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*!

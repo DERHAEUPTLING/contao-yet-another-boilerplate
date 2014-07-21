@@ -1,5 +1,7 @@
 module.exports = function foobar() {
 
+
+
     // extend object
 	this.foo = function(){
         console.log('Hello foo');
@@ -9,8 +11,12 @@ module.exports = function foobar() {
         console.log('Hello bar');
 	}
 
+
+
 	// execute on load
 	var byLoad = console.log("byLoad");
+
+
 
 	// execute on call
 	var byCall = function () {
