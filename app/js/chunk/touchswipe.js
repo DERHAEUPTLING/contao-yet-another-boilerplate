@@ -38,10 +38,12 @@ define(function(require) {
                 offcanvas.open();
             },
             swipeRight:function(event, direction, distance, duration, fingerCount){
-                offcanvas.close();
+                if ( $('.offcanvas-page.open').length > 0 ) {
+                    offcanvas.close();
+                }
             },
             threshold:100,
-            excludedElements:$.fn.swipe.defaults.excludedElements+", .offcanvas-is-ready:not(.open) .content-slider"
+            excludedElements:$.fn.swipe.defaults.excludedElements+", .offcanvas-page:not(.open) .content-slider"
         });
     };
 
