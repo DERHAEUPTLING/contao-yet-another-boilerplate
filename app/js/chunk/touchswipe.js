@@ -41,7 +41,7 @@ define(function(require) {
                 offcanvas.close();
             },
             threshold:100,
-            excludedElements:$.fn.swipe.defaults.excludedElements+", .offcanvas-is-ready:not(.open) .content-slider"
+            excludedElements:$.fn.swipe.defaults.excludedElements+", .offcanvas-page:not(.open) .content-slider"
         });
     };
 

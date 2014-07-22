@@ -62,8 +62,6 @@ define(function(require) {
     });
 
 
-    // onLoad
-    $(items).addClass('offcanvas-is-ready');
 
     return self;
 });
