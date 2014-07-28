@@ -8,7 +8,7 @@ define(function(require) {
 	 * static inclues
 	 *
 	 */
-    var $ = require('jquery');
+    var $ = require('jQuery');
 
 
 
