@@ -1,4 +1,6 @@
-//require("./lib/modernizr-custom.js");
+
+
+// require("./lib/modernizr-custom.js");
 
 /**
  * static includes
@@ -13,8 +15,6 @@ var autogrow = require("./chunk/autogrow.js");
 
 var offcanvas = require('./chunk/offcanvas.js');
 var scrollTimer = require('./chunk/scrollTimer.js');
-
-
 
 
 /**
