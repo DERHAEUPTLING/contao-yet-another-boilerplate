@@ -32,19 +32,22 @@ textarea {
     background-color: $color_bg_content;
 }
 
-* {
-    box-sizing: border-box
-}
-*:before,
-*:after {
-    box-sizing: border-box;
-}
+
+
+
 
 
 /*
  *   layout
  */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 
+// font-size
 html {
     font-size: $font_size;
     line-height: $line_height;

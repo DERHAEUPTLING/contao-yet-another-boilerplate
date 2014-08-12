@@ -6,6 +6,7 @@
  * static includes
  *
  */
+
 var jQuery = require("jquery");
 
 var basic = require("./chunk/basic.js");
