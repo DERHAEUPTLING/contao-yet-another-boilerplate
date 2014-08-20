@@ -5,6 +5,13 @@
     line-height: 1em;
     margin-bottom: .5em;
 
+
+    // preserve lalyout while page load
+    a,
+    img {
+        display: block;
+    }
+
     img {
         max-width: 100%;
     }
