@@ -61,6 +61,8 @@ define(function(require) {
         }
     });
 
+    /* add Active to mene-burger, when ready */
+    $('.menu-burger').addClass('active')
 
 
     return self;
