@@ -2,18 +2,19 @@
   "name": "bower-installer",
   "version": "0.1",
   "dependencies": {
-    "scut": "latest",
-    "modernizr": "latest"
+    "scut"          : "latest",
+    "modernizr"     : "latest",
+    "imagesloaded"  : "latest"
   },
 
   "install": {
     "path" : {
-      "scss": "../app/sass/generic/bower",
-      "js": "../files/dist/js/bower"
+      "scss"  : "../app/sass/generic/bower",
+      "js"    : "../app/js/bower"
     },
     "sources": {
-      "scut": "bower_components/scut/dist/_scut.scss",
-      "modernizr": "bower_components/modernizr/modernizr.js"
+      "scut"        : "bower_components/scut/dist/_scut.scss",
+      "imagesloaded": "bower_components/imagesloaded/imagesloaded.pkgd.min.js"
     }
   }
 }
