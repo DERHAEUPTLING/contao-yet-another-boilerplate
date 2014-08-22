@@ -30,41 +30,27 @@ define(function(require) {
 	 */
     var self = {};
 
-    self.test = function(selector){
-        $(selector).text('hello world');
+    // triggered after each item is loaded
+    self.onProgress = function( imgLoad, image ){
+        // change class if the image is loaded or broken
+		var $item = $( image.img ).parent();
+		$item.addClass('is-loaded');
+		if ( !image.isLoaded ) {
+			$item.addClass('is-broken');
+		}
     };
 
-
-
-
-
-
-
-	// triggered after each item is loaded
-	function onProgress( imgLoad, image ) {
-	  // change class if the image is loaded or broken
-	  var $item = $( image.img ).parent();
-	  $item.addClass('is-loaded');
-	  if ( !image.isLoaded ) {
-	    $item.addClass('is-broken');
-	  }
-	}
 
 
     /**
 	 * do stuff
 	 *
 	 */
-	console.log("do stuff");
-
 	$('#container').imagesLoaded()
 		// .always( function( instance ) {
 		// 	console.log('all images loaded');
 		// })
-		.progress( onProgress );
-
-
-
+		.progress( self.onProgress );
 
     //return self;
 });
