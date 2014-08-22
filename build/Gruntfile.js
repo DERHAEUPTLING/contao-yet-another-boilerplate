@@ -264,7 +264,7 @@ grunt.initConfig({
               authKey: 'host'
             },
           src: '../templates',
-          dest: '../templates',
+          dest: 'templates',
           exclusions: ['**/.DS_Store', '**/Thumbs.db'],
           simple: true,
           useList: false
@@ -276,7 +276,7 @@ grunt.initConfig({
               authKey: 'host'
             },
           src: '../app',
-          dest: '../app',
+          dest: 'app',
           exclusions: ['**/.DS_Store', '**/Thumbs.db', 'dist/tmp', 'styles.css', 'styles.css.map', '.grunt'],
           simple: true,
           useList: false
@@ -288,7 +288,7 @@ grunt.initConfig({
               authKey: 'host'
             },
           src: '../build',
-          dest: '../build',
+          dest: 'build',
           exclusions: ['**/.DS_Store', '**/Thumbs.db', 'dist/tmp', 'styles.css', 'styles.css.map',
             '.sass-cache', 'bower_components', 'node_modules'],
           simple: true,
