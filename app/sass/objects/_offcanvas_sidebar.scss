@@ -6,59 +6,35 @@
     html {
         background-color: white;
     }
+
+
     #offcanvas-sidebar {
         background-color: $color_bg_html;
-    }
-    #offcanvas-sidebar .inside {
-        padding: 161px 6px 30px 40px;
-        color: $color_font;
-        overflow: hidden;
 
-        .filterByTag,
-        .filterByLocation {
-            * {
-                text-shadow: none;
-            }
+        .inside {
+            padding: 161px 6px 30px 40px;
+            color: $color_font;
+            overflow: hidden;
         }
+        .logo {
+            display: block;
+            position: absolute;
+            top: 25px;
+            left: 40px;
+
+            width: 8em;
+            padding: 0 2em 2em 0;
+
+        }
+
 
 
         h1, h2, h3, h4, h5,
         a {
             color: $color_font;
         }
-        hr.first {
-            position: absolute;
-            top: 23px;
-            right: 6px;
-            width: 214px;
-        }
-        h1.offcanvas-h1-fgkh {
-            position: absolute;
-            top: 92px;
-            right: 30px;
-            margin: 0;
-            font-size: 4em;
-            a {
-                color: white;
-                text-shadow: none;
-            }
-        }
 
 
-        /* .mod_navigation */
-        .mod_navigation {
-
-            .page-schauspiel,
-            .page-business,
-            .page-krimi {
-                > span.inner {
-                    font-weight: bold;
-                }
-            }
-            .page-business {
-                margin-bottom: 12px;
-            }
-        }
     }
 
 

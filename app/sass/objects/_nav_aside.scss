@@ -3,28 +3,22 @@
  *	=========================================================================
  */
 
-/*
+// $color_nav
+// $color_nav--hover
+// $color_nav--active
+
+/**
  * default
  */
-#nav_aside {
+.nav_aside {
 	a, span.active {
 		display: block;
 		padding: 5px;
-		border-bottom: 1px solid $color_border;
-
-		transition-property: background-color;
-	    transition-duration: .15s;
-	    transition-timing-function: ease-out;
-	    &:hover {
-	    	background-color: #eee;
-	    }
 	}
 
 	ul.level_2 {
 		display: none;
-
-		a {
-			border-bottom: 0;
+		a, span {
 			padding-left: 20px;
 		}
 	}
@@ -36,15 +30,39 @@
 		}
 	}
 
+}
 
+/**
+ * left
+ */
+#left .nav_aside {
+	a, span.active {
+		border-bottom: 1px solid $color_border;
 
+		transition-property: background-color;
+	    transition-duration: .15s;
+	    transition-timing-function: ease-out;
+		&:hover {
+	    	background-color: #eee;
+	    }
+	}
+	ul.level_2 {
+		a {
+			border-bottom: 0;
+		}
+	}
 }
 /*
- * custom
+ * offcanvas
  */
+#offcanvas-sidebar .nav_aside {
+	a {
+		color: $color_font;
+	}
+	.active {
+		color: $color_link;
+	}
+}
 
-// $color_nav
-// $color_nav--hover
-// $color_nav--active
 
 
