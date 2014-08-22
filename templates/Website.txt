@@ -4,7 +4,7 @@
 # Contao-Website   : Website
 # Contao-Database  : contao-baseinstall
 # Saved by User    : derhaeuptling (Martin Schwenzer)
-# Time stamp       : 2014-06-30 at 16:29:53
+# Time stamp       : 2014-08-22 at 13:25:19
 #
 # Contao Extension : BackupDB, Version 3.2.0
 # Copyright        : Softleister (www.softleister.de)
@@ -14,13 +14,13 @@
 # Visit Contao project page http://www.contao.org for more information
 #
 #-----------------------------------------------------
-# Contao Version 3.2.12
+# Contao Version 3.2.13
 # Folgende Module müssen installiert sein:
 #-----------------------------------------------------
-#   - m17-sticky-backend-footer   : Version 2.0.4 stable, Build 8
-#   - merger2                     : Version 3.0.6 stable, Build 4
+#   - m17-sticky-backend-footer   : Version 2.0.4 stable, Build 9
+#   - merger2                     : Version 3.0.7 stable, Build 2
 #   - mobilecontent               : Version 1.0.1 stable, Build 5
-#   - MultiColumnWizard           : Version 3.2.1 stable, Build 4
+#   - MultiColumnWizard           : Version 3.2.3 rc1, Build 6
 #   - contao-boilerplate
 #
 #================================================================================
