@@ -1,0 +1,16 @@
+.video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-bottom: 75%; /* 4:3 */
+    margin-bottom: 50px;
+    height: 0;
+    overflow: hidden;
+}
+.video iframe {
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
