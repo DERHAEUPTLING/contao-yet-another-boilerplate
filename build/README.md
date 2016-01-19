@@ -1,17 +1,15 @@
 # USAGE
 ## Install required Tools on OS
-- install [npm](https://github.com/npm/npm) <br>
-    `curl -L https://npmjs.org/install.sh | sh`
+- install [node](http://nodejs.org/)
+- install [gulp](https://github.com/gulpjs/gulp) <br>
+    `npm install gulp -g`
 - install [bower](https://github.com/bower/bower) <br> 
     `npm install -g bower`
 - install [bower-installer](https://github.com/blittle/bower-installer) <br>
     `npm install -g bower-installer`
-- install [webpack](http://webpack.github.io/docs/tutorials/getting-started/) <br>
-    `npm install webpack -g`
 
 
-
-## Install build dependencies 
+## Install build dependencies
 - install node modules <br>
     `npm install`
 - install app dependencies <br>
@@ -19,34 +17,30 @@
 
 ## start task runner GRUNT
 - watch and deploy while developement <br>
-    `grunt` 
+    `grunt`
 - deploy all changed source files to server <br>
     `grunt:prod`
 
-
 # INFOS
-## BUILD TOOLS
-Grunt:
---http://zerosixthree.se/getting-started-with-grunt/
-bower-installer: 	https://github.com/blittle/bower-installer
-
-## Grunt-Plugins
-
-watch: 		https://github.com/gruntjs/grunt-contrib-watch
-sass:			https://github.com/gruntjs/grunt-contrib-sass
-Autoprefixer: 	https://github.com/nDmitry/grunt-autoprefixer
-
-modernizr: https://github.com/Modernizr/grunt-modernizr
-requirejs: 	https://github.com/gruntjs/grunt-contrib-requirejs
-
-### LIBS
-
-reuqirejs manual build
-r.js -o build.single.js
+# Taskrunner / Gulp
+- [Gulp](http://markgoodyear.com/2014/01/getting-started-with-gulp/)
+- http://markgoodyear.com/2014/01/getting-started-with-gulp/
+- https://github.com/hughsk/vinyl-source-stream
+/*# sourceMappingURL=main.min.css.map */
 
 
-scut
-http://davidtheclark.github.io/scut/
+### App / Plugin
+- [scut](http://davidtheclark.github.io/scut/)
 
 
 
+
+"gulp": "^3.6.2",
+"gulp-autoprefixer": "0.0.7",
+"gulp-cache": "^0.1.11",
+"gulp-ftp": "^0.3.0",
+"gulp-livereload": "^1.5.0",
+"gulp-notify": "^1.3.1",
+"gulp-rename": "^1.2.0",
+"gulp-ruby-sass": "^0.5.0",
+"gulp-sftp": "0.0.15"
