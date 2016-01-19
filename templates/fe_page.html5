@@ -78,7 +78,7 @@
     <?php echo $this->viewport; ?>
     <?php echo $this->framework; ?>
     <?php echo $this->stylesheets; ?>
-    <link rel="stylesheet" href="files/dist/css/styles.prefixed.css">
+    <link rel="stylesheet" href="files/dist/css/styles.css">
 
     <?php //echo $this->mooScripts; ?>
     <?php echo $this->head; ?>
