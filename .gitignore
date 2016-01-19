@@ -11,11 +11,20 @@ npm-debug.log
 .ftppass
 
 # files
-#files/public/css/*
+files/public/css/*
 
+
+
+# Runtime data
 bower/
-
 .grunt/
+pids
+*.pid
+*.seed
+.vscode 
+.grunt
+.sass-cache
+secrets.json
 
 # templates
 templates/.htaccess
