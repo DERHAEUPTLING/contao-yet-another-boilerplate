@@ -21,14 +21,31 @@ var secrets       = require( './secrets.json' );
 var app         = '../app/';
 var dist        = '../files/dist/';
     
-var styles_src  = '../app/sass/**/*.scss';
+var styles_src  = ['../app/sass/**/*.scss','../files/tinymce_custom.css'];
 var styles_dist = '../files/dist/css/';
-var js_context  = '../app/js';
-var js_entry    = '../app/js/entry.js';
-var js_dist     = '../files/dist/js';
 
-var proxy       = 'cb.derhaeuptling.com'; // browserSync
+var js_context  = '../app/js/';
+var js_src      = '../app/js/**/*.js';
+var js_entry    = './entry.js';
+var js_dist     = '../files/dist/js/';
+
+
+var proxy       = 'cb.derhaeuptling.com'; // for browserSync only
     
+
+
+/*
+ * generic tasks
+ */
+gulp.task('default', function() {
+  gulp.start('watch'); // watch or serve
+});
+gulp.task('make', function() {
+  gulp.start('sass', 'webpack');
+});
+
+
+
 
 
 
@@ -42,8 +59,10 @@ gulp.task('sass', function () {
         .on('error', sass.logError))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest( styles_dist ))
-
 });
+
+
+
 
 
 
@@ -60,7 +79,7 @@ gulp.task('webpack', function() {
             path: js_dist,
             publicPath: js_dist,
 
-            filename: "test.js",
+            filename: "[name].js",
 
         },
         externals: {
@@ -91,15 +110,7 @@ gulp.task('webpack', function() {
 
 
 
-/*
- * generic tasks
- */
-gulp.task('default', function() {
-  gulp.start('watch'); // watch or serve
-});
-gulp.task('make', function() {
-  gulp.start('sass', 'webpack');
-});
+
 
 
 
@@ -110,7 +121,7 @@ gulp.task('make', function() {
 
 
 /** FTP cretentials **/
-var localFilesGlob = ['../files/dist/**/*', '../templates/**/*'];  
+var localFilesGlob = ['../files/**/*', '../templates/**/*'];  
 var remoteFolder = secrets.servers.production.remotepath;
 
 // helper function to build an FTP connection based on our configuration
@@ -124,7 +135,6 @@ function getFtpConnection() {
         log     : gutil.log
     });
 }
-
 
 
 /**
@@ -145,29 +155,6 @@ gulp.task('ftp-deploy', function() {
     ;
 });
 
-/**
- * Watch deploy task.
- * Watches the local copy for changes and copies the new files to the server whenever an update is detected
- *
- * Usage: `FTP_USER=someuser FTP_PWD=somepwd gulp ftp-deploy-watch`
- */
-gulp.task('ftp-deploy-watch', function() {
-
-    var conn = getFtpConnection();
-
-    gulp.watch(localFilesGlob)
-    .on('change', function(event) {
-      console.log('Changes detected! Uploading file "' + event.path + '", ' + event.type);
-
-      return gulp.src( [event.path], { base: '.', buffer: false } )
-        .pipe( conn.newer( remoteFolder ) ) // only upload newer files 
-        .pipe( conn.dest( remoteFolder ) )
-      ;
-    });
-});
-
-
-
 
 
 
@@ -178,6 +165,7 @@ gulp.task('ftp-deploy-watch', function() {
 gulp.task('watch', function() {
     livereload.listen();
     gulp.watch( styles_src, ['sass']);
+    gulp.watch( js_src, ['webpack']);
 
 
     var conn = getFtpConnection();
@@ -216,4 +204,11 @@ gulp.task('serve', ['sass'], function() {
     // gulp.watch(app + 'js/**/*', ['webpack']);
 
 });
+
+
+
+
+
+
+
 
