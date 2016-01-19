@@ -25,6 +25,7 @@ var styles_src  = '../app/sass/**/*.scss';
 var styles_dist = '../files/dist/css/';
 var js_context  = '../app/js';
 var js_entry    = '../app/js/entry.js';
+var js_dist     = '../files/dist/js';
 
 var proxy       = 'cb.derhaeuptling.com'; // browserSync
     
@@ -51,15 +52,15 @@ gulp.task('sass', function () {
  */
 gulp.task('webpack', function() {
     return webpack({
-        context: __dirname + "/app/js",
+        context: js_context,
         entry: {
-            main: "./entry.js"
+            main: js_entry
         },
         output: {
-            path: "./dist/js/",
-            publicPath: "/js/",
+            path: js_dist,
+            publicPath: js_dist,
 
-            filename: "[name].js",
+            filename: "test.js",
 
         },
         externals: {
