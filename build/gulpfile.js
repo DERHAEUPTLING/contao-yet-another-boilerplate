@@ -121,7 +121,7 @@ gulp.task('webpack', function() {
 
 
 /** FTP cretentials **/
-var localFilesGlob = ['../files/**/*', '../templates/**/*'];  
+var localFilesGlob = ['../files/**/*', '../templates/**/*', '../system/**/*'];  
 var remoteFolder = secrets.servers.production.remotepath;
 
 // helper function to build an FTP connection based on our configuration
