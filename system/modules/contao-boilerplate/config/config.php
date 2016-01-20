@@ -39,8 +39,8 @@ $GLOBALS['TL_CONFIG']['gdMaxImgWidth']              = PHP_INT_MAX;
 $GLOBALS['TL_CONFIG']['gdMaxImgHeight']             = PHP_INT_MAX;
 $GLOBALS['TL_CONFIG']['jpgQuality']                 = 90;
 
-$GLOBALS['TL_CONFIG']['repository_unsafe_catalog']  = true;
+$GLOBALS['TL_CONFIG']['repository_unsafe_catalog']  = false;
 $GLOBALS['TL_CONFIG']['minifyMarkup']               = true;
 $GLOBALS['TL_CONFIG']['gzipScripts']                = true;
-$GLOBALS['TL_CONFIG']['bypassCache']                = true;
-$GLOBALS['TL_CONFIG']['doNotCollapse']              = true;
+$GLOBALS['TL_CONFIG']['bypassCache']                = false;
+$GLOBALS['TL_CONFIG']['doNotCollapse']              = false;
