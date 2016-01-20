@@ -13,36 +13,6 @@
       <meta name="keywords" content="<?= $this->keywords ?>">
       <meta name="generator" content="Contao Open Source CMS">
     <?php $this->endblock(); ?>
-    
-
-
-    <script>
-      (function(h){h.className = h.className.replace('', 'has-js')})(document.documentElement)
-    </script>
-    <script type="application/ld+json">
-      {
-        "@context" : "http://schema.org",
-        "@type" : "LocalBusiness",
-        "name" : "name",
-        "image" : [ "img.jpg", "img.svgz" ],
-        "telephone" : "+49 941 00000",
-        "email" : "email",
-        "address" : {
-          "@type" : "PostalAddress",
-          "streetAddress" : "streetAddress",
-          "addressLocality" : "addressLocality",
-          "addressRegion" : "Bayern",
-          "addressCountry" : "Deutschland",
-          "postalCode" : "postalCode"
-        },
-        // "openingHours": [
-        //   "Mo-Fr 09:00-17:00",
-        //   "Sa 10:00-13:00"
-        // ],
-        "url" : "url"
-      }
-    </script>
-
 
     <?= $this->viewport ?>
     <?= $this->framework ?>
@@ -56,8 +26,38 @@
     <?php $this->endblock(); ?>
   <?php $this->endblock(); ?>
 
+  <script>
+    var isLoaded = function(argument){
+      document.body.classList.remove('is-loading');
+    }
+    window.onload = isLoaded;
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "LocalBusiness",
+      "name" : "name",
+      "image" : [ "img.jpg", "img.svgz" ],
+      "telephone" : "+49 941 00000",
+      "email" : "email",
+      "address" : {
+        "@type" : "PostalAddress",
+        "streetAddress" : "streetAddress",
+        "addressLocality" : "addressLocality",
+        "addressRegion" : "Bayern",
+        "addressCountry" : "Deutschland",
+        "postalCode" : "postalCode"
+      },
+      // "openingHours": [
+      //   "Mo-Fr 09:00-17:00",
+      //   "Sa 10:00-13:00"
+      // ],
+      "url" : "url"
+    }
+  </script>
+
 </head>
-<body id="top" class="{{ua::class}}<?php if ($this->class) echo ' ' . $this->class; ?>"<?php if ($this->onload): ?> onload="<?= $this->onload ?>"<?php endif; ?>>
+<body id="top" class="{{ua::class}}<?php if ($this->class) echo ' ' . $this->class; ?> is-loading"<?php if ($this->onload): ?> onload="<?= $this->onload ?>"<?php endif; ?>>
 
 
 <div id="offcanvas-container">
