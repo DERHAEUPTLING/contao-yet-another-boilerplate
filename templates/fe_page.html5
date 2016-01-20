@@ -59,6 +59,23 @@
 </head>
 <body id="top" class="{{ua::class}}<?php if ($this->class) echo ' ' . $this->class; ?>"<?php if ($this->onload): ?> onload="<?= $this->onload ?>"<?php endif; ?>>
 
+
+<div id="offcanvas-container">
+    <?php if(!empty($this->sections['offcanvas sidebar'])): ?>
+    <!-- Add "offcanvas-page" class to items that move right when viewing Nav Drawer  -->
+    <header class="offcanvas-page offcanvas-navbar">
+        <?php echo $this->sections['offcanvas navbar']; ?>
+    </header>
+    <nav id="offcanvas-sidebar">
+        <div class="inside">
+            <?php echo $this->sections['offcanvas sidebar']; ?>
+        </div>
+    </nav>
+    <?php endif; ?>
+
+    <div id="offcanvas-content" class="offcanvas-page offcanvas-content">
+
+
   <?php $this->block('body'); ?>
     <?php $this->sections('top'); ?>
 
@@ -84,7 +101,7 @@
               <div class="inside">
                 <?= $this->main ?>
               </div>
-              <?php $this->sections('main'); ?>
+              <?php //$this->sections('main'); ?>
             </div>
           <?php $this->endblock(); ?>
 
@@ -128,7 +145,12 @@
     <?php $this->sections('bottom'); ?>
   <?php $this->endblock(); ?>
 
-  <?= $this->mootools ?>
+  </div> <!-- .offcanvas-content -->
+</div> <!-- #offcanvas-container -->
 
+
+  <?= $this->mootools ?>
+<script src="files/dist/js/lib/modernizr-custom.js"></script>
+<script src="files/dist/js/main.js"></script>
 </body>
 </html>

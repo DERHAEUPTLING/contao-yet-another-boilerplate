@@ -1,6 +1,6 @@
 @import "variables";
-@import "generic/bower/scut";
-// @import "../tinymce_custom.css";
+@import "bower/scut/scut";
+@import "../../files/tinymce_custom";
 
 
 /*                      generic
@@ -58,4 +58,3 @@
 
 @import "objects/plugin_colorbox";
 
-@import "../../files/tinymce_custom";

@@ -15,7 +15,7 @@ var autogrow 	= require("./chunk/autogrow.js");
 
 var offcanvas  	= require('./chunk/offcanvas.js');
 var scrollTimer = require('./chunk/scrollTimer.js');
-var imagesLoaded= require('./chunk/imagesloaded.js');
+
 
 /**
  * load swipe if touch device

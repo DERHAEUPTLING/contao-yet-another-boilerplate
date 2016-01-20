@@ -2,17 +2,14 @@
   "name": "bower-installer",
   "version": "0.1",
   "dependencies": {
-    "requirejs-domready": "latest",
     "scut": "latest"
   },
 
   "install": {
     "path" : {
-      "scss": "../src/sass/generic/bower",
-      "js": "../files/dist/js/bower"
+      "scss": "../app/sass/bower"
     },
     "sources": {
-      "requirejs-domready": "bower_components/requirejs-domready/domReady.js",
       "scut": "bower_components/scut/dist/_scut.scss"
     }
   }
