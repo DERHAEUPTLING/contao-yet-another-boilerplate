@@ -21,12 +21,12 @@ var scrollTimer = require('./chunk/scrollTimer.js');
  * load swipe if touch device
  *
  */
-if (Modernizr.touch) {
-	//console.log("has touch");
-	require.ensure([], function(require) {
-        var touchswipe = require('./chunk/touchswipe.js');
-	}, 'touchswipe');
-}
+// if (Modernizr.touch) {
+// 	//console.log("has touch");
+// 	require.ensure([], function(require) {
+//         var touchswipe = require('./chunk/touchswipe.js');
+// 	}, 'touchswipe');
+// }
 
 
 
