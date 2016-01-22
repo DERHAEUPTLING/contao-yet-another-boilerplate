@@ -74,7 +74,6 @@
     st-effect-11    Scale and rotate pusher
     st-effect-12    Open door
     st-effect-13    Fall down
-
   */
   ?>
 
@@ -93,12 +92,6 @@
   <div class="st-pusher">
     <div class="st-content"><!-- this is the wrapper for the content -->
       <div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
-      <?php if(!empty($this->sections['offcanvas sidebar'])): ?>
-      <!-- Add "offcanvas-page" class to items that move right when viewing Nav Drawer  -->
-      <header class="offcanvas-page offcanvas-navbar">
-          <?php echo $this->sections['offcanvas navbar']; ?>
-      </header>
-      <?php endif; ?>
 
   <?php $this->block('body'); ?>
     <?php // $this->sections('top'); ?>
