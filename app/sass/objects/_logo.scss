@@ -6,17 +6,17 @@
 
 
 .logo {
-	position: absolute;
-	right: 0;
+	// position: absolute;
+	// left: 0;
 	a {
 		display: block;
 	}
 }
- @media (max-width: 767px) {
-    .logo {
-    	display: none;
-    }
-}
+//  @media (max-width: 767px) {
+//     .logo {
+//     	display: none;
+//     }
+// }
 
 // .ie7, .ie8 .logo {
 // 	a {
