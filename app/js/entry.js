@@ -17,6 +17,9 @@ var autogrow 	= require("./chunk/autogrow.js");
 // var scrollTimer = require('./chunk/scrollTimer.js');
 
 require('./chunk/offcanvas.js');
+require('./chunk/sticky-header.js');
+
+
 
 
 /**

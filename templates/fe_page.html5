@@ -48,10 +48,6 @@
         "addressCountry" : "Deutschland",
         "postalCode" : "postalCode"
       },
-      // "openingHours": [
-      //   "Mo-Fr 09:00-17:00",
-      //   "Sa 10:00-13:00"
-      // ],
       "url" : "url"
     }
   </script>
@@ -61,7 +57,7 @@
 
 
 
-<div id="st-container" class="st-container st-effect-11">
+<div class="st-container st-effect-1">
   <?php 
   /*
     offCanvas effects chosen by class on .st-container
@@ -97,9 +93,10 @@
     <?php // $this->sections('top'); ?>
 
     <div id="wrapper">
+
       <?php $this->block('header'); ?>
         <?php if ($this->header): ?>
-          <header id="header">
+          <header id="header" class="header">
             <div class="inside">
               <?= $this->header ?>
             </div>

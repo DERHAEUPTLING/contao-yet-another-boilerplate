@@ -18,13 +18,6 @@ textarea {
     color: $color_font;
 }
 
-// background outer
-#header,
-#wrapper,
-#containerWrapper,
-#footer {
-    background-color: $color_bg_content;
-}
 // background inner
 #header .inside,
 #container,
@@ -52,7 +45,7 @@ html {
     font-size: $font_size;
     line-height: $line_height;
 
-    overflow-y: scroll;
+    // overflow-y: scroll;
 
     @media (max-width: 767px) {
         font-size: $font_size--small;
@@ -64,7 +57,9 @@ html {
         font-size: $font_size--huge;
     }
 }
-
+#container {
+    padding-top: 10rem;
+}
 // width outer
 #wrapper,
 #footer {
@@ -72,7 +67,7 @@ html {
     margin: 0 auto;
     @media (max-width: 767px) {
         width: 100%;
-        overflow: hidden;
+        // overflow: hidden;
     }
 }
 
@@ -100,7 +95,7 @@ html {
         padding-right: $layout_gutter / 2;
     }
 }
-// additional padding bottom
+
 #main .inside {
     padding-bottom: $font_size;
 }
@@ -135,19 +130,3 @@ html {
 }
 
 
-
-
-
-
-/*
- * prevent flickering on repaint
- */
-#header,
-#main,
-#left,
-#right,
-#footer,
-#offcanvas-navbar,
-#offcanvas-sidebar {
-    transform-style: preserve-3d;
-}
