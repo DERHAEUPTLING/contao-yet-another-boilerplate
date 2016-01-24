@@ -3,23 +3,24 @@
  */
 
 
-*,
-*:after,
-*::before {
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
+// *,
+// *:after,
+// *::before {
+// 	-moz-box-sizing: border-box;
+// 	box-sizing: border-box;
+// }
 
-html,
-body,
-.st-container,
-.st-pusher,
-.st-content {
-	height: 100%;
-}
+// html,
+// body,
+// .st-container,
+// .st-pusher,
+// .st-content {
+// 	height: 100%;
+// }
+
 
 .st-content {
-	overflow-y: scroll;
+	// overflow-y: scroll;
 	background: $color_bg_content;
 }
 
@@ -30,14 +31,14 @@ body,
 
 .st-container {
 	position: relative;
-	overflow: hidden;
+	// overflow: hidden;
 }
 
 .st-pusher {
 	position: relative;
 	left: 0;
 	z-index: 99;
-	height: 100%;
+	// height: 100%;
 	-webkit-transition: -webkit-transform 0.5s;
 	transition: transform 0.5s;
 }
@@ -53,6 +54,8 @@ body,
 	opacity: 0;
 	-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
 	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+
+	z-index: 1; // make overlay sticky header too
 }
 
 .st-menu-open .st-pusher::after {
@@ -65,8 +68,10 @@ body,
 
 .st-menu {
 	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
+	bottom: 0;
 	z-index: 100;
 	visibility: hidden;
 	width: 300px;

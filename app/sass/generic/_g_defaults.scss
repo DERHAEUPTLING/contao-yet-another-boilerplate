@@ -13,9 +13,6 @@ body,div,h1,h2,h3,h4,h5,h6,p,blockquote,pre,code,ol,ul,li,dl,dt,dd,figure,table,
     margin:0;
     padding:0;
 }
-h1,h2,h3,h4,h5,h6 {
-    margin-top: $font_size;
-}
 h1,h2,h3,h4,h5,h6,p,pre,blockquote,table,ol,ul,form {
     margin-bottom: $font_size;
 }
@@ -27,7 +24,7 @@ h1,h2,h3,h4,h5,h6,p,pre,blockquote,table,ol,ul,form {
 #main,
 #right {
     > .inside {
-        margin-top: $font_size;
+        padding-top: $font_size;
     }
 }
 
