@@ -6,10 +6,12 @@
 
 
 .logo {
+	float: left;
+	display: inline-block;
 	// position: absolute;
 	// left: 0;
 	a {
-		display: block;
+		
 	}
 }
 //  @media (max-width: 767px) {

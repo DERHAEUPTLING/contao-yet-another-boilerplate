@@ -55,9 +55,13 @@ gulp.task('make', function() {
 gulp.task('sass', function () {
   gulp.src( styles_src )
     .pipe(sourcemaps.init())
-      .pipe(sass({outputStyle: 'compressed'})
+    .pipe(sass({outputStyle: 'compressed'})
         .on('error', sass.logError))
-    .pipe(sourcemaps.write('.'))
+    .pipe(sourcemaps.write('.', {
+      sourceMappingURL: function(file) {
+        return file.relative + '.map?' + Math.floor(Math.random() * (1000000000)); ;
+      }
+    }))
     .pipe(gulp.dest( styles_dist ))
 });
 
