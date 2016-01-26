@@ -1,7 +1,10 @@
-.header
+header.header
 {
 	width: 100%;
-	height: 200px; /* 120 */
+	height: 12rem;
+	@media screen and ( max-width: 767px ) {
+		height: 16rem;
+	}
 	text-align: center;
 	background-color: #fff;
 	position: fixed;
@@ -22,12 +25,12 @@
 	
 	-webkit-transition-property: -webkit-transform, height, padding-top, padding-left;
 	transition-property: transform, height, padding-top, padding-left;
-
+	
 	
 }
 
 
-.header--hidden
+header.header--hidden
 {
 	-webkit-transform: translateY( -100% );
 	-ms-transform: translateY( -100% );
@@ -35,9 +38,9 @@
 }
 
 
-.header--narrow
+header.header--narrow
 {
-	height: 5em; /* 80 */
+	height: 5.5em; /* 80 */
 }
 
 
@@ -53,11 +56,11 @@
 
 @media screen and ( max-width: 30em ) /* 480 */
 {
-	.header span
+	header.header span
 	{
 		display: inline;
 	}
-	.header b
+	header.header b
 	{
 		display: none;
 	}

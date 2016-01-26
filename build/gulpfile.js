@@ -59,7 +59,7 @@ gulp.task('sass', function () {
         .on('error', sass.logError))
     .pipe(sourcemaps.write('.', {
       sourceMappingURL: function(file) {
-        return file.relative + '.map?' + Math.floor(Math.random() * (1000000000)); ;
+        return file.relative + '.map?ver=' + Math.floor(Math.random() * (10000)); ;
       }
     }))
     .pipe(gulp.dest( styles_dist ))

@@ -2,6 +2,16 @@
  *                             gc_layout--responsive
  *    =========================================================================
  */
+
+@media ( max-width: $layout_width+2*$layout_gutter_outer )
+{
+    #container {
+        padding-left: 0 !important;
+    }
+    #left {
+        display: none;
+    }
+}
 @media (max-width:767px)
 {
     #wrapper {

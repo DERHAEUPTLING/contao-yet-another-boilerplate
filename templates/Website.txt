@@ -4,7 +4,7 @@
 # Contao-Website   : Website
 # Contao-Database  : contao-baseinstall
 # Saved by User    : derhaeuptling (Martin Schwenzer)
-# Time stamp       : 2014-08-22 at 16:45:02
+# Time stamp       : 2016-01-26 at 17:05:38
 #
 # Contao Extension : BackupDB, Version 3.2.0
 # Copyright        : Softleister (www.softleister.de)
@@ -14,13 +14,11 @@
 # Visit Contao project page http://www.contao.org for more information
 #
 #-----------------------------------------------------
-# Contao Version 3.2.13
-# Folgende Module müssen installiert sein:
+# Contao Version 3.5.6
+# Folgende Erweiterungen müssen installiert sein:
 #-----------------------------------------------------
-#   - m17-sticky-backend-footer   : Version 2.0.4 stable, Build 9
-#   - merger2                     : Version 3.0.7 stable, Build 2
-#   - mobilecontent               : Version 1.0.1 stable, Build 5
-#   - MultiColumnWizard           : Version 3.2.3 rc1, Build 6
+#   - m17-sticky-backend-footer   : Version 2.0.5 stable, Build 8
+#   - mobilecontent               : Version 1.1.3 stable, Build 3
 #   - contao-boilerplate
 #
 #================================================================================
@@ -33,7 +31,7 @@
     (z.B. ZIP entpacken und FTP-Upload auf den Webspace)
     Noch nicht gleich das InstallTool aufrufen, erst als Punkt 5!
 
- 2. Installation aller oben gelisteten Extentions.
+ 2. Installation aller oben gelisteten Erweiterungen.
 
  3. Speichern Sie dieses Website-Template im Pfad /templates/ ab.
 
