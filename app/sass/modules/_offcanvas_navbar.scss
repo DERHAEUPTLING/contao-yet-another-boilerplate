@@ -6,6 +6,8 @@
     display: block;
     transition: opacity 700ms linear 0ms;
 
+    padding: 10px;
+
     cursor: pointer;
     //font-size: 23px;
     display: block;
@@ -55,7 +57,7 @@
 
     .offcanvas-toggle {
         position: absolute;
-        right: 15px;
+        right: 0;
         top: 0;
         padding-top: 30px;
         cursor: pointer;

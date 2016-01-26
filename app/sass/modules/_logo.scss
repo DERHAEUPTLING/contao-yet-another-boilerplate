@@ -6,13 +6,26 @@
 
 
 .logo {
+
 	float: left;
 	display: inline-block;
 	// position: absolute;
 	// left: 0;
-	a {
-		
+	img {
+		width: 7rem;
+		padding-top: 2rem;
+		padding-bottom: 1.5rem;
+		transition: .3s ease-out;
+		.header--narrow  & {
+			width: 4rem;
+		}
+
 	}
+}
+
+
+.header--narrow {
+	
 }
 //  @media (max-width: 767px) {
 //     .logo {
