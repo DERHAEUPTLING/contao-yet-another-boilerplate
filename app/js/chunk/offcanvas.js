@@ -16,7 +16,7 @@ define(function(require) {
 
     var container   = $('.st-container');
     var overlay     = $('.st-pusher').after();
-    var button      = $('.offcanvas-toggle');
+    var button      = $('.offcanvas-toggle .menu-burger');
 
 
     /**
@@ -25,6 +25,7 @@ define(function(require) {
      */
     overlay.on('click', function() {
         container.removeClass('st-menu-open');
+        button.removeClass('close');
     });
 
 
@@ -32,10 +33,11 @@ define(function(require) {
         event.preventDefault();
         event.stopPropagation();
         container.toggleClass('st-menu-open');
+        button.toggleClass('close');
 
     });
 
     /* add Active to mene-burger, when ready */
-    $('.menu-burger').addClass('active')
-    
+    button.addClass('active')
+
 });
