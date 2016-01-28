@@ -3,6 +3,12 @@
  *
  */
 
+/**
+ * Auto-Hide Sticky Header
+ * http://osvaldas.info/examples/auto-hide-sticky-header/?lazy-plus
+ *
+ */
+
 define(function(require) {
 	/**
 	 * static inclues

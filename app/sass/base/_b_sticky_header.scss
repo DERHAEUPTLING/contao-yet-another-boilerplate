@@ -1,3 +1,8 @@
+/**
+ * Auto-Hide Sticky Header
+ * http://osvaldas.info/examples/auto-hide-sticky-header/?lazy-plus
+ */
+
 header.header
 {
 	width: 100%;
@@ -49,19 +54,3 @@ header.header--narrow
 		height: 100%;
 		overflow: hidden;
 	}
-
-	
-
-
-
-@media screen and ( max-width: 30em ) /* 480 */
-{
-	header.header span
-	{
-		display: inline;
-	}
-	header.header b
-	{
-		display: none;
-	}
-}
