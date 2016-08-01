@@ -132,10 +132,8 @@ img {
 /**
  * Custom layout sections
  */
-.custom {
-    display:block;
-}
-#container:after,.custom:after {
+
+#container:after {
     content:"";
     display:table;
     clear:both;

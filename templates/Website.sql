@@ -4,7 +4,7 @@
 # Contao-Website   : Website
 # Contao-Database  : contao-baseinstall
 # Saved by User    : derhaeuptling (Martin Schwenzer)
-# Time stamp       : 2016-01-26 at 17:17:30
+# Time stamp       : 2016-08-01 at 09:38:55
 #
 # Contao Extension : BackupDB, Version 3.2.0
 # Copyright        : Softleister (www.softleister.de)
@@ -14,10 +14,10 @@
 # Visit Contao project page http://www.contao.org for more information
 #
 #-----------------------------------------------------
-# Contao Version 3.5.6
+# Contao Version 3.5.15
 # Folgende Erweiterungen müssen installiert sein:
 #-----------------------------------------------------
-#   - m17-sticky-backend-footer   : Version 2.0.5 stable, Build 8
+#   - m17-sticky-backend-footer   : Version 2.0.6 stable, Build 9
 #   - mobilecontent               : Version 1.1.3 stable, Build 3
 #   - contao-boilerplate
 #
@@ -426,47 +426,47 @@ INSERT INTO `tl_page` (`id`, `pid`, `sorting`, `tstamp`, `title`, `alias`, `type
 # Dumping data for table 'tl_repository_installs'
 #
 
-INSERT INTO `tl_repository_installs` (`id`, `tstamp`, `extension`, `version`, `build`, `alpha`, `beta`, `rc`, `stable`, `lickey`, `delprot`, `updprot`, `error`) VALUES ( 23, 1453197848, 'm17-sticky-backend-footer', 20000059, 8, '0', '0', '0', '1', '', '', '', '' );
+INSERT INTO `tl_repository_installs` (`id`, `tstamp`, `extension`, `version`, `build`, `alpha`, `beta`, `rc`, `stable`, `lickey`, `delprot`, `updprot`, `error`) VALUES ( 23, 1470036655, 'm17-sticky-backend-footer', 20000069, 9, '0', '0', '0', '1', '', '', '', '' );
 INSERT INTO `tl_repository_installs` (`id`, `tstamp`, `extension`, `version`, `build`, `alpha`, `beta`, `rc`, `stable`, `lickey`, `delprot`, `updprot`, `error`) VALUES ( 24, 1439822669, 'mobilecontent', 10010039, 3, '0', '0', '0', '1', '', '', '', '' );
-INSERT INTO `tl_repository_installs` (`id`, `tstamp`, `extension`, `version`, `build`, `alpha`, `beta`, `rc`, `stable`, `lickey`, `delprot`, `updprot`, `error`) VALUES ( 27, 1453823839, 'BackupDB', 30020029, 13, '0', '0', '0', '1', '', '', '', '' );
+INSERT INTO `tl_repository_installs` (`id`, `tstamp`, `extension`, `version`, `build`, `alpha`, `beta`, `rc`, `stable`, `lickey`, `delprot`, `updprot`, `error`) VALUES ( 27, 1470036645, 'BackupDB', 30020029, 16, '0', '0', '0', '1', '', '', '', '' );
 
 #
 # Dumping data for table 'tl_repository_instfiles'
 #
 
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1421, 27, 1453823839, 'system/modules/BackupDB/languages/ja/modules.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1421, 27, 1470036645, 'system/modules/BackupDB/languages/ja/modules.php', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1414, 27, 1453823839, 'system/modules/BackupDB/languages/it', 'D', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1415, 27, 1453823839, 'system/modules/BackupDB/languages/it/.htaccess', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1416, 27, 1453823839, 'system/modules/BackupDB/languages/it/default.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1417, 27, 1453823839, 'system/modules/BackupDB/languages/it/modules.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1413, 27, 1453823839, 'system/modules/BackupDB/languages/fr/tl_settings.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1396, 27, 1453823839, 'system/modules/BackupDB/languages/en/.htaccess', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1397, 27, 1453823839, 'system/modules/BackupDB/languages/en/default.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1398, 27, 1453823839, 'system/modules/BackupDB/languages/en/modules.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1399, 27, 1453823839, 'system/modules/BackupDB/languages/en/tl_settings.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1415, 27, 1470036645, 'system/modules/BackupDB/languages/it/.htaccess', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1416, 27, 1470036645, 'system/modules/BackupDB/languages/it/default.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1417, 27, 1470036645, 'system/modules/BackupDB/languages/it/modules.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1413, 27, 1470036645, 'system/modules/BackupDB/languages/fr/tl_settings.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1396, 27, 1470036645, 'system/modules/BackupDB/languages/en/.htaccess', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1397, 27, 1470036645, 'system/modules/BackupDB/languages/en/default.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1398, 27, 1470036645, 'system/modules/BackupDB/languages/en/modules.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1399, 27, 1470036645, 'system/modules/BackupDB/languages/en/tl_settings.php', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1400, 27, 1453823839, 'system/modules/BackupDB/languages/es', 'D', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1401, 27, 1453823839, 'system/modules/BackupDB/languages/es/.htaccess', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1402, 27, 1453823839, 'system/modules/BackupDB/languages/es/default.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1403, 27, 1453823839, 'system/modules/BackupDB/languages/es/modules.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1401, 27, 1470036645, 'system/modules/BackupDB/languages/es/.htaccess', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1402, 27, 1470036645, 'system/modules/BackupDB/languages/es/default.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1403, 27, 1470036645, 'system/modules/BackupDB/languages/es/modules.php', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1404, 27, 1453823839, 'system/modules/BackupDB/languages/fa', 'D', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1405, 27, 1453823839, 'system/modules/BackupDB/languages/fa/.htaccess', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1406, 27, 1453823839, 'system/modules/BackupDB/languages/fa/default.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1407, 27, 1453823839, 'system/modules/BackupDB/languages/fa/modules.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1408, 27, 1453823839, 'system/modules/BackupDB/languages/fa/tl_settings.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1405, 27, 1470036645, 'system/modules/BackupDB/languages/fa/.htaccess', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1406, 27, 1470036645, 'system/modules/BackupDB/languages/fa/default.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1407, 27, 1470036645, 'system/modules/BackupDB/languages/fa/modules.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1408, 27, 1470036645, 'system/modules/BackupDB/languages/fa/tl_settings.php', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1409, 27, 1453823839, 'system/modules/BackupDB/languages/fr', 'D', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1410, 27, 1453823839, 'system/modules/BackupDB/languages/fr/.htaccess', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1411, 27, 1453823839, 'system/modules/BackupDB/languages/fr/default.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1412, 27, 1453823839, 'system/modules/BackupDB/languages/fr/modules.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1410, 27, 1470036645, 'system/modules/BackupDB/languages/fr/.htaccess', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1411, 27, 1470036645, 'system/modules/BackupDB/languages/fr/default.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1412, 27, 1470036645, 'system/modules/BackupDB/languages/fr/modules.php', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1260, 24, 1392734719, 'system/modules/mobilecontent', 'D', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1247, 23, 1388925703, 'system/modules/m17StickyBEFooter/assets', 'D', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1248, 23, 1388925703, 'system/modules/m17StickyBEFooter', 'D', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1249, 23, 1453197848, 'system/modules/m17StickyBEFooter/assets/.htaccess', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1250, 23, 1453197848, 'system/modules/m17StickyBEFooter/assets/m17StickyBeFooter.css', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1251, 23, 1453197848, 'system/modules/m17StickyBEFooter/assets/m17StickyBeFooter.js', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1252, 23, 1453197848, 'system/modules/m17StickyBEFooter/assets/m17StickyBeFooter_uncompressed.css', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1253, 23, 1453197848, 'system/modules/m17StickyBEFooter/assets/m17StickyBeFooter_uncompressed.js', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1249, 23, 1470036654, 'system/modules/m17StickyBEFooter/assets/.htaccess', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1250, 23, 1470036654, 'system/modules/m17StickyBEFooter/assets/m17StickyBeFooter.css', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1251, 23, 1470036654, 'system/modules/m17StickyBEFooter/assets/m17StickyBeFooter.js', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1252, 23, 1470036654, 'system/modules/m17StickyBEFooter/assets/m17StickyBeFooter_uncompressed.css', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1253, 23, 1470036654, 'system/modules/m17StickyBEFooter/assets/m17StickyBeFooter_uncompressed.js', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1254, 23, 1388925703, 'system/modules/m17StickyBEFooter/config', 'D', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1255, 23, 1453197848, 'system/modules/m17StickyBEFooter/config/config.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1255, 23, 1470036654, 'system/modules/m17StickyBEFooter/config/config.php', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1261, 24, 1439822669, 'system/modules/mobilecontent/.gitignore', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1262, 24, 1439822669, 'system/modules/mobilecontent/LICENSE.md', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1263, 24, 1439822669, 'system/modules/mobilecontent/README.md', 'F', '' );
@@ -494,49 +494,54 @@ INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filet
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1285, 24, 1439822669, 'system/modules/mobilecontent/languages/en/modules.php', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1286, 24, 1439822669, 'system/modules/mobilecontent/languages/en/tl_article.php', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1287, 24, 1439822669, 'system/modules/mobilecontent/languages/en/tl_content.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1420, 27, 1453823839, 'system/modules/BackupDB/languages/ja/default.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1420, 27, 1470036645, 'system/modules/BackupDB/languages/ja/default.php', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1418, 27, 1453823839, 'system/modules/BackupDB/languages/ja', 'D', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1419, 27, 1453823839, 'system/modules/BackupDB/languages/ja/.htaccess', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1419, 27, 1470036645, 'system/modules/BackupDB/languages/ja/.htaccess', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1369, 27, 1453823839, 'files/AutoBackupDB', 'D', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1370, 27, 1453823839, 'files/AutoBackupDB/.htaccess', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1370, 27, 1470036645, 'files/AutoBackupDB/.htaccess', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1371, 27, 1453823839, 'system/modules/BackupDB', 'D', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1372, 27, 1453823839, 'system/modules/BackupDB/.htaccess', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1373, 27, 1453823839, 'system/modules/BackupDB/AutoBackupDB.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1374, 27, 1453823839, 'system/modules/BackupDB/BackupDbCommon.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1375, 27, 1453823839, 'system/modules/BackupDB/BackupDbRun.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1376, 27, 1453823839, 'system/modules/BackupDB/CHANGELOG.txt', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1377, 27, 1453823839, 'system/modules/BackupDB/MakeWsTemplateRun.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1378, 27, 1453823839, 'system/modules/BackupDB/ModuleBackupDB.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1372, 27, 1470036645, 'system/modules/BackupDB/.htaccess', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1373, 27, 1470036645, 'system/modules/BackupDB/AutoBackupDB.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1374, 27, 1470036645, 'system/modules/BackupDB/BackupDbCommon.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1375, 27, 1470036645, 'system/modules/BackupDB/BackupDbRun.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1376, 27, 1470036645, 'system/modules/BackupDB/CHANGELOG.txt', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1377, 27, 1470036645, 'system/modules/BackupDB/MakeWsTemplateRun.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1378, 27, 1470036645, 'system/modules/BackupDB/ModuleBackupDB.php', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1379, 27, 1453823839, 'system/modules/BackupDB/config', 'D', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1380, 27, 1453823839, 'system/modules/BackupDB/config/.htaccess', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1381, 27, 1453823839, 'system/modules/BackupDB/config/autoload.ini', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1382, 27, 1453823839, 'system/modules/BackupDB/config/autoload.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1383, 27, 1453823839, 'system/modules/BackupDB/config/config.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1380, 27, 1470036645, 'system/modules/BackupDB/config/.htaccess', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1381, 27, 1470036645, 'system/modules/BackupDB/config/autoload.ini', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1382, 27, 1470036645, 'system/modules/BackupDB/config/autoload.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1383, 27, 1470036645, 'system/modules/BackupDB/config/config.php', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1384, 27, 1453823839, 'system/modules/BackupDB/dca', 'D', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1385, 27, 1453823839, 'system/modules/BackupDB/dca/.htaccess', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1386, 27, 1453823839, 'system/modules/BackupDB/dca/tl_settings.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1387, 27, 1453823839, 'system/modules/BackupDB/htacc', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1388, 27, 1453823839, 'system/modules/BackupDB/iconBackup.gif', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1385, 27, 1470036645, 'system/modules/BackupDB/dca/.htaccess', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1386, 27, 1470036645, 'system/modules/BackupDB/dca/tl_settings.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1387, 27, 1470036645, 'system/modules/BackupDB/htacc', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1388, 27, 1470036645, 'system/modules/BackupDB/iconBackup.gif', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1389, 27, 1453823839, 'system/modules/BackupDB/languages/de', 'D', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1390, 27, 1453823839, 'system/modules/BackupDB/languages', 'D', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1391, 27, 1453823839, 'system/modules/BackupDB/languages/de/.htaccess', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1392, 27, 1453823839, 'system/modules/BackupDB/languages/de/default.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1393, 27, 1453823839, 'system/modules/BackupDB/languages/de/modules.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1394, 27, 1453823839, 'system/modules/BackupDB/languages/de/tl_settings.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1391, 27, 1470036645, 'system/modules/BackupDB/languages/de/.htaccess', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1392, 27, 1470036645, 'system/modules/BackupDB/languages/de/default.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1393, 27, 1470036645, 'system/modules/BackupDB/languages/de/modules.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1394, 27, 1470036645, 'system/modules/BackupDB/languages/de/tl_settings.php', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1395, 27, 1453823839, 'system/modules/BackupDB/languages/en', 'D', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1422, 27, 1453823839, 'system/modules/BackupDB/languages/ja/tl_settings.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1422, 27, 1470036645, 'system/modules/BackupDB/languages/ja/tl_settings.php', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1423, 27, 1453823839, 'system/modules/BackupDB/languages/pl', 'D', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1424, 27, 1453823839, 'system/modules/BackupDB/languages/pl/.htaccess', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1425, 27, 1453823839, 'system/modules/BackupDB/languages/pl/default.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1426, 27, 1453823839, 'system/modules/BackupDB/languages/pl/modules.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1424, 27, 1470036645, 'system/modules/BackupDB/languages/pl/.htaccess', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1425, 27, 1470036645, 'system/modules/BackupDB/languages/pl/default.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1426, 27, 1470036645, 'system/modules/BackupDB/languages/pl/modules.php', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1427, 27, 1453823839, 'system/modules/BackupDB/languages/ru', 'D', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1428, 27, 1453823839, 'system/modules/BackupDB/languages/ru/.htaccess', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1429, 27, 1453823839, 'system/modules/BackupDB/languages/ru/default.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1430, 27, 1453823839, 'system/modules/BackupDB/languages/ru/modules.php', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1431, 27, 1453823839, 'system/modules/BackupDB/languages/ru/tl_settings.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1428, 27, 1470036645, 'system/modules/BackupDB/languages/ru/.htaccess', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1429, 27, 1470036645, 'system/modules/BackupDB/languages/ru/default.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1430, 27, 1470036645, 'system/modules/BackupDB/languages/ru/modules.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1431, 27, 1470036645, 'system/modules/BackupDB/languages/ru/tl_settings.php', 'F', '' );
 INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1432, 27, 1453823839, 'system/modules/BackupDB/templates', 'D', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1433, 27, 1453823839, 'system/modules/BackupDB/templates/.htaccess', 'F', '' );
-INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1434, 27, 1453823839, 'system/modules/BackupDB/templates/mod_backup_db.html5', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1433, 27, 1470036645, 'system/modules/BackupDB/templates/.htaccess', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1434, 27, 1470036645, 'system/modules/BackupDB/templates/mod_backup_db.html5', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1435, 23, 1470036654, 'system/modules/m17StickyBEFooter/languages/de', 'D', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1436, 23, 1470036654, 'system/modules/m17StickyBEFooter/languages', 'D', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1437, 23, 1470036655, 'system/modules/m17StickyBEFooter/languages/de/modules.php', 'F', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1438, 23, 1470036655, 'system/modules/m17StickyBEFooter/languages/en', 'D', '' );
+INSERT INTO `tl_repository_instfiles` (`id`, `pid`, `tstamp`, `filename`, `filetype`, `flag`) VALUES ( 1439, 23, 1470036655, 'system/modules/m17StickyBEFooter/languages/en/modules.php', 'F', '' );
 
 #
 # Dumping data for table 'tl_style' - no entries
