@@ -24,13 +24,12 @@
 	}
 
 	li {
+		float: left;
+
 		position: relative;
 		min-height: 1px;
 		padding-right: $layout_gutter;
 		padding-left: $layout_gutter;
-
-		float: left;
-		box-sizing: border-box;
 	}
 
 	.cols_1 > li { width: 100% ; }
