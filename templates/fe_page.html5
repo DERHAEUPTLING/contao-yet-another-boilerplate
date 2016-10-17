@@ -108,52 +108,58 @@
 
       <?php $this->block('container'); ?>
         <div id="container">
-
-          <?php $this->block('main'); ?>
-            <div id="main">
-              <div class="inside">
-                <?= $this->main ?>
+          <div class="inside">
+            
+            <?php $this->block('main'); ?>
+              <div id="main">
+                <div class="inside">
+                  <?= $this->main ?>
+                </div>
+                <?php // $this->sections('main'); ?>
               </div>
-              <?php // $this->sections('main'); ?>
-            </div>
-          <?php $this->endblock(); ?>
+            <?php $this->endblock(); ?>
 
-          <?php $this->block('left'); ?>
-            <?php if ($this->left): ?>
-              <aside id="left">
-                <div class="inside">
-                  <?= $this->left ?>
-                </div>
-              </aside>
-            <?php endif; ?>
-          <?php $this->endblock(); ?>
+            <?php $this->block('left'); ?>
+              <?php if ($this->left): ?>
+                <aside id="left">
+                  <div class="inside">
+                    <?= $this->left ?>
+                  </div>
+                </aside>
+              <?php endif; ?>
+            <?php $this->endblock(); ?>
 
-          <?php $this->block('right'); ?>
-            <?php if ($this->right): ?>
-              <aside id="right">
-                <div class="inside">
-                  <?= $this->right ?>
-                </div>
-              </aside>
-            <?php endif; ?>
-          <?php $this->endblock(); ?>
-
+            <?php $this->block('right'); ?>
+              <?php if ($this->right): ?>
+                <aside id="right">
+                  <div class="inside">
+                    <?= $this->right ?>
+                  </div>
+                </aside>
+              <?php endif; ?>
+            <?php $this->endblock(); ?>
+            
+          </div>
         </div>
       <?php $this->endblock(); ?>
 
       <?php // $this->sections('after'); ?>
 
-      <?php $this->block('footer'); ?>
-        <?php if ($this->footer): ?>
-          <footer id="footer">
-            <div class="inside">
-              <?= $this->footer ?>
-            </div>
-          </footer>
-        <?php endif; ?>
-      <?php $this->endblock(); ?>
+      
 
     </div>
+
+    <?php $this->block('footer'); ?>
+      <?php if ($this->footer): ?>
+        <footer id="footer">
+          <div class="inside">
+            <?= $this->footer ?>
+          </div>
+        </footer>
+      <?php endif; ?>
+    <?php $this->endblock(); ?>
+
+      
 
     <?php // $this->sections('bottom'); ?>
   <?php $this->endblock(); ?>

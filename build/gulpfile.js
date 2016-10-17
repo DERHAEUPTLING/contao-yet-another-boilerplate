@@ -20,8 +20,9 @@ var secrets       = require( './secrets.json' );
  */
 var app         = '../app/';
 var dist        = '../files/dist/';
-    
-var styles_src  = ['../app/sass/**/*.scss','../files/tinymce_custom.css'];
+
+var styles_watch= ['../app/sass/**/*.scss','../files/tinymce_custom.css'];    
+var styles_src  = ['../app/sass/styles.scss'];
 var styles_dist = '../files/dist/css/';
 
 var js_context  = '../app/js/';
@@ -168,7 +169,7 @@ gulp.task('ftp-deploy', function() {
  */
 gulp.task('watch', function() {
     livereload.listen();
-    gulp.watch( styles_src, ['sass']);
+    gulp.watch( styles_watch, ['sass']);
     gulp.watch( js_src, ['webpack']);
 
 
@@ -204,7 +205,7 @@ gulp.task('serve', ['sass'], function() {
         notify: false,
     });
 
-    gulp.watch( styles_src, ['sass'] );
+    gulp.watch( styles_watch, ['sass'] );
     // gulp.watch(app + 'js/**/*', ['webpack']);
 
 });

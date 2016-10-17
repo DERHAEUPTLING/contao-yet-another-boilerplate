@@ -5,6 +5,7 @@
 
 
 .ce_accordion {
+	@include clearfix;
 	&:last-of-type {
 		border-bottom: 1px $color_link solid;
 	}
