@@ -1,135 +1,71 @@
-/*    -------------------------------------------------------------------------
+/*   
  *                                  b_layout.scss
  *    =========================================================================
  */
-
-
-/*
- * colors
- */
-html {
-    background-color: $color_bg_html;
-}
-html,
-button,
-input,
-select,
-textarea {
-    color: $color_font;
-}
-
-// background inner
-#header .inside,
-#container,
-#footer .inside {
-    background-color: $color_bg_content;
-}
-
-
-
-
-
-
-/*
- *   layout
- */
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-// font-size
-html {
-    font-size: $font_size;
-    line-height: $line_height;
-
-    // overflow-y: scroll;
-
-    @media (max-width: 767px) {
-        font-size: $font_size--small;
-    }
-    @media (min-width: 1281px) {
-        font-size: $font_size--big;
-    }
-    @media (min-width: 2000px) {
-        font-size: $font_size--huge;
-    }
-}
-#container {
-    padding-top: 15rem;
-}
-// width outer
-#wrapper,
-#footer {
-    width: $layout_width + 2*$layout_gutter + 2*$layout_gutter_outer; // 960px = 60em * 16px
-    margin: 0 auto;
-    @media ( max-width: $layout_width+2*$layout_gutter_outer ) {
-        width: 100%;
-    }
-    @media (max-width: 767px) {
-        width: 100%;
-        // overflow: hidden;
-    }
-}
-
-
-// gutter outer
 #header,
-#containerWrapper,
+#container,
 #footer {
-    padding: 0 $layout_gutter_outer;
-    @media (max-width: 767px) {
-        padding: 0 $layout_gutter_outer / 2;
-    }
+    max-width: 60em;
+    @include make-container();
+    
 }
 
-// gutter inner
-#header .inside,
-#main .inside,
-#left .inside,
-#right .inside,
-#footer .inside {
-    padding-left: $layout_gutter;
-    padding-right: $layout_gutter;
-    @media (max-width: 767px) {
-        padding-left: $layout_gutter / 2;
-        padding-right: $layout_gutter / 2;
-    }
-}
 
-#main .inside {
-    padding-bottom: $font_size;
+/*
+ *  #header
+ */
+#header {
+    > .inside {
+        // @include make-row();
+    }
 }
 
 /*
- * Holy Grail dimensions
+ *  #container
  */
 #container {
-    padding-left:  $layout_left_width;
-    padding-right: $layout_right_width;
-    @media (max-width: 767px) {
-        padding-left: 0;
-        padding-right: 0;
+    > .inside {
+        @include make-row();
+    }
+}
+#main {
+    @include make-col-ready();
+    @include media-breakpoint-up(md){
+        @include make-col(6);
+        @include make-col-push(3)
+    }
+
+
+    @include make-container();
+
+    
+    
+}
+#left {
+    @include make-col-ready();
+    @include make-col(3);
+    @include make-col-pull(6)
+}
+#right {
+    @include make-col-ready();
+    @include make-col(3);
+}
+
+/*
+ *  #footer
+ */
+#footer {
+   > .inside {
+        // @include make-row();
     }
 }
 
 
-#left{
-    width: $layout_left_width;
-    right: $layout_left_width;
-    @media (max-width: 767px) {
-        width: inherit;
-        right: inherit;
-        display: none;
-    }
-}
-#right{
-    width: $layout_right_width;
-    @media (max-width: 767px) {
-        width: inherit;
-    }
-}
 
 
+/*   
+ *   misc
+ */
+#wrapper {
+    min-height: 100vh;
+}
