@@ -1,0 +1,40 @@
+<?php 
+
+/** 
+ * Load combined or minified ressources only when no user is logged in 
+ * Info: Ressources with |static gets combined 
+ */ 
+
+$static  = '|static'; 
+$min     = '.min'; 
+$cssPath = 'files/dist/css/'; 
+$jsPath  = 'files/dist/js/'; 
+
+/** 
+ * If a user is logged in: 
+ *   Empty the $static and $min varible 
+ *   Also remove |static from extensions CSS and JS 
+ */ 
+if(sha1(session_id().(!Config::get('disableIpCheck') ? Environment::get('ip') : '').'BE_USER_AUTH') == Input::cookie('BE_USER_AUTH')) 
+{ 
+  if(is_array($GLOBALS['TL_CSS'])) 
+  { 
+    foreach($GLOBALS['TL_CSS'] as &$value) 
+    { 
+      $value = str_replace($static, '', $value); 
+    } 
+  } 
+  $static = ''; 
+  $min    = ''; 
+} 
+
+/** CSS */ 
+// Use the $min variable if you also have a minified version, e.g. myfile.min.css 
+$GLOBALS['TL_USER_CSS'][] = $cssPath.'styles.css'.$static;  
+
+/** JS */ 
+// Use the $min variable if you also have a minified version, e.g. myfile.min.js 
+// $GLOBALS['TL_JAVASCRIPT'][] = $jsPath.'misc.js'.$static; 
+// $GLOBALS['TL_JAVASCRIPT'][] = $jsPath.'myfile'.$min.'.js'.$static; 
+
+?>
