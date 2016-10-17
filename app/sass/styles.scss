@@ -1,6 +1,6 @@
 @import "variables";
-@import "../bower/scut/scut";
-@import "../../files/tinymce_custom";
+@import "scut/scut";
+
 
 
 /*                      generic
@@ -11,8 +11,6 @@
 
 @import "generic/g_mixins";
 @import "generic/g_layout";
-@import "generic/g_layout--responsive";
-@import "generic/g_layout_ie";
 
 @import "generic/g_defaults";
 @import "generic/g_is-loading";
@@ -29,7 +27,7 @@
 // @import "base/b_sticky_footer";
 @import "base/b_sticky_header";
 @import "base/b_link";
-@import "base/b_list";
+
 
 @import "base/b_image_container";
 
@@ -40,6 +38,7 @@
 /*						modules
  *   -------------------------------------------------------------------------
  */
+@import "../../files/tinymce_custom";
 
 @import "modules/logo";
 @import "modules/nav_main";

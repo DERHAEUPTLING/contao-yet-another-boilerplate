@@ -138,3 +138,54 @@ img {
     display:table;
     clear:both;
 }
+
+
+/*    -------------------------------------------------------------------------
+ *                             gc_layout--responsive
+ *    =========================================================================
+ */
+
+@media ( max-width: $layout_width+2*$layout_gutter_outer )
+{
+    #container {
+        padding-left: 0 !important;
+    }
+    #left {
+        display: none;
+    }
+}
+@media (max-width:767px)
+{
+    #wrapper {
+        margin:0;
+        width:auto;
+    }
+    #container {
+        padding-left:0;
+        padding-right:0;
+    }
+    #main,#left,#right {
+        float:none;
+        width:auto;
+    }
+    #left {
+        right:0;
+        margin-left:0;
+    }
+    #right {
+        margin-right:0;
+    }
+}
+
+
+
+
+
+/*
+ *  Holy Grail fix lt IE 9
+ */
+.ie6, .ie7, .ie8 {
+	#container,	#left, #right {
+		zoom: 1;
+	}
+}

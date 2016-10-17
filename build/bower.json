@@ -2,15 +2,21 @@
   "name": "bower-installer",
   "version": "0.1",
   "dependencies": {
-    "scut": "latest"
+    "bootstrap" : "4.0.0-alpha.4",
+    "scut"      : "latest"
   },
 
   "install": {
     "path" : {
-      "scss": "../app/sass/bower"
+      "scss"    : "../app/sass",
+      "js"      : "../app/js/bower"
     },
     "sources": {
-      "scut": "bower_components/scut/dist/_scut.scss"
+      "bootstrap" : [
+        "bower_components/bootstrap/scss/**",
+        "bower_components/bootstrap/js/src/**"
+      ],
+      "scut"      : "bower_components/scut/dist/_scut.scss"
     }
   }
 }
