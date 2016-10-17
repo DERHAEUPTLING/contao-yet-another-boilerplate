@@ -1,0 +1,131 @@
+/*   
+ *                                  b_layout.scss
+ *    =========================================================================
+ */
+.header-container,
+.container-container,
+.footer-container {
+    @include make-container();
+}
+.header-container,
+body:not(.layout-1-col-fullwidth) .container-container,
+.footer-container {
+    @include make-container-max-widths();
+}
+
+
+/*
+ *  .header-container
+ */
+.header-container {
+    /* enable, if grid needed */
+    // .header-row {
+    //     @include make-row();
+    // }
+    // .header-col {
+    //     @include make-col-ready();
+    //     @include make-col(12);
+    // }
+}
+
+
+
+/*
+ *  .container-container
+ */
+.layout-2-col-left {
+    .container-container  {
+        > .container-row {
+            @include make-row();
+        }
+    }
+    #main {
+        @include make-col-ready();
+        @include media-breakpoint-up(lg){
+            @include make-col(9);
+            @include make-col-push(3)
+        }
+    }
+    #left {
+        @include make-col-ready();
+        @include make-col(3);
+        @include make-col-pull(9)
+    }
+}
+
+
+
+.layout-2-col-right {
+    .container-container  {
+        > .container-row  {
+            @include make-row();
+        }
+    }
+    #main {
+        @include make-col-ready();
+        @include media-breakpoint-up(lg){
+            @include make-col(9);
+        }
+    }
+    #right {
+        @include make-col-ready();
+        @include make-col(3);
+    }
+}
+
+
+
+.layout-3-col {
+    .container-container  {
+        > .container-row  {
+            @include make-row();
+        }
+    }
+    #main {
+        @include make-col-ready();
+        @include media-breakpoint-up(lg){
+            @include make-col(6);
+            @include make-col-push(3)
+        }
+        @include make-container();
+    }
+    #left {
+        @include make-col-ready();
+        @include make-col(3);
+        @include make-col-pull(6)
+    }
+    #right {
+        @include make-col-ready();
+        @include make-col(3);
+    }
+}
+
+/*
+ *  #main nested grid
+ */
+// #main {
+//     @include make-container();
+//     > .inside {
+//         @include make-col-ready();
+//     }
+// }
+
+
+/*
+ *  #footer
+ */
+#footer {
+   > .inside {
+        // @include make-row();
+    }
+}
+
+
+
+
+/*   
+ *   misc
+ */
+#wrapper {
+    min-height: 100vh;
+}

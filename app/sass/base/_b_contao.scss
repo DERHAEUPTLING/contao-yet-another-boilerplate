@@ -8,3 +8,16 @@
 	position:absolute;
 	width:1px;
 }
+
+.block {
+	@include clearfix;
+}
+
+	
+
+.mod_navigation {
+	ul {
+		list-style: none;
+    	padding-left: 0;
+	}
+}
