@@ -2,23 +2,6 @@
  * http://tympanus.net/Development/SidebarTransitions/
  */
 
-
-// *,
-// *:after,
-// *::before {
-// 	-moz-box-sizing: border-box;
-// 	box-sizing: border-box;
-// }
-
-// html,
-// body,
-// .st-container,
-// .st-pusher,
-// .st-content {
-// 	height: 100%;
-// }
-
-
 .st-content {
 	// overflow-y: scroll;
 	background: $color_bg_content;
@@ -573,7 +556,15 @@
 
 
 /* Fallback example for browsers that don't support 3D transforms (and no JS fallback) */
-.no-csstransforms3d .st-pusher,
-.no-js .st-pusher {
-	padding-left: 300px;
+// .no-csstransforms3d .st-pusher,
+// .no-js .st-pusher {
+// 	padding-left: 300px;
+// }
+
+/* diable for old IEs */
+
+.ie9, .ie8, .ie7 {
+	.st-menu {
+		display: none;
+	}
 }

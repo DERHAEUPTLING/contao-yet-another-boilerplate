@@ -7,6 +7,7 @@
 .footer-container {
     @include make-container();
 }
+
 .header-container,
 body:not(.layout-1-col-fullwidth) .container-container,
 .footer-container {
@@ -100,15 +101,8 @@ body:not(.layout-1-col-fullwidth) .container-container,
     }
 }
 
-/*
- *  #main nested grid
- */
-// #main {
-//     @include make-container();
-//     > .inside {
-//         @include make-col-ready();
-//     }
-// }
+
+
 
 
 /*
@@ -127,5 +121,6 @@ body:not(.layout-1-col-fullwidth) .container-container,
  *   misc
  */
 #wrapper {
+    // needed by offcanvas & fixed footer
     min-height: 100vh;
 }
