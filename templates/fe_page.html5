@@ -158,8 +158,10 @@
     <?php $this->block('footer'); ?>
       <?php if ($this->footer): ?>
         <footer id="footer">
-          <div class="inside">
-            <?= $this->footer ?>
+          <div class="footer-container">
+            <div class="footer-row">
+              <?= $this->footer ?>
+            </div>
           </div>
         </footer>
       <?php endif; ?>

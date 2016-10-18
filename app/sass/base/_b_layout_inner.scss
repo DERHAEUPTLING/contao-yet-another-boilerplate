@@ -6,14 +6,14 @@
 /*
  * inner grid
  */
-#main {
-	> .inside > * {
-		@include make-row();
-	}
-	> .inside > * > *:not([class*=col- ]) {
-		/* default if no col- is set */
-		@include make-col-ready();
-		float: left;
-		width: 100%;
-	} 
-}
+// #main {
+// 	> .inside > * {
+// 		@include make-row();
+// 	}
+// 	> .inside > * > *:not([class*=col- ]) {
+// 		/* default if no col- is set */
+// 		@include make-col-ready();
+// 		float: left;
+// 		width: 100%;
+// 	} 
+// }

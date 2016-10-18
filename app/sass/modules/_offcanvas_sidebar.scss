@@ -3,34 +3,32 @@
  *    =========================================================================
  */
 
+.st-menu {
+    background-color: $color_bg_html;
 
+    .inside {
+        padding: 161px 6px 30px 40px;
+        color: $color_font;
+        overflow: hidden;
+    }
+    .logo {
+        display: block;
+        position: absolute;
+        top: 25px;
+        left: 40px;
 
-    .st-menu {
-        background-color: $color_bg_html;
-
-        .inside {
-            padding: 161px 6px 30px 40px;
-            color: $color_font;
-            overflow: hidden;
-        }
-        .logo {
-            display: block;
-            position: absolute;
-            top: 25px;
-            left: 40px;
-
-            width: 8em;
-            padding: 0 2em 2em 0;
-
-        }
-
-
-
-        h1, h2, h3, h4, h5,
-        a {
-            color: $color_font;
-        }
-
+        width: 8em;
+        padding: 0 2em 2em 0;
 
     }
+
+
+
+    h1, h2, h3, h4, h5,
+    a {
+        color: $color_font;
+    }
+
+
+}
 
