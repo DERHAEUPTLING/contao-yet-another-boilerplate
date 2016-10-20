@@ -21,11 +21,15 @@
     }
     &.float_left {
         float: left;
-        margin-right: 1em;
+        margin-right: $grid-gutter-width / 2;
     }
     &.float_right {
         float: right;
-        margin-left:  1em;
+        margin-left:  $grid-gutter-width / 2;
+    }
+
+    figcaption {
+        margin-top: .5em;
     }
 
 

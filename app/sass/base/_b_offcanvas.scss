@@ -3,8 +3,7 @@
  */
 
 .st-content {
-	// overflow-y: scroll;
-	background: $color_bg_content;
+	background: $body-bg;
 }
 
 .st-content,
@@ -14,7 +13,6 @@
 
 .st-container {
 	position: relative;
-	// overflow: hidden;
 }
 
 .st-pusher {
