@@ -171,11 +171,11 @@ $colorbox-border-width: 10px;
         will-change: transform;
         transition: transform .4s ease-in-out;
         transform: rotate(90deg) scale(1);
-        &:hover {
-            transform: rotate(180deg) scale(0.9);
-            
-        }
+        
     }
+    &:hover  span {
+            transform: rotate(180deg) scale(0.9);
+        }
 
 
 
