@@ -3,9 +3,7 @@
  *  Burger
  */
 .menu-burger {
-    @include media-breakpoint-up(md) {
-        display: none;
-    }
+    
     
     transition: opacity 700ms linear 0ms;
 
@@ -59,6 +57,9 @@
  */
 
     .offcanvas-toggle {
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
         float: right;
         padding-top: 30px;
         cursor: pointer;
