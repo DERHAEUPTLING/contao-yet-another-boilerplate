@@ -10,7 +10,8 @@
 	ul {
 		list-style:none;
 		padding-left: 0;
-		@include make-row;
+		margin-left: -$grid-gutter-width / 4;
+    	margin-right: -$grid-gutter-width / 4;
 
 		li {
 			position: relative;
