@@ -2,9 +2,13 @@
 
 var gulp          = require( 'gulp' );
 var gutil         = require( 'gulp-util' );
-var sass          = require( 'gulp-sass' );
-var autoprefixer  = require( 'gulp-autoprefixer' );
+
 var sourcemaps    = require( 'gulp-sourcemaps' );
+var sass          = require( 'gulp-sass' );
+var postcss       = require( 'gulp-postcss');
+var autoprefixer  = require( 'autoprefixer' );
+var cssnano       = require( 'cssnano');
+
 var webpack       = require( 'webpack' );
 
 var browserSync   = require( 'browser-sync'  ).create();
@@ -53,19 +57,42 @@ gulp.task('make', function() {
 /*
  * SASS
  */
-gulp.task('sass', function () {
-  gulp.src( styles_src )
-    .pipe(sourcemaps.init())
-    .pipe(sass({outputStyle: 'compressed'})
-        .on('error', sass.logError))
-    .pipe(sourcemaps.write('.', {
-      sourceMappingURL: function(file) {
-        return file.relative + '.map?ver=' + Math.floor(Math.random() * (10000)); ;
-      }
-    }))
-    .pipe(gulp.dest( styles_dist ))
-});
+// gulp.task('sass', function () {
+//   gulp.src( styles_src )
+//     .pipe(sourcemaps.init())
+//     .pipe(sass(
+//         {
+//             outputStyle: 'compressed'
+//         }
+//     ).on('error', sass.logError))
+//     .pipe(sourcemaps.init({loadMaps: true}))
+//     .pipe(autoprefixer(
+//         {
+//             browsers: [
+//                 '> 1%',
+//                 'last 2 versions'
+//             ],
+//         }
+//     ))
+//     .pipe(sourcemaps.write('.', {includeContent: false}))
+//     .pipe(gulp.dest( styles_dist ))
+// });
 
+
+
+
+gulp.task('sass', function () {
+    var processors = [
+        autoprefixer({browsers: ['last 2 version','> 1%']}),
+        cssnano
+    ];
+    return gulp.src( styles_src )
+        .pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(postcss(processors))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest( styles_dist ));
+});
 
 
 
