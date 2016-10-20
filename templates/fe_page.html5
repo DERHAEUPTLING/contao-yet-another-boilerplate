@@ -98,9 +98,19 @@
         <?php if ($this->header): ?>
           <header id="header" class="header">
             <div class="container">
-              <div class="row">
+              <?php if ($this->sections['Header top']): ?>
+              <div class="header-top">
+                <?php echo $this->sections['Header top']; ?>
+              </div>
+              <?php endif; ?>
+              <div class="header-nav row">
                 <?= $this->header ?>
               </div>
+              <?php if ($this->sections['Header tagline']): ?>
+              <div class="header-tagline">
+                <?php echo $this->sections['Header tagline']; ?>
+              </div>
+              <?php endif; ?>
             </div>
           </header>
         <?php endif; ?>
