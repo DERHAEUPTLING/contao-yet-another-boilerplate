@@ -97,11 +97,9 @@
       <?php $this->block('header'); ?>
         <?php if ($this->header): ?>
           <header id="header" class="header">
-            <div class="header-container">
-              <div class="header-row">
-                <div class="header-col">
-                  <?= $this->header ?>
-                </div>
+            <div class="container">
+              <div class="row">
+                <?= $this->header ?>
               </div>
             </div>
           </header>
@@ -112,13 +110,11 @@
 
       <?php $this->block('container'); ?>
         <div id="container">
-          <div class="container-container">
-            <div class="container-row">
+          <div class="container">
+            <div class="row">
               <?php $this->block('main'); ?>
                 <div id="main">
-                  <div class="inside">
                     <?= $this->main ?>
-                  </div>
                   <?php // $this->sections('main'); ?>
                 </div>
               <?php $this->endblock(); ?>
@@ -126,7 +122,7 @@
               <?php $this->block('left'); ?>
                 <?php if ($this->left): ?>
                   <aside id="left">
-                    <div class="inside">
+                    <div class="row">
                       <?= $this->left ?>
                     </div>
                   </aside>
@@ -136,7 +132,7 @@
               <?php $this->block('right'); ?>
                 <?php if ($this->right): ?>
                   <aside id="right">
-                    <div class="inside">
+                    <div class="row">
                       <?= $this->right ?>
                     </div>
                   </aside>
@@ -157,8 +153,8 @@
     <?php $this->block('footer'); ?>
       <?php if ($this->footer): ?>
         <footer id="footer">
-          <div class="footer-container">
-            <div class="footer-row">
+          <div class="container">
+            <div class="row">
               <?= $this->footer ?>
             </div>
           </div>

@@ -2,44 +2,8 @@
  *                                  b_layout.scss
  *    =========================================================================
  */
-.header-container,
-.container-container,
-.footer-container {
-    @include make-container();
-}
 
-.header-container,
-body:not(.layout-1-col-fullwidth) .container-container,
-.footer-container {
-    @include make-container-max-widths();
-}
-
-
-/*
- *  .header-container
- */
-.header-container {
-    /* enable, if grid needed */
-    // .header-row {
-    //     @include make-row();
-    // }
-    // .header-col {
-    //     @include make-col-ready();
-    //     @include make-col(12);
-    // }
-}
-
-
-
-/*
- *  .container-container
- */
 .layout-2-col-left {
-    .container-container  {
-        > .container-row {
-            @include make-row();
-        }
-    }
     #main {
         @include make-col-ready();
         @include media-breakpoint-up(lg){
@@ -57,11 +21,6 @@ body:not(.layout-1-col-fullwidth) .container-container,
 
 
 .layout-2-col-right {
-    .container-container  {
-        > .container-row  {
-            @include make-row();
-        }
-    }
     #main {
         @include make-col-ready();
         @include media-breakpoint-up(lg){
@@ -77,11 +36,6 @@ body:not(.layout-1-col-fullwidth) .container-container,
 
 
 .layout-3-col {
-    .container-container  {
-        > .container-row  {
-            @include make-row();
-        }
-    }
     #main {
         @include make-col-ready();
         @include media-breakpoint-up(lg){
@@ -102,19 +56,50 @@ body:not(.layout-1-col-fullwidth) .container-container,
 }
 
 
+body.fullwidth #container > .container {
+    max-width: none !important;
+}
+
+
 
 
 
 /*
- *  #footer
+ * make no grid elements grid agnostig
  */
-#footer {
-   > .inside {
-        // @include make-row();
-    }
+.mod_article {
+    @include make-row();
 }
+.row,
+.mod_article {
+    > *:not([class*="col"]) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+} 
 
 
+
+/* 
+ * show background grid
+ */
+// $grid-bg : percentage(1 / $grid-columns);
+// .row {
+//     background: repeating-linear-gradient( 
+//         90deg, 
+//         rgba(red,.2) calc(#{$grid-gutter-width} / 2), 
+//         rgba(red,.2)   calc(#{$grid-bg} - #{$grid-gutter-width} / 2), 
+//         rgba(white,.2) calc(#{$grid-bg} - #{$grid-gutter-width} / 2), 
+//         rgba(white,.2) calc(#{$grid-bg} + #{$grid-gutter-width} / 2))
+// }
+// .mod_article {
+//     background: repeating-linear-gradient( 
+//         90deg, 
+//         rgba(green,.5) calc(#{$grid-gutter-width} / 2), 
+//         rgba(green,.5)   calc(#{$grid-bg} - #{$grid-gutter-width} / 2), 
+//         rgba(white,.2) calc(#{$grid-bg} - #{$grid-gutter-width} / 2), 
+//         rgba(white,.2) calc(#{$grid-bg} + #{$grid-gutter-width} / 2))
+// }
 
 
 /*   
@@ -124,3 +109,4 @@ body:not(.layout-1-col-fullwidth) .container-container,
     // needed by offcanvas & fixed footer
     min-height: 100vh;
 }
+
