@@ -1,90 +1,17 @@
 /*
- * bootstrap overrides
+ * custom vars
  */
-
-// Grid breakpoints
-//
-// Define the minimum dimensions at which your layout will change,
-// adapting to different screen sizes, for use in media queries.
-
-$grid-breakpoints: (
-  xs: 0,
-  sm: 544px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px
-);
-
-// Grid containers
-//
-// Define the maximum width of `.container` for different screen sizes.
-
-$container-max-widths: (
-  sm: 576px,
-  md: 720px,
-  lg: 940px,
-  xl: 1230px
-);
-
-$font-size-root: 18px;
-$link-hover-decoration: none;
-
-
-
-
-
-
-
-/*
- * font size
- */
-$font_size--small   : 16px;
-$font_size          : 16px;
-$font_size--big     : 16px;
-$font_size--huge    : 18px;
-
-
-$line_height        : 1.4;
-
-
-/*
- * layout
- */
-$layout_width       : 64em; // 16px * 64em = 1024px
-$layout_left_width  : 14em; // 16px * 14em = 224px
-$layout_right_width : 14em;
-$layout_gutter 		: 1em;
-$layout_gutter_outer: 1em;
-
-// id #main
-$layout_main_width	: $layout_width  - 2*$layout_gutter - $layout_left_width - $layout_right_width;
 
 
 $sticky_footer_height: 3rem;
 
+// Offcanvas
+$offacanvas_bg 		: $gray-lighter;
 
 
-/*
- * Colors
- */
-$color_bg_html      : #eee;
-$color_bg_content   : #FFF;
 
 
-$color_font         : #4D4D4D;
-$color_font_2       : #fff;
 
 
-$color_link         : #bc166e;
-$color_link--hover  : #222;
-
-$color_nav          : #fff;
-$color_nav--hover   : #000;
-$color_nav--active  : #4D4D4D;
-
-$color_border       : #ddd;
-$color_bg 			: #eee;
-
-$color_selection    : #b3d4fc;
 
 

@@ -37,7 +37,7 @@
  */
 #left .nav_aside {
 	a, span.active {
-		border-bottom: 1px solid $color_border;
+		border-bottom: 1px solid $nav-tabs-border-color;
 
 		transition-property: background-color;
 	    transition-duration: .15s;
@@ -55,12 +55,12 @@
 /*
  * offcanvas
  */
-#offcanvas-sidebar .nav_aside {
+.st-menu .nav_aside {
 	a {
-		color: $color_font;
+		color: $gray-dark;
 	}
 	.active {
-		color: $color_link;
+		color: $link-color;
 	}
 }
 
