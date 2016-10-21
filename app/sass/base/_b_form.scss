@@ -1,0 +1,229 @@
+
+
+
+
+/* 
+ * forms grid
+ */
+
+form {
+	/* row */
+	.widget,
+	.submit_container,
+	.mod_login .formbody {
+		@include make-row();
+		@extend .form-group;
+	}
+
+	/* cols */
+	.widget-text,
+	.widget-textarea,
+	.widget-explanation,
+	.widget-select,
+	.widget-radio > fieldset,
+	.widget-checkbox > fieldset,
+	.widget-captcha  {
+
+		> label {
+			@extend .col-form-label ;
+			@include make-col-ready();
+			@include make-col(3);
+		}
+		> legend {
+			@include make-col-ready();
+		}
+
+		> input,
+		> select,
+		> textarea,
+		> span,
+		> .checkbox_container {
+			@include make-col-ready();
+			float: left;
+			width: calc(75% - #{$grid-gutter-width}) !important;
+			margin-left: $grid-gutter-width / 2;
+			margin-right: $grid-gutter-width / 2;
+		}
+		> span {
+			@include make-col-offset(3);
+		}
+		> p,
+		> p.error {
+			@include make-col-ready();
+			@include make-col(9);
+			@include make-col-offset(3);
+		}
+	}
+
+	.submit_container {
+		clear: both;
+		> input {
+			@include make-col-ready();
+			float: left;
+					
+			margin-left: calc(#{percentage(3 / $grid-columns)} + #{$grid-gutter-width} / 2);
+			margin-right: $grid-gutter-width / 2;
+		}
+	}
+}
+
+
+.mod_login form {
+	.formbody {
+		@include make-row();
+		@extend .form-group;
+
+		> label {
+			@extend .col-form-label ;
+			@include make-col-ready();
+			@include make-col(3);
+		}
+
+		> input,
+		> .checkbox_container {
+			margin-bottom: $form-group-margin-bottom;
+			@include make-col-ready();
+			float: left;
+			// width: calc(75% - #{$grid-gutter-width});
+			width: auto;
+			margin-left: $grid-gutter-width / 2;
+			margin-right: $grid-gutter-width / 2;
+		}
+
+		> .checkbox_container,
+		> .submit_container,
+		> p.error  {
+			clear: both;
+
+			@include make-container;
+			@include make-col-offset(3);
+
+			> input {
+				@include make-container;
+			}
+		}
+		> .submit_container > input {
+			width: auto;
+		}
+
+		br {
+			clear: both;
+		}
+		
+	}
+	
+}
+
+
+
+
+
+
+/*
+ * custom design
+ */
+form {
+	input:not([type="radio"]):not([type="checkbox"]),
+	textarea,
+	select {
+		@extend .form-control;
+		width: inherit;
+		background-color: $input-bg;
+	}
+
+	.checkbox_container {
+		@extend .form-check;
+	}
+
+	.submit_container > input.submit,
+	.formbody > input.submit {
+		display: inline-block;
+		font-weight: $btn-font-weight;
+		line-height: $btn-line-height;
+		text-align: center;
+		white-space: nowrap;
+		vertical-align: middle;
+		cursor: pointer;
+		user-select: none;
+		border: $input-btn-border-width solid transparent;
+		@include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius);
+		@include transition(all .2s ease-in-out);
+
+		&,
+		&:active,
+		&.active {
+		&:focus,
+		&.focus {
+		  	@include tab-focus();
+		}
+		}
+
+		@include hover-focus {
+			text-decoration: none;
+		}
+		&.focus {
+			text-decoration: none;
+		}
+
+		&:active,
+		&.active {
+			background-image: none;
+			outline: 0;
+			@include box-shadow($btn-active-box-shadow);
+		}
+
+		&.disabled,
+		&:disabled {
+			cursor: $cursor-disabled;
+			opacity: .65;
+			@include box-shadow(none);
+		}
+
+
+		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	}
+}
+
+
+
+
+
+
+
+
+/*
+ * forms validation
+ */
+form {
+	.widget.error {
+		position: relative;
+		margin-bottom: 2.5rem;
+
+		input:not([type="radio"]):not([type="checkbox"]),
+		textarea,
+		select {
+			padding-right: ($input-padding-x * 3);
+			background-repeat: no-repeat;
+			background-position: center right ($input-height / 4);
+			background-size: ($input-height / 2) ($input-height / 2);
+			
+			background-image: $form-icon-danger;
+			border-color: $brand-danger;
+		}
+		
+		p.error {
+			position: absolute;
+			bottom: -2.5rem;
+		}
+	}
+
+	p.error {
+		color: $brand-danger;
+	}
+	
+}
+
+
+
+
+

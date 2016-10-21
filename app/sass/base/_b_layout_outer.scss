@@ -83,23 +83,23 @@ body.fullwidth #container > .container {
 /* 
  * show background grid
  */
-$grid-bg : percentage(1 / $grid-columns);
-.row {
-    background: repeating-linear-gradient( 
-        90deg, 
-        rgba(red,.2) calc(#{$grid-gutter-width} / 2), 
-        rgba(red,.2)   calc(#{$grid-bg} - #{$grid-gutter-width} / 2), 
-        rgba(white,.2) calc(#{$grid-bg} - #{$grid-gutter-width} / 2), 
-        rgba(white,.2) calc(#{$grid-bg} + #{$grid-gutter-width} / 2))
-}
-.mod_article {
-    background: repeating-linear-gradient( 
-        90deg, 
-        rgba(green,.5) calc(#{$grid-gutter-width} / 2), 
-        rgba(green,.5)   calc(#{$grid-bg} - #{$grid-gutter-width} / 2), 
-        rgba(white,.2) calc(#{$grid-bg} - #{$grid-gutter-width} / 2), 
-        rgba(white,.2) calc(#{$grid-bg} + #{$grid-gutter-width} / 2))
-}
+// $grid-bg : percentage(1 / $grid-columns);
+// .row {
+//     background: repeating-linear-gradient( 
+//         90deg, 
+//         rgba(red,.2) calc(#{$grid-gutter-width} / 2), 
+//         rgba(red,.2)   calc(#{$grid-bg} - #{$grid-gutter-width} / 2), 
+//         rgba(white,.2) calc(#{$grid-bg} - #{$grid-gutter-width} / 2), 
+//         rgba(white,.2) calc(#{$grid-bg} + #{$grid-gutter-width} / 2))
+// }
+// .mod_article {
+//     background: repeating-linear-gradient( 
+//         90deg, 
+//         rgba(green,.5) calc(#{$grid-gutter-width} / 2), 
+//         rgba(green,.5)   calc(#{$grid-bg} - #{$grid-gutter-width} / 2), 
+//         rgba(white,.2) calc(#{$grid-bg} - #{$grid-gutter-width} / 2), 
+//         rgba(white,.2) calc(#{$grid-bg} + #{$grid-gutter-width} / 2))
+// }
 
 
 /*   
