@@ -2,9 +2,13 @@
 
 var gulp          = require( 'gulp' );
 var gutil         = require( 'gulp-util' );
-var sass          = require( 'gulp-sass' );
-var autoprefixer  = require( 'gulp-autoprefixer' );
+
 var sourcemaps    = require( 'gulp-sourcemaps' );
+var sass          = require( 'gulp-sass' );
+var postcss       = require( 'gulp-postcss');
+var autoprefixer  = require( 'autoprefixer' );
+var cssnano       = require( 'cssnano');
+
 var webpack       = require( 'webpack' );
 
 var browserSync   = require( 'browser-sync'  ).create();
@@ -20,8 +24,9 @@ var secrets       = require( './secrets.json' );
  */
 var app         = '../app/';
 var dist        = '../files/dist/';
-    
-var styles_src  = ['../app/sass/**/*.scss','../files/tinymce_custom.css'];
+
+var styles_watch= ['../app/sass/**/*.scss','../files/tinymce_custom.css'];    
+var styles_src  = ['../app/sass/styles.scss'];
 var styles_dist = '../files/dist/css/';
 
 var js_context  = '../app/js/';
@@ -52,19 +57,42 @@ gulp.task('make', function() {
 /*
  * SASS
  */
-gulp.task('sass', function () {
-  gulp.src( styles_src )
-    .pipe(sourcemaps.init())
-    .pipe(sass({outputStyle: 'compressed'})
-        .on('error', sass.logError))
-    .pipe(sourcemaps.write('.', {
-      sourceMappingURL: function(file) {
-        return file.relative + '.map?ver=' + Math.floor(Math.random() * (10000)); ;
-      }
-    }))
-    .pipe(gulp.dest( styles_dist ))
-});
+// gulp.task('sass', function () {
+//   gulp.src( styles_src )
+//     .pipe(sourcemaps.init())
+//     .pipe(sass(
+//         {
+//             outputStyle: 'compressed'
+//         }
+//     ).on('error', sass.logError))
+//     .pipe(sourcemaps.init({loadMaps: true}))
+//     .pipe(autoprefixer(
+//         {
+//             browsers: [
+//                 '> 1%',
+//                 'last 2 versions'
+//             ],
+//         }
+//     ))
+//     .pipe(sourcemaps.write('.', {includeContent: false}))
+//     .pipe(gulp.dest( styles_dist ))
+// });
 
+
+
+
+gulp.task('sass', function () {
+    var processors = [
+        autoprefixer({browsers: ['last 2 version','> 1%']}),
+        cssnano
+    ];
+    return gulp.src( styles_src )
+        .pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(postcss(processors))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest( styles_dist ));
+});
 
 
 
@@ -168,7 +196,7 @@ gulp.task('ftp-deploy', function() {
  */
 gulp.task('watch', function() {
     livereload.listen();
-    gulp.watch( styles_src, ['sass']);
+    gulp.watch( styles_watch, ['sass']);
     gulp.watch( js_src, ['webpack']);
 
 
@@ -204,7 +232,7 @@ gulp.task('serve', ['sass'], function() {
         notify: false,
     });
 
-    gulp.watch( styles_src, ['sass'] );
+    gulp.watch( styles_watch, ['sass'] );
     // gulp.watch(app + 'js/**/*', ['webpack']);
 
 });

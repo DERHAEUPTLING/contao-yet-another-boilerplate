@@ -8,7 +8,7 @@
  * default
  */
 #nav_main {
-	margin: 0 (-$layout_gutter -$layout_gutter_outer);
+
 	ul.level_1 {
 		display: table;
 		margin: 0;
@@ -35,13 +35,13 @@
 	    overflow: hidden;
 	}
 	.active, .trail {
-		color: $color_nav--active;
+		color: $link-hover-color;
 	}
 }
 
 @media only screen and (max-width: 767px) {
     #nav_main {
-		margin: 0 (-$layout_gutter/2);
+
 		ul.level_1 {
 
 			> li {

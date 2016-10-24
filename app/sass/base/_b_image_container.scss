@@ -3,31 +3,38 @@
  */
 .image_container {
     line-height: 1em;
-    margin-bottom: .5em;
 
-
-    // preserve lalyout while page load
-    a,
-    img {
+    a {
         display: block;
     }
 
     img {
+        display: block;
+        width: 100%;
         max-width: 100%;
+        height: auto;
     }
-
-    &.float_left {
-        width: 40%;
-        margin-right: 1em;
-    }
+    
+    &.float_left,
     &.float_right {
         width: 40%;
-        margin-left:  1em;
+    }
+    &.float_left {
+        float: left;
+        margin-right: $grid-gutter-width / 2;
+    }
+    &.float_right {
+        float: right;
+        margin-left:  $grid-gutter-width / 2;
+    }
+
+    figcaption {
+        margin-top: .5em;
     }
 
 
     // figure margins
-    @media (max-width: 480px) {
+    @include media-breakpoint-down(md) {
         &.float_right,
         &.float_left {
             float: none !important;
@@ -36,9 +43,4 @@
             width: 100%;
         }
     }
-}
-
-// reset for Gallery
-.ce_gallery .image_container {
-    width: auto;
 }
