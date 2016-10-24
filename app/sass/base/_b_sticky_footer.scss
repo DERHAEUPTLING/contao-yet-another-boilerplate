@@ -3,14 +3,13 @@
  *   =========================================================================
  */
 
+#wrapper {
+	padding-bottom: $sticky_footer_height;
+}
+#footer {
 
-/*
- * sticky footer - fix
- */
-#offcanvas-container,
-#offcanvas-content,
-#page {
-    height: 100%;
+	height: $sticky_footer_height;
+	margin-top: -$sticky_footer_height;
 }
 
-@include scut-sticky-footer($sticky_footer_height, "#wrapper","#footer");
+

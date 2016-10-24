@@ -1,0 +1,90 @@
+
+<?php 
+
+/** 
+ * Load combined or minified ressources only when no user is logged in 
+ * Info: Ressources with |static gets combined 
+ *       You also can use |async to render the async attribute for JS 
+ */ 
+
+$static    = '|static'; 
+$arrStatic = array('||static', $static); 
+$min       = '.min'; 
+$cssPath   = 'files/dist/css/'; // edit your path to css files 
+$jsPath    = 'files/dist/js/';  // edit your path to js files 
+
+// Fetch all core and extension CSS resources and rebuild a new $GLOBALS['TL_CSS'] 
+$TL_FRAMEWORK_CSS = is_array($GLOBALS['TL_FRAMEWORK_CSS']) ? $GLOBALS['TL_FRAMEWORK_CSS'] : array(); 
+$TL_CSS           = is_array($GLOBALS['TL_CSS'])           ? $GLOBALS['TL_CSS']           : array(); 
+$TL_USER_CSS      = is_array($GLOBALS['TL_USER_CSS'])      ? $GLOBALS['TL_USER_CSS']      : array(); 
+$GLOBALS['TL_CSS'] = array_merge($TL_FRAMEWORK_CSS, $TL_CSS, $TL_USER_CSS); 
+$GLOBALS['TL_FRAMEWORK_CSS'] = array(); // empty 
+$GLOBALS['TL_USER_CSS']      = array(); // empty 
+
+
+
+/** 
+ * If a user is logged in: 
+ *   Set $beUserLoggedIn to true 
+ *   Empty the $static and $min varible 
+ *   Also remove |static from extensions CSS and JS 
+ */ 
+if(sha1(session_id().(!Config::get('disableIpCheck') ? Environment::get('ip') : '').'BE_USER_AUTH') == Input::cookie('BE_USER_AUTH')) 
+{ 
+  $beUserLoggedIn = true; 
+
+  // remove |static from CSS when logged in 
+  foreach($GLOBALS['TL_CSS'] as $k => $v) 
+  { 
+    // not from SCSS 
+    if(strpos($v, '.scss') === false) 
+    { 
+      $GLOBALS['TL_CSS'][$k] = str_replace($arrStatic, '', $v); 
+    } 
+  } 
+
+  // remove |static from JS when logged in 
+  if(is_array($GLOBALS['TL_JAVASCRIPT'])) 
+  { 
+    foreach($GLOBALS['TL_JAVASCRIPT'] as $k => $v) 
+    { 
+      $GLOBALS['TL_JAVASCRIPT'][$k] = str_replace($arrStatic, '', $v); 
+    } 
+  } 
+
+  $static = ''; 
+  $min    = ''; 
+} 
+else // add static to all CSS and JS if not logged in 
+{ 
+  foreach($GLOBALS['TL_CSS'] as $k => $v) 
+  { 
+    if(strpos($v, $static) === false) 
+    { 
+      $GLOBALS['TL_CSS'][$k] = $v.$static; 
+    } 
+  } 
+  if(is_array($GLOBALS['TL_JAVASCRIPT'])) 
+  { 
+    foreach($GLOBALS['TL_JAVASCRIPT'] as $k => $v) 
+    { 
+      if(strpos($v, $static) === false) 
+      { 
+        $GLOBALS['TL_JAVASCRIPT'][$k] = $v.$static; 
+      } 
+    } 
+  } 
+} 
+
+
+
+/** Edit your resources below this line */ 
+// my CSS 
+// $GLOBALS['TL_CSS'][] = $cssPath.'normalize.css'.$static; 
+// $GLOBALS['TL_CSS'][] = $cssPath.'basic.css'.$static; 
+// $GLOBALS['TL_CSS'][] = $cssPath.'layout.css'.$static; 
+// $GLOBALS['TL_CSS'][] = $cssPath.'custom.css'.$static; 
+// $GLOBALS['TL_CSS'][] = $cssPath.'tinymce.css'.$static; 
+
+// my JS 
+// $GLOBALS['TL_JAVASCRIPT'][] = $jsPath.'misc.js'.$static;

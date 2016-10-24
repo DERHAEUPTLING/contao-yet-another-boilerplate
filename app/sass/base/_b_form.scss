@@ -1,163 +1,226 @@
-/* =============================================================================
-   HTML5 Boilerplate Reset
-   ========================================================================== */
 
-form { margin: 0; }
-fieldset { border: 0; margin: 0; padding: 0; }
 
-/* Indicate that 'label' will shift focus to the associated form element */
-label { cursor: pointer; }
 
-/*
- * 1. Correct color not inheriting in IE6/7/8/9
- * 2. Correct alignment displayed oddly in IE6/7
+
+/* 
+ * forms grid
  */
 
-legend { border: 0; *margin-left: -7px; padding: 0; white-space: normal;}
+form {
+	/* row */
+	.widget,
+	.submit_container,
+	.mod_login .formbody {
+		@include make-row();
+		@extend .form-group;
+	}
+
+	/* cols */
+	.widget-text,
+	.widget-textarea,
+	.widget-explanation,
+	.widget-select,
+	.widget-radio > fieldset,
+	.widget-checkbox > fieldset,
+	.widget-captcha  {
+
+		> label {
+			@extend .col-form-label ;
+			@include make-col-ready();
+			@include make-col(3);
+		}
+		> legend {
+			@include make-col-ready();
+		}
+
+		> input,
+		> select,
+		> textarea,
+		> span,
+		> .checkbox_container {
+			@include make-col-ready();
+			float: left;
+			width: calc(75% - #{$grid-gutter-width}) !important;
+			margin-left: $grid-gutter-width / 2;
+			margin-right: $grid-gutter-width / 2;
+		}
+		> span {
+			@include make-col-offset(3);
+		}
+		> p,
+		> p.error {
+			@include make-col-ready();
+			@include make-col(9);
+			@include make-col-offset(3);
+		}
+	}
+
+	.submit_container {
+		clear: both;
+		> input {
+			@include make-col-ready();
+			float: left;
+					
+			margin-left: calc(#{percentage(3 / $grid-columns)} + #{$grid-gutter-width} / 2);
+			margin-right: $grid-gutter-width / 2;
+		}
+	}
+}
+
+
+.mod_login form {
+	.formbody {
+		@include make-row();
+		@extend .form-group;
+
+		> label {
+			@extend .col-form-label ;
+			@include make-col-ready();
+			@include make-col(3);
+		}
+
+		> input,
+		> .checkbox_container {
+			margin-bottom: $form-group-margin-bottom;
+			@include make-col-ready();
+			float: left;
+			// width: calc(75% - #{$grid-gutter-width});
+			width: auto;
+			margin-left: $grid-gutter-width / 2;
+			margin-right: $grid-gutter-width / 2;
+		}
+
+		> .checkbox_container,
+		> .submit_container,
+		> p.error  {
+			clear: both;
+
+			@include make-container;
+			@include make-col-offset(3);
+
+			> input {
+				@include make-container;
+			}
+		}
+		> .submit_container > input {
+			width: auto;
+		}
+
+		br {
+			clear: both;
+		}
+		
+	}
+	
+}
+
+
+
+
+
 
 /*
- * 1. Correct font-size not inheriting in all browsers
- * 2. Remove margins in FF3/4 S5 Chrome
- * 3. Define consistent vertical alignment display in all browsers
+ * custom design
  */
+form {
+	input:not([type="radio"]):not([type="checkbox"]),
+	textarea,
+	select {
+		@extend .form-control;
+		width: inherit;
+		background-color: $input-bg;
+	}
 
-button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+	.checkbox_container {
+		@extend .form-check;
+	}
+
+	.submit_container > input.submit,
+	.formbody > input.submit {
+		display: inline-block;
+		font-weight: $btn-font-weight;
+		line-height: $btn-line-height;
+		text-align: center;
+		white-space: nowrap;
+		vertical-align: middle;
+		cursor: pointer;
+		user-select: none;
+		border: $input-btn-border-width solid transparent;
+		@include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-border-radius);
+		@include transition(all .2s ease-in-out);
+
+		&,
+		&:active,
+		&.active {
+		&:focus,
+		&.focus {
+		  	@include tab-focus();
+		}
+		}
+
+		@include hover-focus {
+			text-decoration: none;
+		}
+		&.focus {
+			text-decoration: none;
+		}
+
+		&:active,
+		&.active {
+			background-image: none;
+			outline: 0;
+			@include box-shadow($btn-active-box-shadow);
+		}
+
+		&.disabled,
+		&:disabled {
+			cursor: $cursor-disabled;
+			opacity: .65;
+			@include box-shadow(none);
+		}
+
+
+		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+	}
+}
+
+
+
+
+
+
+
 
 /*
- * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
+ * forms validation
  */
+form {
+	.widget.error {
+		position: relative;
+		margin-bottom: 2.5rem;
 
-button, input { line-height: normal; }
+		input:not([type="radio"]):not([type="checkbox"]),
+		textarea,
+		select {
+			padding-right: ($input-padding-x * 3);
+			background-repeat: no-repeat;
+			background-position: center right ($input-height / 4);
+			background-size: ($input-height / 2) ($input-height / 2);
+			
+			background-image: $form-icon-danger;
+			border-color: $brand-danger;
+		}
+		
+		p.error {
+			position: absolute;
+			bottom: -2.5rem;
+		}
+	}
 
-/*
- * 1. Display hand cursor for clickable form elements
- * 2. Allow styling of clickable form elements in iOS
- * 3. Correct inner spacing displayed oddly in IE7 (doesn't effect IE6)
- */
-
-button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
-
-/*
- * Re-set default cursor for disabled elements
- */
-
-button[disabled], input[disabled] { cursor: default; }
-
-/*
- * Consistent box sizing and appearance
- */
-
-input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; }
-input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
-input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
-
-/*
- * Remove inner padding and border in FF3/4: h5bp.com/l
- */
-
-button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
-
-/*
- * 1. Remove default vertical scrollbar in IE6/7/8/9
- * 2. Allow only vertical resizing
- */
-
-textarea { overflow: auto; vertical-align: top; resize: vertical; }
-
-/* Colors for form validity */
-input:valid, textarea:valid {  }
-input:invalid, textarea:invalid { background-color: #f0dddd; }
-
-
-/*
- *                                                          mod_subscribe
- * ----------------------------------------------------------------------------
- */
-.contact {
-    form {
-        margin: 0 0 0 14px;
-    }
-    form h1 {
-        margin-left: 0;
-    }
-    .radio_container {
-        margin-bottom: -15px;
-        padding: 6px 14px;
-        width: 50%;
-        background: #f2f2f2;
-
-        span {
-            padding-right: 10px;
-        }
-        input {
-            width: auto;
-            padding-right: 5px;
-        }
-        p.error {
-            margin-left: 0;
-            margin-top: 0;
-        }
-    }
-
-    input,
-    textarea {
-        // font-family: Arial, sans-serif;
-        // font-size: 16px;
-        color: $color_font;
-
-        outline: none;
-
-        padding: 8px 14px;
-        margin: 5px 0;
-        width: 50%;
-        background-color: #f2f2f2;
-        border: 0;
-
-        @include transition-property(background-color, box-shadow);
-        @include transition-duration(.2s);
-        &:focus {
-            background-color: #fafafa;
-            @include box-shadow(#aaa 0 0 8px);
-            @include border-radius(1px);
-
-
-        }
-    }
-    textarea {
-        outline: none;
-        overflow: auto;
-        resize:vertical;
-        min-height:100px;
-        //max-height:300px;
-    }
-    input.submit {
-        font-family:"Frutiger Neue W01 Book";
-        font-size: 1.1em;
-
-        width: inherit;
-        padding: 5px 30px;
-        color: white;
-        background: #5d5c60;
-        *width: 35%;
-        @include transition-property(background-color, box-shadow);
-        @include transition-duration(.2s);
-        &:hover,
-        &:focus {
-            background: $color_link;
-            @include box-shadow(#aaa 0 0 8px);
-            @include border-radius(1px);
-        }
-    }
-
-    p.error {
-        margin: 15px 0 -6px 14px;
-    }
-    input.error,
-    textarea.error,
-    .radio_container.error {
-        background-color: #fbc4c0;
-    }
-
+	p.error {
+		color: $brand-danger;
+	}
+	
 }
 
 

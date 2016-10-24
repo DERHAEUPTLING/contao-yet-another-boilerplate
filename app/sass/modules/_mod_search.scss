@@ -1,0 +1,8 @@
+.mod_search {
+	input {
+		float: left;
+		&.submit {
+			padding: .5rem .75rem !important;
+		}
+	}
+}

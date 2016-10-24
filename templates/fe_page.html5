@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+<!DOCTYPE html><?php 
+  include 'inc-resources.html5'; 
+?>
 <html lang="<?= $this->language ?>"<?php if ($this->isRTL): ?> dir="rtl"<?php endif; ?>>
 <head>
-
   <?php $this->block('head'); ?>
     <meta charset="<?= $this->charset ?>">
     <title><?= $this->title ?></title>
@@ -16,8 +17,7 @@
 
     <?= $this->viewport ?>
     <?= $this->framework ?>
-    <?= $this->stylesheets ?>
-    <link rel="stylesheet" href="files/dist/css/styles.css">
+    <?= $this->stylesheets ?>    
     <?= $this->mooScripts ?>
     <?= $this->head ?>
     
@@ -97,8 +97,20 @@
       <?php $this->block('header'); ?>
         <?php if ($this->header): ?>
           <header id="header" class="header">
-            <div class="inside">
-              <?= $this->header ?>
+            <div class="container">
+              <?php if ($this->sections['Header top']): ?>
+              <div class="header-top">
+                <?php echo $this->sections['Header top']; ?>
+              </div>
+              <?php endif; ?>
+              <div class="header-nav row">
+                <?= $this->header ?>
+              </div>
+              <?php if ($this->sections['Header tagline']): ?>
+              <div class="header-tagline">
+                <?php echo $this->sections['Header tagline']; ?>
+              </div>
+              <?php endif; ?>
             </div>
           </header>
         <?php endif; ?>
@@ -108,52 +120,59 @@
 
       <?php $this->block('container'); ?>
         <div id="container">
+          <div class="container">
+            <div class="row">
+              <?php $this->block('main'); ?>
+                <div id="main">
+                    <?= $this->main ?>
+                  <?php // $this->sections('main'); ?>
+                </div>
+              <?php $this->endblock(); ?>
 
-          <?php $this->block('main'); ?>
-            <div id="main">
-              <div class="inside">
-                <?= $this->main ?>
-              </div>
-              <?php // $this->sections('main'); ?>
+              <?php $this->block('left'); ?>
+                <?php if ($this->left): ?>
+                  <aside id="left">
+                    <div class="row">
+                      <?= $this->left ?>
+                    </div>
+                  </aside>
+                <?php endif; ?>
+              <?php $this->endblock(); ?>
+
+              <?php $this->block('right'); ?>
+                <?php if ($this->right): ?>
+                  <aside id="right">
+                    <div class="row">
+                      <?= $this->right ?>
+                    </div>
+                  </aside>
+                <?php endif; ?>
+              <?php $this->endblock(); ?>
             </div>
-          <?php $this->endblock(); ?>
-
-          <?php $this->block('left'); ?>
-            <?php if ($this->left): ?>
-              <aside id="left">
-                <div class="inside">
-                  <?= $this->left ?>
-                </div>
-              </aside>
-            <?php endif; ?>
-          <?php $this->endblock(); ?>
-
-          <?php $this->block('right'); ?>
-            <?php if ($this->right): ?>
-              <aside id="right">
-                <div class="inside">
-                  <?= $this->right ?>
-                </div>
-              </aside>
-            <?php endif; ?>
-          <?php $this->endblock(); ?>
-
-        </div>
+            
+          </div>
+        </div> 
       <?php $this->endblock(); ?>
 
       <?php // $this->sections('after'); ?>
 
-      <?php $this->block('footer'); ?>
-        <?php if ($this->footer): ?>
-          <footer id="footer">
-            <div class="inside">
-              <?= $this->footer ?>
-            </div>
-          </footer>
-        <?php endif; ?>
-      <?php $this->endblock(); ?>
+      
 
     </div>
+
+    <?php $this->block('footer'); ?>
+      <?php if ($this->footer): ?>
+        <footer id="footer">
+          <div class="container">
+            <div class="row">
+              <?= $this->footer ?>
+            </div>
+          </div>
+        </footer>
+      <?php endif; ?>
+    <?php $this->endblock(); ?>
+
+      
 
     <?php // $this->sections('bottom'); ?>
   <?php $this->endblock(); ?>

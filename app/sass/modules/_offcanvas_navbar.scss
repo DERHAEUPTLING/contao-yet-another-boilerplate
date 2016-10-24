@@ -3,7 +3,8 @@
  *  Burger
  */
 .menu-burger {
-    display: block;
+    
+    
     transition: opacity 700ms linear 0ms;
 
     padding: 10px;
@@ -16,7 +17,7 @@
     opacity: 0;
     span {
         transition: transform 200ms cubic-bezier(0.63, 0.62, 0.48, 1.64);
-        background: $color_font;
+        background: $gray-dark;
         display: block;
         width: 30px;
         height: 3px;
@@ -56,9 +57,10 @@
  */
 
     .offcanvas-toggle {
-        position: absolute;
-        right: 0;
-        top: 0;
+        @include media-breakpoint-up(md) {
+            display: none;
+        }
+        float: right;
         padding-top: 30px;
         cursor: pointer;
 

@@ -25,14 +25,6 @@ $colorboxUrl : '../../../files/dist/images/lightbox/';
 */
 // #cboxOverlay{background:#fff;}
 #colorbox{outline:0;}
-    // #cboxTopLeft{width:25px; height:25px; background:url(#{$colorboxUrl}border1.png) no-repeat 0 0;}
-    // #cboxTopCenter{height:25px; background:url(#{$colorboxUrl}border1.png) repeat-x 0 -50px;}
-    // #cboxTopRight{width:25px; height:25px; background:url(#{$colorboxUrl}border1.png) no-repeat -25px 0;}
-    // #cboxBottomLeft{width:25px; height:25px; background:url(#{$colorboxUrl}border1.png) no-repeat 0 -25px;}
-    // #cboxBottomCenter{height:25px; background:url(#{$colorboxUrl}border1.png) repeat-x 0 -75px;}
-    // #cboxBottomRight{width:25px; height:25px; background:url(#{$colorboxUrl}border1.png) no-repeat -25px -25px;}
-    // #cboxMiddleLeft{width:25px; background:url(#{$colorboxUrl}border2.png) repeat-y 0 0;}
-    // #cboxMiddleRight{width:25px; background:url(#{$colorboxUrl}border2.png) repeat-y -25px 0;}
 
     // #cboxContent{background:#fff; overflow:hidden;}
         .cboxIframe{background:#fff;}
@@ -40,7 +32,43 @@ $colorboxUrl : '../../../files/dist/images/lightbox/';
         //#cboxLoadedContent{margin-bottom:20px;}
         #cboxTitle{position:absolute; bottom:0px; left:0; text-align:center; width:100%; color:#999;}
         #cboxCurrent{position:absolute; bottom:0px; left:100px; color:#999;}
-        #cboxLoadingOverlay{background:#fff url(#{$colorboxUrl}loading.gif) no-repeat 5px 5px;}
+        #cboxLoadingOverlay{
+            // background:#fff url(#{$colorboxUrl}Symbol_loading.svg) no-repeat 5px 5px;
+        }
+        
+        @keyframes rotation {
+            from {transform: rotate(0deg);}
+            to {transform: rotate(359deg);}
+        }
+
+
+
+        
+        .spinner{
+            $spinnerSize : 40px;
+            // position: absolute;
+            // top: 200px;
+            // left: 50%;
+            // margin-left: -($spinnerSize/2);
+
+            height:$spinnerSize;
+            width: $spinnerSize;
+
+            
+            background: transparent url(../../../files/dist/images/lightbox/Symbol_loading.svg) no-repeat center;
+            background-size: $spinnerSize;
+
+            
+            animation: rotation 1s infinite linear;
+
+            transition: opacity .6s ease-out;  
+
+            pointer-events: none;
+            z-index: 1; 
+
+        }
+
+
 
         /* these elements are buttons, and may need to have additional styles reset to avoid unwanted base styles */
         #cboxPrevious, #cboxNext, #cboxSlideshow, #cboxClose {border:0; padding:0; margin:0; overflow:visible; width:auto; background:none; }
@@ -125,20 +153,29 @@ $colorbox-border-width: 10px;
     // icon
     span {
         position: relative;
-        top: -2px;
+        top: -1px;
         right: -4px;
         display: block;
-        width: 30px;
-        height: 30px;
-        background: transparent url('#{$colorboxUrl}fancybox.png') -40px 0px;
+        width: 23px;
+        height: 23px;
+        // background: transparent url('#{$colorboxUrl}fancybox.png') -40px 0px;
+        // background: transparent url('#{$colorboxUrl}Symbol_schließen.svg');
         cursor: pointer;
         z-index: 1103;
 
         /* ir */
-        text-indent: 102%;
-        white-space: nowrap;
-        overflow: hidden;
+        // text-indent: 102%;
+        // white-space: nowrap;
+        // overflow: hidden;
+        
+        will-change: transform;
+        transition: transform .4s ease-in-out;
+        transform: rotate(90deg) scale(1);
+        
     }
+    &:hover  span {
+            transform: rotate(180deg) scale(0.9);
+        }
 
 
 
@@ -167,15 +204,17 @@ $colorbox-border-width: 10px;
         margin: auto;
         opacity: 0;
 
-        /* ir */
-        text-indent: 102%;
-        white-space: nowrap;
-        overflow: hidden;
+        width: 40px;
 
-        /* bg */
-        width: 30px;
-        height: 30px;
-        background-image: url('#{$colorboxUrl}fancybox.png');
+        // /* ir */
+        // text-indent: 102%;
+        // white-space: nowrap;
+        // overflow: hidden;
+
+        // /* bg */
+        // width: 30px;
+        // height: 30px;
+        // background-image: url('#{$colorboxUrl}fancybox.png');
 
         /* transition */
         transition-property: transform, opacity;
@@ -190,8 +229,8 @@ $colorbox-border-width: 10px;
 #cboxPrevious {
     left: 0;
     span {
-        margin-left: 15px;
-        background-position: -40px -30px;
+        margin-left: 20%;
+        // background-image: url('#{$colorboxUrl}Symbol_prev.svg');
     }
     &:hover span {
         transform: translateX(-10px)
@@ -201,8 +240,8 @@ $colorbox-border-width: 10px;
     right: 0;
     span {
         float: right;
-        margin-right: 15px;
-        background-position: -40px -60px;
+        margin-right: 20%;
+        // background-image: url('#{$colorboxUrl}Symbol_next.svg');
     }
     &:hover span {
         transform: translateX(10px);

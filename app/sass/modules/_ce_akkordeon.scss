@@ -5,8 +5,9 @@
 
 
 .ce_accordion {
-	&:last-of-type {
-		border-bottom: 1px $color_link solid;
+	@include clearfix;
+	&:last-of-type .accordion {
+		border-bottom: 1px $link-color solid;
 	}
 
 	/* toggler */
@@ -15,8 +16,8 @@
 		font-size: 1.125em;
 		line-height: 1.7em;
 		cursor: pointer;
-		background-color: $color_bg;
-		border-top: 1px $color_link solid;
+		background-color: $gray-lighter;
+		border-top: 1px $link-color solid;
 
 		&.ui-state-focus {
 		  	outline: none;
@@ -30,6 +31,7 @@
 
 	/* accordion */
 	.accordion {
+		@include clearfix;
 		padding-top: .75em;
 		> div {
 			margin-bottom: 1em;

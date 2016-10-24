@@ -1,0 +1,112 @@
+/*   
+ *                                  b_layout.scss
+ *    =========================================================================
+ */
+
+.layout-2-col-left {
+    #main {
+        @include make-col-ready();
+        @include media-breakpoint-up(lg){
+            @include make-col(9);
+            @include make-col-push(3)
+        }
+    }
+    #left {
+        @include make-col-ready();
+        @include make-col(3);
+        @include make-col-pull(9)
+    }
+}
+
+
+
+.layout-2-col-right {
+    #main {
+        @include make-col-ready();
+        @include media-breakpoint-up(lg){
+            @include make-col(9);
+        }
+    }
+    #right {
+        @include make-col-ready();
+        @include make-col(3);
+    }
+}
+
+
+
+.layout-3-col {
+    #main {
+        @include make-col-ready();
+        @include media-breakpoint-up(lg){
+            @include make-col(6);
+            @include make-col-push(3)
+        }
+        @include make-container();
+    }
+    #left {
+        @include make-col-ready();
+        @include make-col(3);
+        @include make-col-pull(6)
+    }
+    #right {
+        @include make-col-ready();
+        @include make-col(3);
+    }
+}
+
+
+body.fullwidth #container > .container {
+    max-width: none !important;
+}
+
+
+
+
+
+/*
+ * make no grid elements grid agnostig
+ */
+.mod_article {
+    @include make-row();
+}
+.row,
+.mod_article {
+    > *:not([class*="col-"]) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+} 
+
+
+
+/* 
+ * show background grid
+ */
+// $grid-bg : percentage(1 / $grid-columns);
+// .row {
+//     background: repeating-linear-gradient( 
+//         90deg, 
+//         rgba(red,.2) calc(#{$grid-gutter-width} / 2), 
+//         rgba(red,.2)   calc(#{$grid-bg} - #{$grid-gutter-width} / 2), 
+//         rgba(white,.2) calc(#{$grid-bg} - #{$grid-gutter-width} / 2), 
+//         rgba(white,.2) calc(#{$grid-bg} + #{$grid-gutter-width} / 2))
+// }
+// .mod_article {
+//     background: repeating-linear-gradient( 
+//         90deg, 
+//         rgba(green,.5) calc(#{$grid-gutter-width} / 2), 
+//         rgba(green,.5)   calc(#{$grid-bg} - #{$grid-gutter-width} / 2), 
+//         rgba(white,.2) calc(#{$grid-bg} - #{$grid-gutter-width} / 2), 
+//         rgba(white,.2) calc(#{$grid-bg} + #{$grid-gutter-width} / 2))
+// }
+
+
+/*   
+ *   misc
+ */
+#wrapper {
+    // needed by offcanvas & fixed footer
+    min-height: 100vh;
+}
+
