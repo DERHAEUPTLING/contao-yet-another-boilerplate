@@ -13,8 +13,10 @@
     }
     #left {
         @include make-col-ready();
-        @include make-col(3);
-        @include make-col-pull(9)
+        @include media-breakpoint-up(lg){
+            @include make-col(3);
+            @include make-col-pull(9)
+        }
     }
 }
 
