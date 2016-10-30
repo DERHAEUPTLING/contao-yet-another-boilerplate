@@ -2,14 +2,16 @@
  * 								b_sticky_footer
  *   =========================================================================
  */
-
-#wrapper {
-	padding-bottom: $sticky_footer_height;
+.st-content {
+	min-height: 100vh;
 }
-#footer {
-
-	height: $sticky_footer_height;
-	margin-top: -$sticky_footer_height;
+.st-content-inner {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+#wrapper {
+	flex: 1;
 }
 
 
