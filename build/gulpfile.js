@@ -25,7 +25,7 @@ var secrets       = require( './secrets.json' );
 var app         = '../app/';
 var dist        = '../files/dist/';
 
-var styles_watch= ['../app/sass/**/*.scss','../files/tinymce_custom.css'];    
+var styles_watch= ['../app/sass/**/*.scss','../files/_tinymce_custom.css'];    
 var styles_src  = ['../app/sass/styles.scss'];
 var styles_dist = '../files/dist/css/';
 
