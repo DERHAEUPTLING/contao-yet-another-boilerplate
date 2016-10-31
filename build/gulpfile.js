@@ -84,7 +84,7 @@ gulp.task('make', function() {
 gulp.task('sass', function () {
     var processors = [
         autoprefixer({browsers: ['last 2 version','> 1%']}),
-        cssnano
+        cssnano({safe: true})
     ];
     return gulp.src( styles_src )
         .pipe(sourcemaps.init())
