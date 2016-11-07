@@ -37,15 +37,18 @@ window.tinymce && tinymce.init({
   templates: [
     <?php echo Backend::getTinyTemplates(); ?>
   ],
-  plugins: 'autosave charmap code fullscreen image importcss link lists paste searchreplace tabfocus table template visualblocks',
+  plugins: 'autosave charmap code fullscreen importcss link lists paste searchreplace tabfocus table template visualblocks',
+  paste_as_text: true,
   browser_spellcheck: true,
   tabfocus_elements: ':prev,:next',
   importcss_append: true,
-  importcss_groups: [{title: '<?php echo Config::get('uploadPath'); ?>/tinymce.css'}],
+  // importcss_groups: [{title: '<?php echo Config::get('uploadPath'); ?>/tinymce.css'}],
   content_css: '<?php echo TL_PATH; ?>/system/themes/tinymce.css,<?php echo TL_PATH . '/' . Config::get('uploadPath'); ?>/_tinymce_custom.css,<?php echo TL_PATH . '/' . Config::get('uploadPath'); ?>/_tinymce_backend_only.css',
   extended_valid_elements: 'q[cite|class|title],article,section,hgroup,figure,figcaption',
-  menubar: 'file edit insert view table',
-  toolbar: 'link unlink | styleselect removeformat | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | undo redo | code  '
+  // menubar: 'file edit insert view format table',
+  menubar: 'edit insert view table',
+  removed_menuitems: 'pastetext',
+  toolbar: 'styleselect | link unlink | bold italic superscript | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | undo redo | removeformat | code  '
 });
 </script>
 <?php endif; ?>
