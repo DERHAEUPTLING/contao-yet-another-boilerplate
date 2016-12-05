@@ -123,3 +123,4 @@
 // unset($GLOBALS['TL_CTE']['includes']['form']);
 // unset($GLOBALS['TL_CTE']['includes']['module']);
 // unset($GLOBALS['TL_CTE']['includes']['teaser']);
+// unset($GLOBALS['TL_CTE']['includes']['comments']);
