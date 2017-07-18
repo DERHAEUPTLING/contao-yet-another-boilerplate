@@ -47,13 +47,14 @@ globaly install npm & bower
 
 ## Configure FTP
 Copy `secrets.json.default`  to `secrets.json` and fill in your FTP credentials. <br>
-If FTPS is not supported remove the following lines
+If FTPS is not supported remove the following lines from the function getFtpConnection` in the `gulpfile.js`.
+
 ```
 secure  : true,
 secureOptions: { rejectUnauthorized: false },
 ```
 
-from the function `getFtpConnection` in the `gulpfile.js`.
+
 
 <br><br>
 
