@@ -1,6 +1,6 @@
 # Contao
 
-Contao starter theme and build tools.
+Contao starter theme and build tools for Contao 3.5.28.
 - gulp build and server push.
 - some preconfiguration of tinyMCE and dcaconfig.php
 - Bootrap SASS files in a minimal configuration. 
