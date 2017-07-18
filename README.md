@@ -11,13 +11,11 @@ Relevant Contao content elements prepared.
 Output is saved in `files/dist/js/` and uploaded to server.
 
 ## CSS
-`app/sass/styles.scss` is the starting point.
+- `app/sass/styles.scss` is the starting point.
 Output are saved in `files/dist/css/`
-
-CSS gets autoprefixed, compressed by cssnano, sourcemaped and uploaded to server.
-
-CSS is based on Bootstrap v4-alpha4.
-Styles for common Contao modules / elements are prepared.
+- CSS gets autoprefixed, compressed by cssnano, sourcemaped and uploaded to server.
+- CSS is based on Bootstrap v4-alpha4.
+- Styles for common Contao modules / elements are prepared.
 
 ## templates
 Changes on any files in  `templates/` are uploaded to server.
@@ -30,6 +28,7 @@ The `system/` folder contains useful presets.
     + `paste_as_text` is enabled, to remove all formatting on copy & paste  
 - `dcaconfig.php` contains presets 
     including a list of all available Conten Elements, that could be disabled, if not needed in the project.
+- the module `modules/contao-boilerplate` contains some presets
 
 
 ## contao installation
