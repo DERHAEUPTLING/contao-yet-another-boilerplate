@@ -38,6 +38,13 @@ you can skip the folders `app/` and `build`.
 - install with contao install tool `contao/install.php`.
 - import Template `website.spq`
 - create user
+
+## suggested Contao plugins
+[contao-mobilecontent](https://github.com/derhaeuptling/contao-mobilecontent)
+[contao-seo-serp-preview](https://github.com/derhaeuptling/contao-seo-serp-preview)
+[contao-lazy-images](https://github.com/derhaeuptling/contao-lazy-images)
+[contao-notification_center](https://github.com/terminal42/contao-notification_center)
+[contao-m17StickyBEFooter](https://github.com/may17/contao-m17StickyBEFooter)
 <br><br>
 
 # Build Tools
