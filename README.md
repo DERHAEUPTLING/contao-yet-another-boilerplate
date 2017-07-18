@@ -40,11 +40,11 @@ you can skip the folders `app/` and `build`.
 - create user
 
 ## suggested Contao plugins
-[contao-mobilecontent](https://github.com/derhaeuptling/contao-mobilecontent)
-[contao-seo-serp-preview](https://github.com/derhaeuptling/contao-seo-serp-preview)
-[contao-lazy-images](https://github.com/derhaeuptling/contao-lazy-images)
-[contao-notification_center](https://github.com/terminal42/contao-notification_center)
-[contao-m17StickyBEFooter](https://github.com/may17/contao-m17StickyBEFooter)
+[contao-mobilecontent](https://github.com/derhaeuptling/contao-mobilecontent) <br>
+[contao-seo-serp-preview](https://github.com/derhaeuptling/contao-seo-serp-preview) <br>
+[contao-lazy-images](https://github.com/derhaeuptling/contao-lazy-images) <br>
+[contao-notification_center](https://github.com/terminal42/contao-notification_center) <br>
+[contao-m17StickyBEFooter](https://github.com/may17/contao-m17StickyBEFooter) <br>
 <br><br>
 
 # Build Tools
