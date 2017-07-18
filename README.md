@@ -1,5 +1,5 @@
-# USAGE
-## Install required Tools on OS
+# Installation
+## Prepare System by globaly installing npm & bower
 - install [npm](https://github.com/npm/npm) <br>
     `curl -L https://npmjs.org/install.sh | sh`
 - install [bower](https://github.com/bower/bower) <br> 
@@ -8,41 +8,48 @@
     `npm install -g bower-installer`
 
 
-## Install build dependencies 
-- install node modules <br>
-    `npm install`
+## Install build tools 
+- goto folder `build/` and install node modules<br>
+   `npm install`
 - install app dependencies `bower-installer`
 
+## Configure FTP
+Copy `secrets.json.default`  to `secrets.json` and fill in your FTP credentials.
+If FTPS is not supported remove the following lines
+```
+secure  : true,
+secureOptions: { rejectUnauthorized: false },
+```
+
+from the function `getFtpConnection` in the `gulpfile.js`.
+
+
+# Usage
 ## start task runner GRUNT
 - watch and deploy while developement <br>
-    `grunt` 
+    `gulp` 
 - deploy all changed source files to server <br>
-    `grunt:prod`
+    `make:make`
 
 
-# INFOS
-## BUILD TOOLS
-Grunt:
---http://zerosixthree.se/getting-started-with-grunt/
-bower-installer: 	https://github.com/blittle/bower-installer
 
-## Grunt-Plugins
-
-watch: 		https://github.com/gruntjs/grunt-contrib-watch
-sass:			https://github.com/gruntjs/grunt-contrib-sass
-Autoprefixer: 	https://github.com/nDmitry/grunt-autoprefixer
-
-modernizr: https://github.com/Modernizr/grunt-modernizr
-requirejs: 	https://github.com/gruntjs/grunt-contrib-requirejs
-
-### LIBS
-
-reuqirejs manual build
-r.js -o build.single.js
+# What is inside
 
 
-scut
-http://davidtheclark.github.io/scut/
+lib | URL
+-|-
+gulp | 	http://gulpjs.com/
+gulp-util | https://www.npmjs.com/package/gulp-util
+gulp-sourcemaps | https://www.npmjs.com/package/gulp-sourcemaps
+gulp-sass |	https://www.npmjs.com/package/gulp-sass
+gulp-postcss | https://github.com/postcss/gulp-postcss
+autoprefixer | https://github.com/postcss/autoprefixer
+cssnano | http://cssnano.co/
+webpack | https://webpack.github.io/
+browserSync | https://www.browsersync.io/
+gulp-livereload | https://www.npmjs.com/package/gulp-livereload
+vinyl-ftp | https://www.npmjs.com/package/vinyl-ftp
+
 
 
 

@@ -164,7 +164,9 @@ function getFtpConnection() {
         user    : secrets.servers.production.username,
         password: secrets.servers.production.password,
         parallel: 5,
-        log     : gutil.log
+        log     : gutil.log,
+        secure  : true,
+        secureOptions: { rejectUnauthorized: false },
     });
 }
 

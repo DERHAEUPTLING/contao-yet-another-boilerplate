@@ -13,12 +13,31 @@
 	p {
         float: left;
     }
-    ul {
-    	float: right;
+    ul {        
+        $divider : "\00B7";
+        $space   : 0.2em;
 
-        // |  -> default
-	    // \00B7 -> dot
-        @include scut-list-divided("\00B7", 0.2em);
+        float: right;
+        list-style-type: none;
+        padding-left: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        > li {
+          float: left;
+        }
+        > li + li:before {
+          content: $divider;
+          display: inline-block;
+          margin-left: $space;
+          margin-right: $space;
+        }
 
         li.first,li.previous, li.previous + li, li.next, li.last {
             &:before {
