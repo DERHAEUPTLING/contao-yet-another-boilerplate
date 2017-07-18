@@ -1,5 +1,6 @@
 # Installation
-## Prepare System by globaly installing npm & bower
+## Prepare System 
+globaly install npm & bower
 - install [npm](https://github.com/npm/npm) <br>
     `curl -L https://npmjs.org/install.sh | sh`
 - install [bower](https://github.com/bower/bower) <br> 
@@ -9,12 +10,13 @@
 
 
 ## Install build tools 
-- goto folder `build/` and install node modules<br>
+- goto folder `build/` and install needed node modules<br>
    `npm install`
-- install app dependencies `bower-installer`
+- install app dependencies 
+    `bower-installer`
 
 ## Configure FTP
-Copy `secrets.json.default`  to `secrets.json` and fill in your FTP credentials.
+Copy `secrets.json.default`  to `secrets.json` and fill in your FTP credentials. <br>
 If FTPS is not supported remove the following lines
 ```
 secure  : true,
@@ -23,12 +25,13 @@ secureOptions: { rejectUnauthorized: false },
 
 from the function `getFtpConnection` in the `gulpfile.js`.
 
+<br><br>
 
 # Usage
-## start task runner GRUNT
-- watch and deploy while developement <br>
+start task runner Gulp
+- watch for changes and deploy while developement <br>
     `gulp` 
-- deploy all changed source files to server <br>
+- build and deploy only  <br>
     `make:make`
 
 
