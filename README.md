@@ -33,6 +33,14 @@ The `system/` folder contains useful presets.
 - `dcaconfig.php` contains presets 
     including a list of all available Conten Elements, that could be disabled, if not needed in the project.
 
+
+## contao installation
+- upload contao as usual
+- upload this bundle to root.
+you can skip the folders `app/` and `build`.
+- install with contao install tool `contao/install.php`.
+- import Template `website.spq`
+- create user
 <br><br>
 
 # Build Tools
