@@ -6,8 +6,6 @@ Contao starter theme and build tools.
 - Bootrap SASS files in a minimal configuration. 
 Relevant Contao content elements prepared.
 - JS bundled with Webpack.
-<br> 
-
 ## JS
 `app/js/entry.js` is used as starting point for Webpack.
 Output is saved in `files/dist/js/` and uploaded to server.
@@ -71,10 +69,6 @@ secure  : true,
 secureOptions: { rejectUnauthorized: false },
 ```
 
-
-
-<br><br>
-
 ## Usage
 start task runner Gulp
 - watch for changes and deploy while developement <br>
@@ -82,10 +76,7 @@ start task runner Gulp
 - build and deploy only  <br>
     `make:make`
 
-
-
 ## What is inside
-
 
 lib | URL
 -|-
