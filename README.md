@@ -1,4 +1,13 @@
 # Contao
+
+Contao starter theme and build tools.
+- gulp build and server push.
+- some preconfiguration of tinyMCE and dcaconfig.php
+- Bootrap SASS files in a minimal configuration. 
+Relevant Contao content elements prepared.
+- JS bundled with Webpack.
+
+<br> 
 ## JS
 `app/js/entry.js` is used as starting point for Webpack.
 Output is saved in `files/dist/js/` and uploaded to server.
