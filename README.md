@@ -6,8 +6,8 @@ Contao starter theme and build tools.
 - Bootrap SASS files in a minimal configuration. 
 Relevant Contao content elements prepared.
 - JS bundled with Webpack.
-
 <br> 
+
 ## JS
 `app/js/entry.js` is used as starting point for Webpack.
 Output is saved in `files/dist/js/` and uploaded to server.
