@@ -1,4 +1,34 @@
-# Installation
+# Contao
+## JS
+`app/js/entry.js` is used as starting point for Webpack.
+Output is saved in `files/dist/js/` and uploaded to server.
+
+## CSS
+`app/sass/styles.scss` is the starting point.
+Output are saved in `files/dist/css/`
+
+CSS gets autoprefixed, compressed by cssnano, sourcemaped and uploaded to server.
+
+CSS is based on Bootstrap v4-alpha4.
+Styles for common Contao modules / elements are prepared.
+
+## templates
+Changes on any files in  `templates/` are uploaded to server.
+
+## system
+The `system/` folder contains useful presets.
+- TinyMCE Custom configuration.
+    + Images Shortcut is removed
+    + Formats is pulled into top level
+    + `paste_as_text` is enabled, to remove all formatting on copy & paste  
+- `dcaconfig.php` contains presets 
+    including a list of all available Conten Elements, that could be disabled, if not needed in the project.
+
+<br><br>
+
+# Build Tools
+
+The folder `build/` contains everything necessary for build the app. 
 ## Prepare System 
 globaly install npm & bower
 - install [npm](https://github.com/npm/npm) <br>
@@ -27,7 +57,7 @@ from the function `getFtpConnection` in the `gulpfile.js`.
 
 <br><br>
 
-# Usage
+## Usage
 start task runner Gulp
 - watch for changes and deploy while developement <br>
     `gulp` 
@@ -36,7 +66,7 @@ start task runner Gulp
 
 
 
-# What is inside
+## What is inside
 
 
 lib | URL
@@ -52,6 +82,9 @@ webpack | https://webpack.github.io/
 browserSync | https://www.browsersync.io/
 gulp-livereload | https://www.npmjs.com/package/gulp-livereload
 vinyl-ftp | https://www.npmjs.com/package/vinyl-ftp
+
+
+
 
 
 
