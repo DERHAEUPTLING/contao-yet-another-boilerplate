@@ -1,5 +1,5 @@
-<!DOCTYPE html><?php
-  include 'inc-resources.html5';
+<!DOCTYPE html><?php 
+  include 'inc-resources.html5'; 
 ?>
 <html lang="<?= $this->language ?>"<?php if ($this->isRTL): ?> dir="rtl"<?php endif; ?>>
 <head>
@@ -17,10 +17,10 @@
 
     <?= $this->viewport ?>
     <?= $this->framework ?>
-    <?= $this->stylesheets ?>
+    <?= $this->stylesheets ?>    
     <?= $this->mooScripts ?>
     <?= $this->head ?>
-
+    
     <?php $this->block('html5shiv'); ?>
       <!--[if lt IE 9]><script src="<?= TL_ASSETS_URL ?>assets/html5shiv/<?= $GLOBALS['TL_ASSETS']['HTML5SHIV'] ?>/html5shiv-printshiv.min.js"></script><![endif]-->
     <?php $this->endblock(); ?>
@@ -58,7 +58,7 @@
 
 
 <div class="st-container st-effect-1">
-  <?php
+  <?php 
   /*
     offCanvas effects chosen by class on .st-container
     st-effect-1     Slide in on top
@@ -77,7 +77,7 @@
 
   <nav class="st-menu">
     <div class="inside">
-          <?php echo $this->sections['offcanvas']; ?>
+          <?php echo $this->sections['offcanvas sidebar']; ?>
     </div>
   </nav>
 
@@ -91,30 +91,31 @@
 
   <?php $this->block('body'); ?>
     <?php // $this->sections('top'); ?>
+
     <div id="wrapper">
 
       <?php $this->block('header'); ?>
         <?php if ($this->header): ?>
           <header id="header" class="header">
             <div class="container">
-              <?php if ($this->sections['headerTop']): ?>
+              <?php if ($this->sections['Header top']): ?>
               <div class="header-top">
-                <?php echo $this->sections['headerTop']; ?>
+                <?php echo $this->sections['Header top']; ?>
               </div>
               <?php endif; ?>
               <div class="header-nav row">
                 <?= $this->header ?>
               </div>
-              <?php if ($this->sections['headerTagline']): ?>
+              <?php if ($this->sections['Header tagline']): ?>
               <div class="header-tagline">
-                <?php echo $this->sections['headerTagline']; ?>
+                <?php echo $this->sections['Header tagline']; ?>
               </div>
               <?php endif; ?>
             </div>
           </header>
         <?php endif; ?>
       <?php $this->endblock(); ?>
-
+      
       <?php //$this->sections('before'); ?>
 
       <?php $this->block('container'); ?>
@@ -148,14 +149,14 @@
                 <?php endif; ?>
               <?php $this->endblock(); ?>
             </div>
-
+            
           </div>
-        </div>
+        </div> 
       <?php $this->endblock(); ?>
 
       <?php // $this->sections('after'); ?>
 
-
+      
 
     </div>
 
@@ -171,7 +172,7 @@
       <?php endif; ?>
     <?php $this->endblock(); ?>
 
-
+      
 
     <?php // $this->sections('bottom'); ?>
   <?php $this->endblock(); ?>
