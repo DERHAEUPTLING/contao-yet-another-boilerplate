@@ -8,9 +8,7 @@
 
 form {
 	/* row */
-	.widget,
-	.widget-submit,
-	.mod_login .formbody {
+	.widget {
 		@include make-row();
 		@extend .form-group;
 	}
@@ -22,7 +20,8 @@ form {
 	.widget-select,
 	.widget-radio > fieldset,
 	.widget-checkbox > fieldset,
-	.widget-captcha  {
+	.widget-captcha,
+	.widget-password  {
 
 		> label {
 			@extend .col-form-label ;
@@ -33,14 +32,14 @@ form {
 			@include make-col-ready();
 		}
 
-		> input,
+		> input:not([type=radio]):not([type=checkbox]),
 		> select,
 		> textarea,
 		> span,
 		> .checkbox_container {
 			@include make-col-ready();
 			float: left;
-			width: calc(75% - #{$grid-gutter-width}) !important;
+			width: calc(75% - #{$grid-gutter-width}) ;
 			margin-left: $grid-gutter-width / 2;
 			margin-right: $grid-gutter-width / 2;
 		}
@@ -56,64 +55,13 @@ form {
 	}
 
 	.widget-submit {
-		clear: both;
 		> button {
-			@include make-col-ready();
-			float: left;
-					
+			@include make-col-ready();					
 			margin-left: calc(#{percentage(3 / $grid-columns)} + #{$grid-gutter-width} / 2);
 			margin-right: $grid-gutter-width / 2;
 		}
 	}
 }
-
-
-.mod_login form {
-	.formbody {
-		@include make-row();
-		@extend .form-group;
-
-		> label {
-			@extend .col-form-label ;
-			@include make-col-ready();
-			@include make-col(3);
-		}
-
-		> input,
-		> .checkbox_container {
-			margin-bottom: $form-group-margin-bottom;
-			@include make-col-ready();
-			float: left;
-			// width: calc(75% - #{$grid-gutter-width});
-			width: auto;
-			margin-left: $grid-gutter-width / 2;
-			margin-right: $grid-gutter-width / 2;
-		}
-
-		> .checkbox_container,
-		> .widget-submit,
-		> p.error  {
-			clear: both;
-
-			@include make-container;
-			@include make-col-offset(3);
-
-			> input {
-				@include make-container;
-			}
-		}
-		> .widget-submit > button {
-			width: auto;
-		}
-
-		br {
-			clear: both;
-		}
-		
-	}
-	
-}
-
 
 
 

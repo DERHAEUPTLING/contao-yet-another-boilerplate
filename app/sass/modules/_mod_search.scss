@@ -1,8 +1,26 @@
 .mod_search {
-	input {
-		float: left;
-		&.submit {
-			padding: .5rem .75rem !important;
+
+	form {
+		@include make-row();
+	}
+	.widget-text,
+	.widget-submit {
+		@include make-col-ready();
+		margin: initial;
+	}
+	
+	.widget-text {
+		@include make-col(7);
+		input:not([type=radio]):not([type=checkbox]) {
+			width: 100%;
+			margin: 0;
+		}
+	}
+	.widget-submit {
+		@include make-col(5);
+		padding-left: 0;
+		button {
+			margin: 0;
 		}
 	}
 }
