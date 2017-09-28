@@ -9,7 +9,7 @@
 form {
 	/* row */
 	.widget,
-	.submit_container,
+	.widget-submit,
 	.mod_login .formbody {
 		@include make-row();
 		@extend .form-group;
@@ -55,9 +55,9 @@ form {
 		}
 	}
 
-	.submit_container {
+	.widget-submit {
 		clear: both;
-		> input {
+		> button {
 			@include make-col-ready();
 			float: left;
 					
@@ -91,7 +91,7 @@ form {
 		}
 
 		> .checkbox_container,
-		> .submit_container,
+		> .widget-submit,
 		> p.error  {
 			clear: both;
 
@@ -102,7 +102,7 @@ form {
 				@include make-container;
 			}
 		}
-		> .submit_container > input {
+		> .widget-submit > button {
 			width: auto;
 		}
 
@@ -135,8 +135,8 @@ form {
 		@extend .form-check;
 	}
 
-	.submit_container > input.submit,
-	.formbody > input.submit {
+	.widget-submit > button.submit,
+	.formbody > button.submit {
 		display: inline-block;
 		font-weight: $btn-font-weight;
 		line-height: $btn-line-height;
