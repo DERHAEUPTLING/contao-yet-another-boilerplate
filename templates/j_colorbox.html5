@@ -21,7 +21,7 @@
           maxHeight : '95%',
           opacity   : '.7',
           //title     : false,
-          close     : '<div></div><span><img src="files/dist/images/lightbox/Symbol_schließen.svg" alt="" /></span>',
+          close     : '<div></div><span><img src="files/dist/images/lightbox/Symbol_close.svg" alt="" /></span>',
           previous  : '<span><img src="files/dist/images/lightbox/Symbol_prev.svg" alt="" /></span>',
           next      : '<span><img src="files/dist/images/lightbox/Symbol_next.svg" alt="" /></span>',
 
