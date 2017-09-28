@@ -11,14 +11,15 @@
  * default
  */
 .nav_aside {
-	a, span.active {
+	a, strong {
 		display: block;
 		padding: 5px;
+		font-weight: normal;
 	}
 
 	ul.level_2 {
 		display: none;
-		a, span {
+		a, strong {
 			padding-left: 20px;
 		}
 	}
@@ -36,7 +37,7 @@
  * left
  */
 #left .nav_aside {
-	a, span.active {
+	a, strong {
 		border-bottom: 1px solid $nav-tabs-border-color;
 
 		transition-property: background-color;
