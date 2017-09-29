@@ -1,0 +1,25 @@
+#================================================================================
+# Website-Template : contao-open-source-cms.sql
+#================================================================================
+# Contao-Website   : Contao Open Source CMS
+# Contao-Database  : contao-base4
+# Saved by User    : derhaeuptling (Martin Schwenzer)
+# Time stamp       : 2017-09-29 at 11:41:15
+#
+# Contao Extension : BackupDbBundle, Version 1.2.0
+# Copyright        : Softleister (www.softleister.de)
+# Licence          : LGPL
+#
+# Visit https://github.com/do-while/contao-BackupDB for more information
+#
+#-----------------------------------------------------
+# If you save the backup in ZIP file, a file restoreSymlinks.php
+# is also in the ZIP. See the file for more information
+#-----------------------------------------------------
+# Contao Version 4.4.6
+# The following packages must be installed:
+#
+#   - jrgregory/m17-sticky-backend-footer : 2.0.9
+#
+#================================================================================
+
