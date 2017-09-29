@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<!DOCTYPE html><?php
+  include 'inc-resources.html5';
+?>
 <html lang="<?= $this->language ?>"<?php if ($this->isRTL): ?> dir="rtl"<?php endif; ?>>
 <head>
 
@@ -24,8 +26,44 @@
     <?php $this->endblock(); ?>
   <?php $this->endblock(); ?>
 
+  <script>
+    var isLoaded = function(argument){
+      document.body.classList.remove('is-loading');
+    }
+    window.onload = isLoaded;
+  </script>
+
 </head>
-<body id="top" class="{{ua::class}}<?php if ($this->class) echo ' ' . $this->class; ?>"<?php if ($this->onload): ?> onload="<?= $this->onload ?>"<?php endif; ?> itemscope itemtype="http://schema.org/WebPage">
+<body id="top" class="{{ua::class}}<?php if ($this->class) echo ' ' . $this->class; ?> is-loading"<?php if ($this->onload): ?> onload="<?= $this->onload ?>"<?php endif; ?> itemscope itemtype="http://schema.org/WebPage">
+
+
+<div class="st-container st-effect-1">
+  <?php
+  /*
+    offCanvas effects chosen by class on .st-container
+    st-effect-1     Slide in on top
+    st-effect-2     Reveal
+    st-effect-4     Slide along
+    st-effect-5     Reverse slide out
+    st-effect-9     Scale down pusher
+    st-effect-10    Scale up
+    st-effect-11    Scale and rotate pusher
+    st-effect-12    Open door
+    st-effect-13    Fall down
+  */
+  ?>
+
+
+
+  <nav class="st-menu">
+      <?php $this->section('offcanvas', 'block_section') ?>
+  </nav>
+
+  <!-- content push wrapper -->
+  <div class="st-pusher">
+    <div class="st-content"><!-- this is the wrapper for the content -->
+      <div class="st-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+
 
   <?php $this->block('body'); ?>
     <?php $this->sections('top'); ?>
@@ -35,8 +73,12 @@
       <?php $this->block('header'); ?>
         <?php if ($this->header): ?>
           <header id="header" itemscope itemtype="http://schema.org/WPHeader">
-            <div class="inside">
-              <?= $this->header ?>
+            <div class="container">
+              <?php $this->section('headerTop', 'block_section') ?>
+              <div class="header-nav row">
+                <?= $this->header ?>
+              </div>
+              <?php $this->section('headerTagline', 'block_section') ?>
             </div>
           </header>
         <?php endif; ?>
@@ -44,49 +86,58 @@
 
       <?php $this->sections('before'); ?>
 
+
+
+
       <?php $this->block('container'); ?>
         <div id="container">
+          <div class="container">
+            <div class="row">
+              <?php $this->block('main'); ?>
+                <main id="main" itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage">
+                  <div class="inside">
+                    <?= $this->main ?>
+                  </div>
+                  <?php $this->sections('main'); ?>
+                </main>
+              <?php $this->endblock(); ?>
 
-          <?php $this->block('main'); ?>
-            <main id="main" itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage">
-              <div class="inside">
-                <?= $this->main ?>
-              </div>
-              <?php $this->sections('main'); ?>
-            </main>
-          <?php $this->endblock(); ?>
+              <?php $this->block('left'); ?>
+                <?php if ($this->left): ?>
+                  <aside id="left">
+                    <div class="row">
+                      <?= $this->left ?>
+                    </div>
+                  </aside>
+                <?php endif; ?>
+              <?php $this->endblock(); ?>
 
-          <?php $this->block('left'); ?>
-            <?php if ($this->left): ?>
-              <aside id="left">
-                <div class="inside">
-                  <?= $this->left ?>
-                </div>
-              </aside>
-            <?php endif; ?>
-          <?php $this->endblock(); ?>
-
-          <?php $this->block('right'); ?>
-            <?php if ($this->right): ?>
-              <aside id="right">
-                <div class="inside">
-                  <?= $this->right ?>
-                </div>
-              </aside>
-            <?php endif; ?>
-          <?php $this->endblock(); ?>
-
+              <?php $this->block('right'); ?>
+                <?php if ($this->right): ?>
+                  <aside id="right">
+                    <div class="row">
+                      <?= $this->right ?>
+                    </div>
+                  </aside>
+                <?php endif; ?>
+              <?php $this->endblock(); ?>
+            </div>
+          </div>
         </div>
       <?php $this->endblock(); ?>
 
       <?php $this->sections('after'); ?>
 
+
+
       <?php $this->block('footer'); ?>
         <?php if ($this->footer): ?>
           <footer id="footer" itemscope itemtype="http://schema.org/WPFooter">
-            <div class="inside">
-              <?= $this->footer ?>
-            </div>
+            <div class="container">
+              <div class="row">
+                <?= $this->footer ?>
+              </div>
+            <div>
           </footer>
         <?php endif; ?>
       <?php $this->endblock(); ?>
@@ -96,7 +147,14 @@
     <?php $this->sections('bottom'); ?>
   <?php $this->endblock(); ?>
 
-  <?= $this->mootools ?>
 
+    </div><!-- /st-content-inner -->
+    </div><!-- /st-content -->
+  </div><!-- /st-pusher -->
+</div><!-- /st-container -->
+
+<?= $this->mootools ?>
+<script src="files/dist/js/lib/modernizr-custom.js"></script>
+<script src="files/dist/js/main.js"></script>
 </body>
 </html>
