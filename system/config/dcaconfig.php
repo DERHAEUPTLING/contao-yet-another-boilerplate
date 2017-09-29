@@ -25,7 +25,12 @@
 // $GLOBALS['TL_DCA']['tl_news']['fields']['size']['default'] = array(480);
 // $GLOBALS['TL_DCA']['tl_news']['fields']['floating']['default'] = array('right');
 
-
+// Remove the image margin fields
+    unset($GLOBALS['TL_DCA']['tl_article']['fields']['imagemargin']);
+    unset($GLOBALS['TL_DCA']['tl_content']['fields']['imagemargin']);
+    unset($GLOBALS['TL_DCA']['tl_module']['fields']['imagemargin']);
+    unset($GLOBALS['TL_DCA']['tl_news']['fields']['imagemargin']);
+    unset($GLOBALS['TL_DCA']['tl_calendar_events']['fields']['imagemargin']);
 
 // Sets the default content element
 // $GLOBALS['TL_DCA']['tl_content']['fields']['type']['default'] = 'headline';
