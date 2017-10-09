@@ -229,3 +229,21 @@ $GLOBALS['TL_DCA']['tl_news']['list']['sorting']['child_record_callback'] = func
          return $buffer;
      };
  }
+
+
+
+/**
+ * Form fields -> show CSS 
+ */
+$callback = $GLOBALS['TL_DCA']['tl_form_field']['list']['sorting']['child_record_callback'];
+if (is_array($callback)) {
+    $GLOBALS['TL_DCA']['tl_form_field']['list']['sorting']['child_record_callback'] = function (array $row) use ($callback) {
+        $replacement = '';
+        if ($row['class']) {
+            $replacement = sprintf('<span style="float:right;color:#aaaaaa;padding-left:3px;">(.%s)</span>', $row['class']);
+        }
+        $buffer = \Contao\System::importStatic($callback[0])->{$callback[1]}($row);
+        $buffer = preg_replace('/<\/div>/', $replacement . '</div>', $buffer, 1);
+        return $buffer;
+    };
+}
