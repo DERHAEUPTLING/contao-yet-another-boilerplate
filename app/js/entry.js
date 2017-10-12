@@ -14,7 +14,7 @@ var basic 		= require("./chunk/basic.js");
 
 
 // var scrollTimer = require('./chunk/scrollTimer.js');
-require("./chunk/autogrow.js");
+require("./chunk/autosize.js");
 require('./chunk/offcanvas.js');
 
 
