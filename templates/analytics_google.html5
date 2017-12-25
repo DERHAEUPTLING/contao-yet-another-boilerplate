@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * To use this script, please fill in your Google Analytics ID below
+ */
+$GoogleAnalyticsId = 'UA-XXXXX-X';
+
+
+/**
+ * DO NOT EDIT ANYTHING BELOW THIS LINE UNLESS YOU KNOW WHAT YOU ARE DOING!
+ */
+if ($GoogleAnalyticsId != 'UA-XXXXX-X' && !BE_USER_LOGGED_IN && !$this->hasAuthenticatedBackendUser()): ?>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<?= $GoogleAnalyticsId ?>"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+
+  gtag('config', '<?= $GoogleAnalyticsId ?>', {
+    <?php if (Config::get('privacyAnonymizeGA')): ?>
+      'anonymize_ip': true,
+    <?php endif; ?>
+  });
+</script>
+<?php endif; ?>
