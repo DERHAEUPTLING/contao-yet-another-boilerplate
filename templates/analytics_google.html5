@@ -15,15 +15,25 @@ if ($GoogleAnalyticsId != 'UA-XXXXX-X' && !BE_USER_LOGGED_IN && !$this->hasAuthe
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=<?= $GoogleAnalyticsId ?>"></script>
 <script>
+
+  var disableStr = 'ga-disable-<?= $GoogleAnalyticsId ?>';
+  if (document.cookie.indexOf(disableStr + '=true') > -1) {
+    window[disableStr] = true;
+  }
+
+  function gaOptout() {
+    document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+    window[disableStr] = true;
+    alert('Google Analytics OptOut successful');
+  }
+
+
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-
   gtag('config', '<?= $GoogleAnalyticsId ?>', {
-    <?php if (Config::get('privacyAnonymizeGA')): ?>
       'anonymize_ip': true,
-    <?php endif; ?>
   });
 </script>
 <?php endif; ?>
