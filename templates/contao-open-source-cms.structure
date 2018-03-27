@@ -2,9 +2,9 @@
 # Contao-Website   : Contao Open Source CMS
 # Contao-Database  : contao-base4
 # Saved by User    : derhaeuptling (Martin Schwenzer)
-# Time stamp       : 2017-09-29 at 11:41:15
+# Time stamp       : 2018-03-27 at 11:03:00
 #
-# Contao Extension : BackupDbBundle, Version 1.2.0
+# Contao Extension : BackupDbBundle, Version 1.2.1
 # Copyright        : Softleister (www.softleister.de)
 # Licence          : LGPL
 #
@@ -14,7 +14,7 @@
 # If you save the backup in ZIP file, a file restoreSymlinks.php
 # is also in the ZIP. See the file for more information
 #-----------------------------------------------------
-# Contao Version 4.4.6
+# Contao Version 4.4.16
 # The following packages must be installed:
 #
 #   - jrgregory/m17-sticky-backend-footer : 2.0.9
@@ -286,7 +286,7 @@ CREATE TABLE `tl_content` (
   `imagemargin` varchar(128) NOT NULL default '',
   PRIMARY KEY  (`id`),
   KEY `pid_ptable_invisible_sorting` (`pid`, `ptable`, `invisible`, `sorting`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=434;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=435;
 
 
 #---------------------------------------------------------
@@ -555,7 +555,7 @@ CREATE TABLE `tl_log` (
   `ip` varchar(64) NOT NULL default '',
   `browser` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=186;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=69;
 
 
 #---------------------------------------------------------
@@ -583,7 +583,7 @@ CREATE TABLE `tl_member` (
   `groups` blob NULL,
   `login` char(1) NOT NULL default '',
   `username` varchar(64) COLLATE utf8_bin NULL,
-  `password` varchar(128) NOT NULL default '',
+  `password` varchar(255) NOT NULL default '',
   `assignDir` char(1) NOT NULL default '',
   `homeDir` binary(16) NULL,
   `disable` char(1) NOT NULL default '',
@@ -899,7 +899,7 @@ CREATE TABLE `tl_newsletter_recipients` (
   `token` varchar(32) NOT NULL default '',
   `confirmed` varchar(10) NOT NULL default '',
   PRIMARY KEY  (`id`),
-  KEY `pid` (`pid`),
+  UNIQUE KEY `pid_email` (`pid`, `email`),
   KEY `email` (`email`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
@@ -981,9 +981,8 @@ CREATE TABLE `tl_search` (
   `language` varchar(5) NOT NULL default '',
   PRIMARY KEY  (`id`),
   UNIQUE KEY `checksum_pid` (`checksum`, `pid`),
-  UNIQUE KEY `url` (`url`),
-  FULLTEXT KEY `text` (`text`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=13;
+  UNIQUE KEY `url` (`url`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=12;
 
 
 #---------------------------------------------------------
@@ -998,7 +997,7 @@ CREATE TABLE `tl_search_index` (
   PRIMARY KEY  (`id`),
   KEY `pid` (`pid`),
   KEY `word` (`word`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=78551;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=19530;
 
 
 #---------------------------------------------------------
@@ -1016,7 +1015,7 @@ CREATE TABLE `tl_session` (
   PRIMARY KEY  (`id`),
   UNIQUE KEY `hash` (`hash`),
   KEY `pid` (`pid`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=218;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=224;
 
 
 #---------------------------------------------------------
@@ -1134,7 +1133,7 @@ CREATE TABLE `tl_undo` (
   `affectedRows` smallint(5) unsigned NOT NULL default '0',
   `data` mediumblob NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=16;
 
 
 #---------------------------------------------------------
@@ -1153,7 +1152,7 @@ CREATE TABLE `tl_user` (
   `thumbnails` char(1) NOT NULL default '',
   `useRTE` char(1) NOT NULL default '',
   `useCE` char(1) NOT NULL default '',
-  `password` varchar(128) NOT NULL default '',
+  `password` varchar(255) NOT NULL default '',
   `pwChange` char(1) NOT NULL default '',
   `admin` char(1) NOT NULL default '',
   `groups` blob NULL,
@@ -1193,7 +1192,7 @@ CREATE TABLE `tl_user` (
   PRIMARY KEY  (`id`),
   UNIQUE KEY `username` (`username`),
   KEY `email` (`email`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=3;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=4;
 
 
 #---------------------------------------------------------
@@ -1251,7 +1250,7 @@ CREATE TABLE `tl_version` (
   PRIMARY KEY  (`id`),
   KEY `pid` (`pid`),
   KEY `fromTable` (`fromTable`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=116;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=38;
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
