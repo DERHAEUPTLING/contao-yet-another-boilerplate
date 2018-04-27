@@ -32,6 +32,7 @@ setTimeout(function() {
     plugins: 'autosave charmap code fullscreen importcss link lists paste searchreplace stripnbsp tabfocus table visualblocks',
     paste_as_text: true,
     browser_spellcheck: true,
+    allow_script_urls: true,
     tabfocus_elements: ':prev,:next',
     importcss_append: true,
     // importcss_groups: [{title: 'Custom'}],
