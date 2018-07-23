@@ -28,7 +28,7 @@ var src_static  = 'src_layout/static/**';
 var dist        = 'web/layout/';
 
 var styles_watch= ['src_layout/sass/**/*.scss','src_layout/static/css/_tinymce_custom.css'];    
-var styles_src  = ['src_layout/sass/styles.scss','src_layout/sass/regiondo.scss'];
+var styles_src  = ['src_layout/sass/styles.scss'];
 var styles_dist = 'web/layout/css/';
 
 var js_context  = 'src_layout/js/';
@@ -100,9 +100,7 @@ gulp.task('webpack', function() {
         ],
         devtool: "source-map",
     }, function(err, stats) {
-        if(err) throw new gutil.PluginError("webpack", err);
-        // gutil.log("[webpack]", stats.toString({}));
-        browserSync.reload();        
+        if(err) throw new gutil.PluginError("webpack", err);    
     })
 });
 
@@ -127,7 +125,7 @@ gulp.task('copy', function() {
 
 /** FTP cretentials **/
 // helper function to build an FTP connection based on our configuration
-function getFtpConnection() {  
+function conn() {  
     return ftp.create({
         host    : secrets.servers.production.serverhost,
         port    : secrets.servers.production.serverport,
@@ -153,32 +151,32 @@ function getFtpConnection() {
  *  watch
  */
 gulp.task('watch',['copy'], function() {
-
-    
-
-    var localFilesGlob = ['./web/layout/**', './templates/**'];  
-
+    var globs = [
+        'web/layout/**', 
+        'templates/**'
+    ];  
+   
     livereload.listen();
+
     gulp.watch( styles_watch, ['sass']);
     gulp.watch( js_src, ['webpack']);
     gulp.watch( src_static, ['copy']);
-
     
-    gulp.watch(localFilesGlob)
+    gulp.watch(globs)
         .on('change', function(event) {
-            console.log('Changes detected! Uploading file "' + event.path + '", ' + event.type);
+            console.log(event);
             
+            
+            // [event.path, event.path + "/**", '!./node_modules/**/*','!./git/**/*']
 
-            return gulp.src( [event.path, event.path + "/**"], { base: '.', buffer: false } )
-                .pipe( getFtpConnection().newer( secrets.servers.production.remotepath ) ) // only upload newer files 
-                .pipe( getFtpConnection().dest( secrets.servers.production.remotepath ) )
-                .pipe(livereload())
-                .on("end", browserSync.reload);
+            return gulp.src( [event.path, '!.git', '!node_modules', '!src_layout'], { base: '.', buffer: false } )
+                .pipe( conn().newer( secrets.servers.production.remotepath ) ) // only upload newer files 
+                .pipe( conn().dest( secrets.servers.production.remotepath ) )
+                .pipe(livereload() )
         });
     
     
 });
-
 
 
 
@@ -194,5 +192,3 @@ gulp.task('default', function() {
 
 gulp.task('build',['sass', 'webpack', 'copy']);
 
-
-// gulp.start('copy', ['watch']);

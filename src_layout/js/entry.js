@@ -42,5 +42,3 @@ require('./chunk/offcanvas.js');
 $( window ).load(function() {
     $('body').removeClass(' is-loading');
 });
-
-

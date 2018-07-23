@@ -1,4 +1,4 @@
-$colorboxUrl : '../../../files/dist/images/lightbox/';
+$colorboxUrl : '/layout/images/lightbox/';
 /*
     Colorbox Core Style:
     The following CSS is consistent between example themes and should not be altered.
@@ -55,7 +55,7 @@ $colorboxUrl : '../../../files/dist/images/lightbox/';
             width: $spinnerSize;
 
             
-            background: transparent url(../../../files/dist/images/lightbox/Symbol_loading.svg) no-repeat center;
+            background: transparent url(/layout/images/lightbox/Symbol_loading.svg) no-repeat center;
             background-size: $spinnerSize;
 
             
