@@ -1,30 +1,15 @@
-# OS
-.DS_Store
-Thumbs.db
+# App config
+/app/config/parameters.yml
 
-# IDEs
-.sass-cache
-images_to_optimze/
-bower_components/
-node_modules/
-npm-debug.log
-.ftppass
+# Generated files
+.php_cs.cache
 
-# files
+# Generated folders
+/assets/
+/node_modules/
+/system/
+/var/
+/vendor/
 
-
-# Runtime data
-bower/
-.grunt/
-pids
-*.pid
-*.seed
-.vscode 
-.grunt
-.sass-cache
-secrets.json
-
-# templates
-templates/.htaccess
-templates/music_academy.sql
-templates/index.html
+# ignore copied & generated files
+web/*
