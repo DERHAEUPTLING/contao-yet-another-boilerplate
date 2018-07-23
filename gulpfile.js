@@ -91,12 +91,9 @@ gulp.task('webpack', function() {
             "$": "jQuery",
             "modernizr": "Modernizr",
         },
-        plugins: [
-            new webpack.optimize.UglifyJsPlugin({
-              sourceMap: true,
-              mangle: true
-            })
-        ],
+        optimization: {
+            minimize: true
+        },
         devtool: "source-map",
     }, function(err, stats) {
         if(err) throw new gutil.PluginError("webpack", err);    
