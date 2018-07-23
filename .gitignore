@@ -1,9 +1,12 @@
 # App config
 /app/config/parameters.yml
+
 secrets.json
 
 # Generated files
 .php_cs.cache
+package-lock.json
+
 
 # Generated folders
 /assets/
