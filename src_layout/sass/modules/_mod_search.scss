@@ -6,8 +6,7 @@
 	.widget-text,
 	.widget-submit {
 		@include make-col-ready();
-		margin: initial;
-
+		// margin: initial;
 	}
 	
 	.widget-text {
@@ -15,6 +14,7 @@
 		input:not([type=radio]):not([type=checkbox]) {
 			width: 100%;
 			margin: 0;
+			@extend	.form-control;
 		}
 	}
 	.widget-submit {
@@ -23,6 +23,8 @@
 		button {
 			margin: 0;
 			width: 100%;
+			@extend .btn;
+			@extend .btn-secondary;
 		}
 	}
 }

@@ -22,6 +22,8 @@
 @import "../bootstrap/scss/code";
 @import "../bootstrap/scss/grid";
 
+@import "../bootstrap/scss/forms";
+@import "../bootstrap/scss/buttons";
 
 /*                      custom variables & scut
  *   -------------------------------------------------------------------------
@@ -48,7 +50,7 @@
 @import "base/b_image_container";
 
 @import "base/b_offcanvas";
-// @import "base/_b_form";
+@import "base/_b_form";
 
 
 

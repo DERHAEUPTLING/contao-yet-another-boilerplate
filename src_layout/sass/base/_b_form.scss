@@ -118,13 +118,13 @@ form {
 
 		&.disabled,
 		&:disabled {
-			cursor: $cursor-disabled;
+			cursor: not-allowed;
 			opacity: .65;
 			@include box-shadow(none);
 		}
 
 
-		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+		@include button-variant($white, $secondary, $gray-300);
 	}
 }
 
@@ -151,8 +151,8 @@ form {
 			background-position: center right ($input-height / 4);
 			background-size: ($input-height / 2) ($input-height / 2);
 			
-			background-image: $form-icon-danger;
-			border-color: $brand-danger;
+			background-image: $danger;
+			border-color: $danger;
 		}
 		
 		p.error {
@@ -162,7 +162,7 @@ form {
 	}
 
 	p.error {
-		color: $brand-danger;
+		color: $danger;
 	}
 	
 }
