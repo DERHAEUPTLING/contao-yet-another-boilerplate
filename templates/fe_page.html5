@@ -1,6 +1,4 @@
-<!DOCTYPE html><?php
-  include 'inc-resources.html5';
-?>
+<!DOCTYPE html>
 <html lang="<?= $this->language ?>"<?php if ($this->isRTL): ?> dir="rtl"<?php endif; ?>>
 <head>
 
@@ -21,11 +19,16 @@
     <?= $this->mooScripts ?>
     <?= $this->head ?>
 
-    <?php $this->block('html5shiv'); ?>
-      <!--[if lt IE 9]><script src="<?= TL_ASSETS_URL ?>assets/html5shiv/js/html5shiv-printshiv.min.js"></script><![endif]-->
-    <?php $this->endblock(); ?>
+    <?php
+    $GLOBALS['TL_CSS'][] = 'layout/css/styles.css||static';
+
+    // $GLOBALS['TL_JAVASCRIPT'][] = 'layout/js/lib/jquery-1.12.4.min.js|static';
+    // $GLOBALS['TL_JAVASCRIPT'][] = 'layout/js/lib/modernizr-2.6.2.min.js|static';
+    // $GLOBALS['TL_JAVASCRIPT'][] = 'layout/js/main.js|static';
+    ?>
   <?php $this->endblock(); ?>
 
+  <script src="layout/js/main.js" defer></script>
   <script>
     var isLoaded = function(argument){
       document.body.classList.remove('is-loading');
@@ -154,7 +157,6 @@
 </div><!-- /st-container -->
 
 <?= $this->mootools ?>
-<script src="files/dist/js/lib/modernizr-custom.js"></script>
-<script src="files/dist/js/main.js"></script>
+
 </body>
 </html>

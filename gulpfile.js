@@ -156,7 +156,7 @@ gulp.task('watch',['copy'], function() {
 
     
 
-    var localFilesGlob = ['web/layout/**', 'templates/**'];  
+    var localFilesGlob = ['./web/layout/**', './templates/**'];  
 
     livereload.listen();
     gulp.watch( styles_watch, ['sass']);
