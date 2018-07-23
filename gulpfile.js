@@ -6,8 +6,7 @@ var newer         = require( 'gulp-newer' );
 
 var sourcemaps    = require( 'gulp-sourcemaps' );
 var sass          = require( 'gulp-sass' );
-var postcss       = require( 'gulp-postcss');
-var post_compass  = require( 'postcss-compass');
+var postcss       = require( 'gulp-postcss' );
 var autoprefixer  = require( 'autoprefixer' );
 var cssnano       = require( 'cssnano');
 
@@ -56,11 +55,6 @@ var js_publicPath     = '/layout/js/';
  */
 gulp.task('sass', function () {
     var processors = [
-        post_compass({
-            css: './css',
-            font: '../fonts',
-            image: '../images'
-        }),
         autoprefixer({browsers: ['last 2 version','> 1%']}),
         cssnano({safe: true})
     ];
@@ -158,8 +152,11 @@ function getFtpConnection() {
 /**
  *  watch
  */
-gulp.task('watch', function() {
-    var localFilesGlob = ['files/**','web/layout/**', 'templates/**'];  
+gulp.task('watch',['copy'], function() {
+
+    
+
+    var localFilesGlob = ['web/layout/**', 'templates/**'];  
 
     livereload.listen();
     gulp.watch( styles_watch, ['sass']);
@@ -196,6 +193,6 @@ gulp.task('default', function() {
 });
 
 gulp.task('build',['sass', 'webpack', 'copy']);
-gulp.start('copy', ['watch']);
 
 
+// gulp.start('copy', ['watch']);
