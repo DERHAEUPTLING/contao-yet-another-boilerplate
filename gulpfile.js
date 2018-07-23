@@ -12,7 +12,6 @@ var cssnano       = require( 'cssnano');
 
 var webpack       = require( 'webpack' );
 
-var browserSync   = require( 'browser-sync'  ).create();
 var livereload    = require( 'gulp-livereload' );
 
 var ftp           = require( 'vinyl-ftp' );

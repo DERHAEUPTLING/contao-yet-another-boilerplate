@@ -1,70 +1,32 @@
-/*                      custom variables & scut
- *   -------------------------------------------------------------------------
- */
-@import "bootstrap/variables";
-@import "variables-bs-override";
-@import "variables";
-// @import "scut/scut";
-
 /*                      bootstrap
  *   -------------------------------------------------------------------------
  */
 
 
-// Core variables and mixins
-
-@import "bootstrap/mixins";
-
-// Reset and dependencies
-@import "bootstrap/normalize";
-// @import "bootstrap/print";
-
-// Core CSS
-@import "bootstrap/reboot";
-// @import "bootstrap/type";
-// @import "bootstrap/images";
-// @import "bootstrap/code";
-@import "bootstrap/grid";
-// @import "bootstrap/tables";
-@import "bootstrap/forms";
-// @import "bootstrap/buttons";
-
-// Components
-// @import "bootstrap/animation";
-// @import "bootstrap/dropdown";
-// @import "bootstrap/button-group";
-// @import "bootstrap/input-group";
-// @import "bootstrap/custom-forms";
-// @import "bootstrap/nav";
-// @import "bootstrap/navbar";
-// @import "bootstrap/card";
-// @import "bootstrap/breadcrumb";
-// @import "bootstrap/pagination";
-// @import "bootstrap/tags";
-// @import "bootstrap/jumbotron";
-// @import "bootstrap/alert";
-// @import "bootstrap/progress";
-// @import "bootstrap/media";
-// @import "bootstrap/list-group";
-// @import "bootstrap/responsive-embed";
-// @import "bootstrap/close";
-
-// Components w/ JavaScript
-// @import "bootstrap/modal";
-// @import "bootstrap/tooltip";
-// @import "bootstrap/popover";
-// @import "bootstrap/carousel";
-
-// Utility classes
-@import "bootstrap/utilities/spacing";
 
 
+// @import "bootstrap/forms";
+// @import "bootstrap/utilities/spacing";
 
 
-/*                      Contao
+// Required
+@import "../bootstrap/scss/functions";
+@import "../bootstrap/scss/variables";
+@import "variables-bs-override";
+@import "../bootstrap/scss/mixins";
+
+// Optional
+@import "../bootstrap/scss/reboot";
+@import "../bootstrap/scss/type";
+@import "../bootstrap/scss/images";
+@import "../bootstrap/scss/code";
+@import "../bootstrap/scss/grid";
+
+
+/*                      custom variables & scut
  *   -------------------------------------------------------------------------
  */
-// @import "contao/form";
+@import "variables";
 
 
 /*                      Base
@@ -86,7 +48,7 @@
 @import "base/b_image_container";
 
 @import "base/b_offcanvas";
-@import "base/_b_form";
+// @import "base/_b_form";
 
 
 

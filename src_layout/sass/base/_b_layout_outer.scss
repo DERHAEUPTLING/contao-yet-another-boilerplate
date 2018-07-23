@@ -5,17 +5,16 @@
 
 .layout-2-col-left {
     #main {
-        @include make-col-ready();
+        // @include make-col-ready();
         @include media-breakpoint-up(lg){
             @include make-col(9);
-            @include make-col-push(3)
+            order: 1;
         }
     }
     #left {
         @include make-col-ready();
         @include media-breakpoint-up(lg){
             @include make-col(3);
-            @include make-col-pull(9)
         }
     }
 }
@@ -44,7 +43,7 @@
         @include make-col-ready();
         @include media-breakpoint-up(lg){
             @include make-col(6);
-            @include make-col-push(3)
+            order: 2;
         }
         @include make-container();
     }
@@ -52,13 +51,14 @@
         @include make-col-ready();
         @include media-breakpoint-up(lg){
             @include make-col(3);
-            @include make-col-pull(6)
+            order: 1;
         }
     }
     #right {
         @include make-col-ready();
         @include media-breakpoint-up(lg){
             @include make-col(3);
+            order: 3;
         }
     }
 }
@@ -75,14 +75,14 @@ body.fullwidth #container > .container {
 /*
  * make no grid elements grid agnostig
  */
-.mod_article {
-    @include make-row();
-}
 .row,
 .mod_article {
-    > *:not([class*="col-"]) {
-        padding-left: 15px;
-        padding-right: 15px;
+    @include make-row();
+    > *:not([class*="col"]) {
+        @include make-col-ready();
+        @include make-col(12);
+        // padding-left: $grid-gutter-width / 2;
+        // padding-right: $grid-gutter-width / 2;
     }
 } 
 
