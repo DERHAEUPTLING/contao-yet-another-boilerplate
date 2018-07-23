@@ -20,8 +20,5 @@
     "gulp-util": "^3.0.7",
     "vinyl-ftp": "^0.6.1",
     "webpack": "^1.12.9"
-  },
-  "dependencies": {
-    "postcss-compass": "0.0.2"
   }
 }
