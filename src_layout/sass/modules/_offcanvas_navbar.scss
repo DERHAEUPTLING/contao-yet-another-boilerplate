@@ -1,9 +1,23 @@
+/**
+ *  .offcanvas-toggle
+ */
+
+ .offcanvas-toggle {
+    @include media-breakpoint-up(md) {
+        display: none;
+    }
+    padding-top: 30px;
+    
+}
+
+
 
 /**
  *  Burger
  */
 .menu-burger {
-    
+    cursor: pointer;
+    float: right;
     
     transition: opacity 700ms linear 0ms;
 
@@ -17,7 +31,7 @@
     opacity: 0;
     span {
         transition: transform 200ms cubic-bezier(0.63, 0.62, 0.48, 1.64);
-        background: $gray-300;
+        background: $gray-900;
         display: block;
         width: 30px;
         height: 3px;
@@ -52,22 +66,7 @@
 
 
 
-/**
- *  .offcanvas-toggle
- */
 
-    .offcanvas-toggle {
-        @include media-breakpoint-up(md) {
-            display: none;
-        }
-        float: right;
-        padding-top: 30px;
-        cursor: pointer;
-
-        transition-property: scale;
-        transition-duration: .35s;
-        transform: scale(1);
-    }
 
 
 

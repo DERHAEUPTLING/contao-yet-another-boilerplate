@@ -90,7 +90,7 @@ form {
 		cursor: pointer;
 		user-select: none;
 		border: $input-btn-border-width solid transparent;
-		@include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-width);
+		@include button-size($btn-padding-y, $btn-padding-x, $font-size-base, $btn-line-height, $btn-border-radius);
 		@include transition(all .2s ease-in-out);
 
 		&,
@@ -124,7 +124,8 @@ form {
 		}
 
 
-		@include button-variant($white, $secondary, $gray-300);
+		@include button-variant($primary, $primary, darken($primary, 10%));
+		
 	}
 }
 
