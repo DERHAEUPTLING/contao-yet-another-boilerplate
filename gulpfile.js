@@ -11,6 +11,8 @@ var autoprefixer  = require( 'autoprefixer' );
 var cssnano       = require( 'cssnano');
 
 var webpack       = require( 'webpack' );
+var babel         = require( 'gulp-babel' );
+var concat        = require('gulp-concat');
 
 var livereload    = require( 'gulp-livereload' );
 
@@ -70,37 +72,58 @@ gulp.task('sass', function () {
 
 
 /**
- * Webpack
+ * Javascript
  */
-gulp.task('webpack', function() {
-    return webpack({
-        context: js_context,
-        entry: {
-            main: js_entry
-        },
-        output: {
-            path: js_path,
-            publicPath: js_publicPath,
+// gulp.task('webpack', function() {
+//     return webpack({
+//         context: js_context,
+//         entry: {
+//             main: js_entry
+//         },
+//         output: {
+//             path: js_path,
+//             publicPath: js_publicPath,
 
-            filename: "[name].js",
+//             filename: "[name].js",
 
-        },
-        externals: {
-            // require("jquery") is external and available on the global var jQuery
-            "jquery": "jQuery",
-            "$": "jQuery",
-            "modernizr": "Modernizr",
-        },
-        optimization: {
-            minimize: true
-        },
-        devtool: "source-map",
-    }, function(err, stats) {
-        if(err) throw new gutil.PluginError("webpack", err);    
-    })
-});
+//         },
+//         externals: {
+//             // require("jquery") is external and available on the global var jQuery
+//             "jquery": "jQuery",
+//             "$": "jQuery",
+//             "modernizr": "Modernizr",
+//         },
+//         optimization: {
+//             minimize: true
+//         },
+//         devtool: "source-map",
+//     }, function(err, stats) {
+//         if(err) throw new gutil.PluginError("webpack", err);    
+//     })
+// });
 
 
+gulp.task('scripts', () =>
+    gulp.src(js_src)
+        .pipe(sourcemaps.init())
+        .pipe(babel({
+            "presets": [
+                ["env", {
+                  "targets": {
+                    "browsers": ["last 2 versions", "> 1%", "safari >= 7"]
+                  },
+                //   "debug" : true
+                }],
+                ["minify", {
+                    "evaluate": false,
+                    "mangle": true
+                }]
+              ]
+        }))
+        .pipe(concat('all.js'))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('dist'))
+);
 
 
 
@@ -155,7 +178,7 @@ gulp.task('watch',['copy'], function() {
     livereload.listen();
 
     gulp.watch( styles_watch, ['sass']);
-    gulp.watch( js_src, ['webpack']);
+    gulp.watch( js_src, ['scripts']);
     gulp.watch( src_static, ['copy']);
     
     gulp.watch(globs)
@@ -186,5 +209,5 @@ gulp.task('default', function() {
     gulp.start('watch'); // watch or serve
 });
 
-gulp.task('build',['sass', 'webpack', 'copy']);
+gulp.task('build',['sass', 'scripts', 'copy']);
 

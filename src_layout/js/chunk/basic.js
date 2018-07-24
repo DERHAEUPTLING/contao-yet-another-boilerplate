@@ -74,31 +74,6 @@ log = function (element) {
 
 
 
-/**
- * preload images one after another 
- * images is an array with image metadata 
- * preload(images);
- */
-preload = function (imageArray) {
-	var imageArray = imageArray;
-    var index = 0;
-    
-    function iterating(imageArray, index) {
-    	if (imageArray && imageArray.length > index) {
-            var img = new Image();
-            img.src = imageArray[index];
-            img.onload = function() {
-                iterating(imageArray, index + 1);
-                // console.log(imageArray[index]);
-                index++;
-            }
-        }
-    };
-    iterating(imageArray, index);
-        
-}
-
-
 /*
  * jQuery code snippet to get the dynamic variables stored in the url as parameters 
  * and store them as JavaScript variables 
