@@ -3,17 +3,8 @@
  * global vars
  *
  */
-addEvent = function(elem, type, eventHandle) {
-	if ( elem.addEventListener ) {
-	  	elem.addEventListener( type, eventHandle, false );
-	} else if ( elem.attachEvent ) {
-	  	elem.attachEvent( 'on' + type, eventHandle );
-	} else {
-	  	elem['on'+type]=eventHandle;
-	}
-};
 
-viewport = function () {
+const viewport = function () {
 	var e = {};
 	e.width  = $(window).width();
 	e.height = $(window).height();
@@ -31,7 +22,7 @@ viewport = function () {
 
 // try this https://davidwalsh.name/javascript-debounce-function
 
-throttle = function( delay, fn )
+const throttle = function( delay, fn )
 {
     var last, deferTimer;
     return function()
@@ -67,7 +58,7 @@ window.console = window.console || (function(){
  * shorthand for console.log
  *
  */
-log = function (element) {
+const log = function (element) {
     console.log(element);
     return element;
 }

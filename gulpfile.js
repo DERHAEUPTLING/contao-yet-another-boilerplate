@@ -10,9 +10,7 @@ var postcss       = require( 'gulp-postcss' );
 var autoprefixer  = require( 'autoprefixer' );
 var cssnano       = require( 'cssnano');
 
-var webpack       = require( 'webpack' );
-var babel         = require( 'gulp-babel' );
-var concat        = require('gulp-concat');
+var webpack       = require( 'webpack-stream' );
 
 var livereload    = require( 'gulp-livereload' );
 
@@ -74,24 +72,69 @@ gulp.task('sass', function () {
 /**
  * Javascript
  */
-// gulp.task('webpack', function() {
+gulp.task('script', function() {
+    return gulp.src('src_layout/js/entry.js')
+        .pipe(webpack({
+            watch: true,
+            mode : "production",
+            output: {
+                path: '/web/layout/js/',
+                publicPath: js_publicPath,
+
+                filename: "[name].js"
+            },
+            externals: {
+                "jquery": "jQuery",
+                "$": "jQuery",
+                "modernizr": "Modernizr"
+            },
+            module: {
+                rules: [
+                  {
+                    test: /\.js$/,
+                    exclude: /(node_modules|bower_components)/,
+                    loader: 'babel-loader',
+                    query: {
+                        presets: [
+                            ["env", {
+                              "targets": {
+                                "browsers": ["last 2 versions", "safari >= 7"]
+                              }
+                            }]
+                        ]
+                    }
+                  }
+                ]
+            },
+            optimization: {
+                minimize: true
+            },
+            devtool: "source-map",
+        }, null, function(err, stats) {
+            if(err) throw new gutil.PluginError("webpack", err);  
+        }))
+        .pipe(gulp.dest(js_path));
+});
+
+
+// gulp.task('script', function() {
 //     return webpack({
 //         context: js_context,
 //         entry: {
 //             main: js_entry
 //         },
 //         output: {
-//             path: js_path,
+//             path: '/web/layout/js/',
 //             publicPath: js_publicPath,
 
-//             filename: "[name].js",
+//             filename: "[name].js"
 
 //         },
 //         externals: {
 //             // require("jquery") is external and available on the global var jQuery
 //             "jquery": "jQuery",
 //             "$": "jQuery",
-//             "modernizr": "Modernizr",
+//             "modernizr": "Modernizr"
 //         },
 //         optimization: {
 //             minimize: true
@@ -103,27 +146,6 @@ gulp.task('sass', function () {
 // });
 
 
-gulp.task('scripts', () =>
-    gulp.src(js_src)
-        .pipe(sourcemaps.init())
-        .pipe(babel({
-            "presets": [
-                ["env", {
-                  "targets": {
-                    "browsers": ["last 2 versions", "> 1%", "safari >= 7"]
-                  },
-                //   "debug" : true
-                }],
-                ["minify", {
-                    "evaluate": false,
-                    "mangle": true
-                }]
-              ]
-        }))
-        .pipe(concat('all.js'))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('dist'))
-);
 
 
 
@@ -178,7 +200,7 @@ gulp.task('watch',['copy'], function() {
     livereload.listen();
 
     gulp.watch( styles_watch, ['sass']);
-    gulp.watch( js_src, ['scripts']);
+    gulp.watch( js_src, ['script']);
     gulp.watch( src_static, ['copy']);
     
     gulp.watch(globs)
@@ -209,5 +231,5 @@ gulp.task('default', function() {
     gulp.start('watch'); // watch or serve
 });
 
-gulp.task('build',['sass', 'scripts', 'copy']);
+gulp.task('build',['sass', 'script', 'copy']);
 

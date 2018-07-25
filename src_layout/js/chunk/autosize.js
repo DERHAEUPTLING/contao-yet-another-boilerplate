@@ -1,9 +1,9 @@
 
-require("../lib/autosize.js");
+var autosize = require("../lib/autosize.js");
 
 
 // from a NodeList
-// autosize(document.querySelectorAll('textarea'));
+autosize(document.querySelectorAll('textarea'));
 
 // from a single Node
 // autosize(document.querySelector('textarea'));

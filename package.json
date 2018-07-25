@@ -10,13 +10,11 @@
   "devDependencies": {
     "autoprefixer": "^6.5.1",
     "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "babel-preset-minify": "^0.4.3",
     "cssnano": "^3.7.7",
     "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.1",
-    "gulp-concat": "^2.6.1",
     "gulp-livereload": "^3.8.1",
     "gulp-newer": "^1.4.0",
     "gulp-plumber": "^1.0.1",
@@ -25,6 +23,6 @@
     "gulp-sourcemaps": "^2.1.1",
     "gulp-util": "^3.0.7",
     "vinyl-ftp": "^0.6.1",
-    "webpack": "^4"
+    "webpack-stream": "^5.0.0"
   }
 }
