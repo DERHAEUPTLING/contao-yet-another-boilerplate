@@ -36,7 +36,7 @@ setTimeout(function() {
     tabfocus_elements: ':prev,:next',
     importcss_append: true,
     // importcss_groups: [{title: 'Custom'}],
-    content_css: '<?php echo TL_PATH . '/' . Config::get('uploadPath'); ?>/dist/css/_tinymce_custom.css,<?php echo TL_PATH . '/' . Config::get('uploadPath'); ?>/dist/css/_tinymce_backend_only.css',
+    content_css: '/layout/css/_tinymce_custom.css,/layout/css/_tinymce_backend_only.css',
     extended_valid_elements: 'q[cite|class|title],article,section,hgroup,figure,figcaption',
     menubar: 'edit insert view table',
     removed_menuitems: 'pastetext',
