@@ -7,9 +7,15 @@
  *
  */
 
-var jQuery 		= require("jquery");
+require("jquery");
+require("./chunk/_polyfills.js");
 
-var basic 		= require("./chunk/basic.js");
+import {
+    log,
+    viewport
+} from './chunk/_utils.js';
+
+
 
 
 
@@ -18,18 +24,6 @@ require("./chunk/autosize.js");
 require('./chunk/offcanvas.js');
 
 
-
-
-/**
- * load swipe if touch device
- *
- */
-// if (Modernizr.touch) {
-// 	//console.log("has touch");
-// 	require.ensure([], function(require) {
-//         var touchswipe = require('./chunk/touchswipe.js');
-// 	}, 'touchswipe');
-// }
 
 
 

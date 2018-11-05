@@ -1,4 +1,4 @@
-define(function(require) {
+
     /**
      * static inclues
      *
@@ -40,4 +40,3 @@ define(function(require) {
     /* add Active to mene-burger, when ready */
     button.addClass('active')
 
-});
