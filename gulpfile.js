@@ -1,7 +1,8 @@
 'use strict';
 
 var gulp          = require( 'gulp' );
-var gutil         = require( 'gulp-util' );
+var log           = require( 'fancy-log' );
+var PluginError   = require( 'plugin-error' );
 var newer         = require( 'gulp-newer' );
 
 var sourcemaps    = require( 'gulp-sourcemaps' );
@@ -111,7 +112,7 @@ gulp.task('script', function() {
             },
             devtool: "source-map",
         }, null, function(err, stats) {
-            if(err) throw new gutil.PluginError("webpack", err);  
+            if(err) throw new PluginError("webpack", err);  
         }))
         .pipe(gulp.dest(js_path));
 });
@@ -141,7 +142,7 @@ gulp.task('script', function() {
 //         },
 //         devtool: "source-map",
 //     }, function(err, stats) {
-//         if(err) throw new gutil.PluginError("webpack", err);    
+//         if(err) throw new PluginError("webpack", err);    
 //     })
 // });
 
@@ -173,7 +174,7 @@ function conn() {
         user    : secrets.servers.production.username,
         password: secrets.servers.production.password,
         parallel: 5,
-        // log     : gutil.log,
+        // log     : log,
         secure  : true,
         secureOptions: { rejectUnauthorized: false },
     });

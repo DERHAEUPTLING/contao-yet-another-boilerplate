@@ -26,7 +26,7 @@
     overlay.on('click', function() {
         container.removeClass('st-menu-open');
         button.removeClass('close');
-    });
+    }); 
 
 
     button.on('click',  function(event) {

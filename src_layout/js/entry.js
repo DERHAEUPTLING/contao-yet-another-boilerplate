@@ -17,8 +17,6 @@ import {
 
 
 
-
-
 // var scrollTimer = require('./chunk/scrollTimer.js');
 require("./chunk/autosize.js");
 require('./chunk/offcanvas.js');
