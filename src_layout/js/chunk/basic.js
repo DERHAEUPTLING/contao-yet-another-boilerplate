@@ -3,8 +3,17 @@
  * global vars
  *
  */
+addEvent = function(elem, type, eventHandle) {
+	if ( elem.addEventListener ) {
+	  	elem.addEventListener( type, eventHandle, false );
+	} else if ( elem.attachEvent ) {
+	  	elem.attachEvent( 'on' + type, eventHandle );
+	} else {
+	  	elem['on'+type]=eventHandle;
+	}
+};
 
-const viewport = function () {
+viewport = function () {
 	var e = {};
 	e.width  = $(window).width();
 	e.height = $(window).height();
@@ -22,7 +31,7 @@ const viewport = function () {
 
 // try this https://davidwalsh.name/javascript-debounce-function
 
-const throttle = function( delay, fn )
+throttle = function( delay, fn )
 {
     var last, deferTimer;
     return function()
@@ -58,11 +67,36 @@ window.console = window.console || (function(){
  * shorthand for console.log
  *
  */
-const log = function (element) {
+log = function (element) {
     console.log(element);
     return element;
 }
 
+
+
+/**
+ * preload images one after another 
+ * images is an array with image metadata 
+ * preload(images);
+ */
+preload = function (imageArray) {
+	var imageArray = imageArray;
+    var index = 0;
+    
+    function iterating(imageArray, index) {
+    	if (imageArray && imageArray.length > index) {
+            var img = new Image();
+            img.src = imageArray[index];
+            img.onload = function() {
+                iterating(imageArray, index + 1);
+                // console.log(imageArray[index]);
+                index++;
+            }
+        }
+    };
+    iterating(imageArray, index);
+        
+}
 
 
 /*
