@@ -4,6 +4,7 @@
 secrets.json
 
 # Generated files
+.DS_Store
 .php_cs.cache
 package-lock.json
 
